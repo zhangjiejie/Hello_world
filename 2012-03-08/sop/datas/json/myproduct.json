@@ -1,0 +1,40 @@
+{
+
+"PersonalProductInfo":
+[
+    {
+        "productNo":"900001",
+        "packageName":"动力200",
+        "effectType":"及时",
+        "effectDate":"2011-07-01",
+        "expirationDate":"2011-07-31",
+        "orderStatus":"正常"
+    },
+    {
+        "productNo":"900002",
+        "packageName":"神州行",
+        "effectType":"及时",
+        "effectDate":"2011-07-01",
+        "expirationDate":"2011-07-31",
+        "orderStatus":"正常"
+    },
+    {
+        "productNo":"900003",
+        "packageName":"彩铃",
+        "effectType":"及时",
+        "effectDate":"2011-07-01",
+        "expirationDate":"2011-07-31",
+        "orderStatus":"正常"
+    },
+    {
+        "productNo":"900004",
+        "packageName":"全球通",
+        "effectType":"及时",
+        "effectDate":"2011-07-01",
+        "expirationDate":"2011-07-31",
+        "orderStatus":"正常"
+    }
+
+]
+
+}

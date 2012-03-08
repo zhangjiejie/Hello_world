@@ -1,0 +1,22 @@
+﻿<div id="noticedetail">
+    {#foreach $T.data as data}
+        {#if $T.data.notifyId == $P.myId}
+        <div class="header">
+            <span>公告详情</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+        <div class="content scroll">
+            <div>
+                <div class="midwrapper">
+                    <div class="midcontent">
+                        <div class="noticediv">
+                            <span style="margin-right:30px;"><a style="color: #8B8B8A;">发布时间：</a><a>{$T.data.effDate}</a></span><span><a style="color: #8B8B8A;">发布人：</a><a>{$T.data.creator}</a></span>
+                        </div>
+                        <div class="noticediv">
+                            <a style="color: #8B8B8A;">公告内容：</a><p style="text-indent: 2em;">{$T.data.notifyContent}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {#/if}
+    {#/for}
+</div>

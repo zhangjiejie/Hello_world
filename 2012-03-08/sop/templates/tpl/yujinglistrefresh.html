@@ -1,0 +1,11 @@
+﻿{#if $T.data.length}
+	{#foreach $T.data as data}
+		{#if $T.data.execState == 1}
+			<li class="nobackimage" href="templates/tpl/myyujingtaskdetail.html" json="com.ai.esp.g3.workmanager.web.WorkTaskAction" params="action=getYuJinTasks&staffId={$P.staffId}&myId={$T.data.workId}" remote="true">
+				<div class="spanTitle longContent" style="width: 88%;">{$T.data.workTitle}</div>
+			</li>
+		{#/if}
+	{#/for}
+{#else}
+	<li class="nobackimage"><a>暂无集团预警任务</a></li>
+{#/if}

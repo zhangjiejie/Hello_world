@@ -1,0 +1,16 @@
+﻿<div id="opponent">
+    <div class="header"><span>竞争信息列表</span><a href="#" class="toolback back"><div class="divback"></div></a><a class="toolother" href="templates/tpl/opponentedit.html" json="datas/json/blank.json" params="groupNo={$P.groupNo}&add=true&groupName={$P.groupName}" func="setDefault('opponent','{$P.groupName}','{$P.groupNo}')"><div class="divedit"></div></a></div>
+    <div class="content scroll">
+        <div>
+            <ul id="opponentList" class="arrowlist rounded">
+                {#if $T.data.length}
+                    {#foreach $T.data as data}
+                        <li href="templates/tpl/opponentedit.html" json="com.ai.esp.g3.customer.web.CompeteInfoServiceAction" cachekey="opponent" params="action=getCustomerCompeteInfos&staffId={$P.staffId}&groupNo={$P.groupNo}&competitors=3&myId={$T.data.competitorsId}&groupName={$P.groupName}" remote="true"><a class="longContent">{$T.data.title}</a></li>
+                    {#/for}
+                {#else}
+                    <li class="nobackimage"><a>暂无竞争信息</a></li>
+                {#/if}
+            </ul>
+        </div>
+    </div>
+</div>

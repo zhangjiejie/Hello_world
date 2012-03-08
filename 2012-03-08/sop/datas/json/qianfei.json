@@ -1,0 +1,10 @@
+{
+"ArrearsCallsInfo":[
+    {"groupNo" : "23424", "groupName" : "新苑名家", "commissionPayCount" : "12", "redListCounts" : 3, "telphone": "12321343", "qdate": "2011-06-28" },
+    {"groupNo" : "34534", "groupName" : "新苑花园", "commissionPayCount" : "12", "redListCounts" : 1, "telphone": "12321343", "qdate": "2011-06-28" },
+    {"groupNo" : "2324", "groupName" : "新苑中学", "commissionPayCount" : "12", "redListCounts" : 1, "telphone": "12321343", "qdate": "2011-06-28" },
+    {"groupNo" : "567", "groupName" : "新苑大厦", "commissionPayCount" : "12", "redListCounts" : 2, "telphone": "12321343", "qdate": "2011-06-28" },
+    {"groupNo" : "6867", "groupName" : "新苑小区", "commissionPayCount" : "12", "redListCounts" : 1, "telphone": "12321343", "qdate": "2011-06-28" }
+]
+
+}

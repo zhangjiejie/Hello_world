@@ -1,0 +1,22 @@
+<div id="grouplistdetails">
+    <div class="header"><span>集团详情</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div>
+            <ul class="rounded noa">
+                <li class="nobackimage box_container"><div style="width: 90px;">集团名称：</div><div class="pink box_inner_1 box_inner_heighter">{$T.data.GROUPNAME}</div></li>
+                <li class="nobackimage box_container"><div style="width: 90px;">红名单欠费：</div><div class="pink box_inner_1">{#if $T.data.REDLISTCOUNTS}{$T.data.REDLISTCOUNTS}{#else}0{#/if}</div></li>
+			</ul>
+            <ul class="arrowlist rounded">
+                <li href="templates/tpl/groupdetais.html" json="com.ai.esp.g3.customer.web.CustomerServiceAction" params="action=getCustomerDetail&staffId={$P.staffId}&groupNo={$T.data.GROUPNO}" remote="true" cachekey="groupdetais{$T.data.GROUPNO}"><a class="fontbold">集团详细资料</a></li>
+                <li onclick="send('{$T.data.TELPHONE}', '')"><a class="fontbold">发送短信</a></li>
+                <li onclick="callNum('{$T.data.TELPHONE}')"><a class="fontbold">拨打电话</a></li>
+                <li onclick="Position.addPosition(this,{$T.data.GROUPNO})"><a class="fontbold">添加位置</a></li>
+                <li onclick="mapNavigation('d', '{$T.data.position}')"><a class="fontbold">地图导航</a></li>
+                <li href="templates/tpl/opponent.html" json="com.ai.esp.g3.customer.web.CompeteInfoServiceAction" remote="true" params="action=getCustomerCompeteInfos&staffId={$P.staffId}&groupNo={$T.data.GROUPNO}&groupName={$T.data.GROUPNAME}&competitors=3" cachekey="opponent"><a class="fontbold">添加竞争信息</a></li>
+                <li href="templates/tpl/qianfei2.html" json="com.ai.esp.g3.customer.web.OverdueServiceAction" remote="true" params="action=getOverDueDetail&staffId={$P.staffId}&groupNo={$T.data.GROUPNO}&groupName={$T.data.GROUPNAME}" cachekey="qianfei{$T.data.GROUPNO}"><a class="fontbold">红名单欠费</a></li>
+                <li href="templates/tpl/baifang.html" json="com.ai.esp.g3.workmanager.web.WorkNoteAction" remote="true" params="action=getWorkNoteByCustomerId&staffId={$P.staffId}&groupNo={$T.data.GROUPNO}&groupName={$T.data.GROUPNAME}&fromDate={$P.reqDate}&toDate={$P.reqDate}" cachekey="baifang"><a class="fontbold">拜访记录</a></li>
+								<li href="templates/tpl/addmember.html" json="datas/json/blank.json" params="staffId={$P.staffId}&groupNo={$T.data.GROUPNO}&groupName={$T.data.GROUPNAME}"><a class="fontbold">添加成员</a></li>
+			</ul>
+        </div>
+    </div> 
+</div>

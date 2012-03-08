@@ -1,0 +1,23 @@
+﻿<div id="productdetail">
+    {#foreach $T.data.ProductInfo as ProductInfo}
+        {#if $T.ProductInfo.serviceCode == $P.myId}
+        <div class="header"><span>{$T.ProductInfo.packageName}</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+        <div class="content scroll">
+            <div class="accordion">
+                <div class="tit prodtit">产品计费号：{$T.ProductInfo.serviceCode}</div>
+                <div class="tit prodtit">当前状态：{#if $T.ProductInfo.orderStatus == 1}正常{#else}失效{#/if}</div>
+                <div class="tit prodtit">当月欠费：{$T.ProductInfo.overDueInfo}</div>
+                <div class="tit prodtit">预存信息：{$T.ProductInfo.preDepositInfo}</div>
+                <div class="tit prodtit">生效/失效日期：</div>
+                <div class="prodcontent">
+                    生效日期：{$T.ProductInfo.effectDate}<br /> 失效日期：{$T.ProductInfo.expirationDate}
+                </div>
+                <div class="tit prodtit">产品说明：</div>
+                <div class="prodcontent">
+                    {#if $T.ProductInfo.packageDesc}{$T.ProductInfo.packageDesc}{#else}无{#/if}
+                </div>
+            </div>
+        </div>
+        {#/if}
+    {#/for}
+</div>

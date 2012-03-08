@@ -1,0 +1,287 @@
+/* login for width 480px */
+span{
+	font-size: 21px;
+}
+
+#login{
+    background: url(img480/bg_login480.png) no-repeat left top;
+    width:480px; 
+    height:642px;
+    position: relative;
+}
+
+#login .logButton{
+    margin-left: 1px;
+    width: 321px;
+    height: 76px;
+    background: url("img480/button_login.png") no-repeat;
+}
+
+#login .logButton_touchstart{
+    background: url(img480/button_login_hover.png) no-repeat;
+}
+
+#login .miniButton{
+    width: 151px;
+    height: 56px;
+    background: url("img480/button_key.png") no-repeat left -1px;
+}
+
+#login .validateimg{
+    width: 145px;
+    height: 46px;
+    vertical-align: middle;
+}
+
+#login .logSelect{
+    width: 135px;
+    margin-right: 20px;
+}
+
+#login .miniButton_touchstart{
+    background-image: url(img480/button_key_hover.png);
+}
+
+#login .logInput{
+    width: 285px;
+    height: 45px;
+    line-height: 42px;
+    font-size: 24px;
+    background: url("img480/bg_textbox.png") repeat-x;
+    padding-left: 15px;
+    border: 1px solid rgb(173, 156, 143);
+    -webkit-border-radius: 7px;
+}
+
+#login input.mini{
+    margin-top: 3px;
+    width: 135px;
+}
+
+span.labelClass {
+    background: url(img480/selectbox.png) no-repeat;
+    padding-left:42px;
+	height:30px;
+	line-height:30px;
+	display:inline-block;
+    color: rgb(51,51,51);
+    margin-right: 22px;
+}
+
+#loginNav{
+    height: 202px;
+    width: 165px;
+    position: absolute;
+    top: 27px;
+    left: 0;
+}
+
+#loginNav div{
+    height: 52px;
+    width: 150px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+#loginNav div.yidong{
+    background: url("img480/tab_login_yidong.png") no-repeat;
+    margin-left: 2px;
+}
+
+#loginNav div.yidong_hover{
+    background: url("img480/tab_login_yidong_hover.png") no-repeat;
+}
+
+#loginNav div.dianxin{
+    margin-left: 6px;
+    background: url("img480/tab_login_dianxin.png") no-repeat;
+    width: 123px;
+}
+
+#loginNav div.dianxin_hover{
+    margin-left: 6px;
+    background: url("img480/tab_login_dianxin_hover.png") no-repeat;
+}
+
+#loginNav div.liantong{
+    background: url("img480/tab_login_liantong.png") no-repeat;
+    width: 129px;
+}
+
+#loginNav div.liantong_hover{
+    background: url("img480/tab_login_liantong_hover.png") no-repeat;
+}
+
+#loginContain{
+    position: absolute;
+    width: 337px;
+    height: 345px;
+    right: 0;
+    top: 75px;
+}
+
+#loginContain td{
+    line-height: 68px;
+}
+
+#loginContain td.last{
+    border-top: 1px dashed rgb(161, 141, 128);
+}
+
+span.radioClass {
+    background: url(img480/radioframe.png) no-repeat;
+    padding-left:42px;
+	height:33px;
+	line-height:33px;
+	display:inline-block;
+    color: rgb(51,51,51);
+    margin-right: 22px;
+}
+
+span.radioSelected{
+    background: url(img480/radioframe-selected.png) no-repeat;
+}
+
+
+/*time.html for 480*/
+
+#time{
+    width: 480px;
+    height: 800px;
+    background: url(img480/bg.png) no-repeat left top;
+}
+
+#userContain{
+    height: 156px;
+    background: url(img480/bg_file_line.png) repeat-x left bottom;
+}
+
+#timeContain{
+    height: 330px;
+    background: url(img480/bg_file_line.png) repeat-x left bottom;
+}
+
+div.userDiv{
+    float: left;
+    margin: 23px 15px;
+}
+
+#userPhoto{
+    margin-left: 38px;
+    width: 112px;
+    height: 116px;
+    background: url(img480/icon_cmcc.png) no-repeat left top;
+}
+
+#userShadow{
+    width: 13px;
+    height: 109px;
+    background: url(img480/bg_file_line_vertical.png) no-repeat left top;
+}
+
+#userInfo{
+    font-size: 20px;
+}
+
+#userInfo div{
+    margin-top: 12px;
+}
+
+#operaContain{
+    text-align:center;
+    padding-top: 38px;
+}
+
+input[type=button]{
+    height: 33px;
+    width: 93px;
+    color: White;
+	-webkit-border-radius: 6px;
+    font-weight:bold;
+}
+
+input.submit{
+    background: url(img480/button_hover.png) repeat-x left top;
+    margin-right: 15px;
+    border: 1px solid rgb(140, 202, 255);
+    -webkit-box-shadow: rgba(0,0,0, .8) 0px 0px 2px;
+}
+
+input.save{
+    background: url(img480/button.png) repeat-x left top;
+    border: 1px solid rgb(202, 194, 182);
+    -webkit-box-shadow: rgba(0,0,0, .8) 0px 0px 3px;
+}
+
+#timeContain>div{
+    margin-top: 30px;
+    padding-left: 45px;
+}
+
+div.timeshow{
+    width: 42px;
+    height: 62px;
+    background: url(img480/clock_bg.png) repeat-x left top;
+    border: 1px solid rgb(202, 194, 182);
+    -webkit-box-shadow: rgba(0,0,0, .8) 0px 0px 3px;
+    margin-right: 8px;
+    -webkit-border-radius: 6px;
+    color: White;
+    font: 42px bold "Microsoft YaHei";
+    text-align: center;
+    line-height: 62px;
+    vertical-align: middle;
+    text-shadow: 0px 0px 4px #000; 
+}
+
+#timeContain span{
+    font: 38px bold "Microsoft YaHei";
+    margin: 0 12px 0 5px;
+}
+
+
+/** wifi for 480 **/
+
+#wifi{
+    background: url(img480/bg_login_renyy.png) no-repeat left top;
+    width:480px; 
+    height:800px;
+    position: relative;
+}
+
+#wifiContain{
+    position: absolute;
+    width: 420px;
+    height: 405px;
+    right: 0;
+    top: 60px;
+}
+
+#wifiContain td{
+    line-height: 60px;
+}
+
+#wifiContain input.mini{
+    margin-top: 3px;
+    width: 165px;
+    font-size: 21px;
+}
+
+#wifiContain .logButton{
+    margin-left: 2px;
+    width: 319px;
+    height: 74px;
+    background: url("img480/button_connect.png") no-repeat;
+}
+
+#wifiContain .big{
+    width: 300px;
+}
+
+#wifiContain .logButton_touchstart{
+    background: url(img480/button_connect_hover.png) no-repeat;
+}
+
+span.pickup{
+    color: Gray;
+}

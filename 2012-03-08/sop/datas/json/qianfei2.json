@@ -1,0 +1,11 @@
+{
+
+"RedListInfo" : 
+[
+    {"qdate" : "2011-06-28", "groupName":"新苑名家", "groupNo":"213123", "customersName" : "张三", "arrearsTotal" : "123", "telphone" : "134454657564", "position" : "经理", "arrearsDetail" : [{"month":"4月","money":"20.30"},{"month":"5月","money":"29.88"}] },
+    {"qdate" : "2011-06-28", "groupName":"新苑名家", "groupNo":"213123", "customersName" : "李四", "arrearsTotal" : "23", "telphone" : "134454657567", "position" : "经理", "arrearsDetail" : [{"month":"4月","money":"20.30"},{"month":"5月","money":"29.88"}] },
+    {"qdate" : "2011-06-28", "groupName":"金太阳太阳能配件", "groupNo":"1003233443", "customersName" : "王五", "arrearsTotal" : "323", "telphone" : "134454657557", "position" : "经理", "arrearsDetail" : [{"month":"4月","money":"20.30"},{"month":"5月","money":"29.88"}] },
+    {"qdate" : "2011-06-28", "groupName":"金太阳太阳能配件", "groupNo":"1003233443", "customersName" : "赵六", "arrearsTotal" : "1232", "telphone" : "134454657547", "position" : "经理", "arrearsDetail" : [{"month":"4月","money":"20.30"},{"month":"5月","money":"29.88"}] }
+]
+
+}

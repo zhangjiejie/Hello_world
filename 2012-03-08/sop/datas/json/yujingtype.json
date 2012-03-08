@@ -1,0 +1,12 @@
+{
+"data": 
+    [
+        {"latestDate" :"2011-07-01", "periodType" : 4},
+        {"latestDate" :"2011-07-04", "periodType" : 2},
+        {"latestDate" :"2011-05-01", "periodType" : 4},
+        {"latestDate" :"2011-04-01", "periodType" : 4},
+        {"latestDate" :"2011-06-01", "periodType" : 4},
+        {"latestDate" :"2011-06-27", "periodType" : 2},
+        {"latestDate" :"2011-06-20", "periodType" : 2},
+    ]
+}

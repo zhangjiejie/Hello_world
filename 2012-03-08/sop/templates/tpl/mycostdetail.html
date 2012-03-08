@@ -1,0 +1,48 @@
+﻿<div id="mycostdetail">
+    <div class="header">
+        <span>账单详情</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+         <div class="calendarEdit">
+            <div class="hd">
+                <table class="mytable">
+                    <tr>
+                        <td style="width:40%;">账单周期：</td>
+                        <td>{#if $T.BillingInfo[0]}{$T.BillingInfo[0].month}{#else}暂无数据{#/if}</td>
+                    </tr>
+                    <tr>
+                        <td>优惠前费用：</td>
+                        <td>{#if $T.BillingInfo[0]}{$T.BillingInfo[0].preferentialFees}{#else}暂无数据{#/if}</td>
+                    </tr>
+                     <tr>
+                        <td>调帐金额：</td>
+                        <td>{#if $T.BillingInfo[0]}{$T.BillingInfo[0].tzAmount}{#else}暂无数据{#/if}</td>
+                    </tr>
+                    <tr>
+                        <td>预存金额：</td>
+                        <td>{#if $T.BillingInfo[0]}{$T.BillingInfo[0].ycAmount}{#else}暂无数据{#/if}</td>
+                    </tr>
+                    <tr>
+                        <td>专款专销存款：</td>
+                        <td>{#if $T.BillingInfo[0]}{$T.BillingInfo[0].specialDeposit}{#else}暂无数据{#/if}</td>
+                    </tr>
+                     <tr>
+                        <td>应收费用：</td>
+                        <td>{#if $T.BillingInfo[0]}{$T.BillingInfo[0].shouldPay}{#else}暂无数据{#/if}</td>
+                    </tr>
+                    <tr>
+                        <td>欠款金额：</td>
+                        <td>{#if $T.BillingInfo[0]}{$T.BillingInfo[0].delinquentAmounts}{#else}暂无数据{#/if}</td>
+                    </tr>
+                    <tr>
+                        <td>实收金额：</td>
+                        <td>{#if $T.BillingInfo[0]}{$T.BillingInfo[0].paidAmount}{#else}暂无数据{#/if}</td>
+                    </tr>
+                    <tr>
+                        <td>未交总话费：</td>
+                        <td>{#if $T.BillingInfo[0]}{$T.BillingInfo[0].unpaidTotalCost}{#else}暂无数据{#/if}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>  
+</div>

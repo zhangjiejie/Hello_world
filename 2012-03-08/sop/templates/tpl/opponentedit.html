@@ -1,0 +1,123 @@
+﻿<div id="opponentedit">
+    <div class="header"><span>{#if $P.add == 'true'}新建{#else}编辑{#/if}竞争对手</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div class="calendarEdit">
+            <div class="hd">
+                {#if $P.add == 'true'}
+                        <table id="opponentAdd_{$P.groupNo}">
+                        <tr>
+                            <td>集团客户：</td>
+                            <td>
+                                <input type="text" readonly="readonly" value={$P.groupName}>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>竞争对手：</td>
+                            <td>
+                                <span class="highClass labelClass radio" style="background-position: left -28px;" id="dianxin">电信</span>
+					            <span class="labelClass radio" id="liantong">联通</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>信息标题：</td>
+                            <td>
+                                <input type="text" />
+                            </td>
+                        </tr>
+                        <tr class="hide">
+                            <td>创建时间：</td>
+                            <td>
+                                <input type="text" id="creatdate" class="nowday" readonly="readonly" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>日志描述：</td>
+                            <td>
+                                <textarea id="scheduleDes" rows="10"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                        <td>创建拜访：</td>
+                        	<td>
+                            	<div type="ON" class="iswitch"></div>
+                        	</td>
+                    	</tr>
+                        <tr>
+                            <td>拍照附件</td>
+                            <td>
+                                <a onclick="getPicture(this)"><span class="save photo">拍照附件</span></a>
+                                <input type="text" class="hide"><br/>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td></td>
+                            <td>
+                            	<div class="imageshow">
+                            	</div>
+                            </td>
+                        </tr>
+                    </table>
+                {#else}
+                {#foreach $T.data as data}
+                    {#if $T.data.competitorsId == $P.myId}
+                    <table>
+                        <tr>
+                            <td>集团客户：</td>
+                            <td>
+                                <input type="text" value="{$P.groupName}" readonly="readonly">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>竞争对手：</td>
+                            <td>
+                                <span class="{#if $T.data.competitors == '01'}highClass{#/if} labelClass radio" {#if $T.data.competitors == '01'}style="background-position: left -28px;"{#/if} id="dianxin">电信</span>
+					            <span class="{#if $T.data.competitors == '02'}highClass{#/if} labelClass radio" {#if $T.data.competitors == '02'}style="background-position: left -28px;"{#/if} id="liantong">联通</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>信息标题：</td>
+                            <td>
+                                <input type="text" value="{$T.data.title}" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>创建时间：</td>
+                            <td>
+                                <input type="text" id="creatdate" class="nowday" value="{$T.data.createTime}" readonly="readonly" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>日志描述：</td>
+                            <td>
+                                <textarea id="scheduleDes" rows="10">{$T.data.desc}</textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拍照附件</td>
+                            <td>
+                                <a onclick="getPicture(this)"><span style="width: 95px;" class="save photo">拍照附件</span></a>
+                            	<a onclick="showPic(this, '{$T.data.attachment}')"><span style="width: 95px; margin-left: 10px;" class="save photo">显示照片</span></a>
+                                <input type="text" class="hide"><br/>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td><input type="text" class="hide oldimg" value="{$T.data.attachment}"><br/></td>
+                            <td>
+                            	<div class="imageshow">
+                            	</div>
+                            </td>
+                        </tr>
+                    </table>
+                    {#/if}
+                {#/for}
+            {#/if}
+            </div>
+            <div class="cl">
+            	<a onclick="submitOpponent(this, '{$P.groupNo}','{$P.add}','{$P.myId}')"><span class="sub">提交</span></a>
+                {#if $P.add != 'true'}
+                	<a onclick="deleteEsop('deleteCompeteInfo','com.ai.esp.g3.customer.web.CompeteInfoServiceAction','competitorsId={$P.myId}','opponent','action=getCustomerCompeteInfos&staffId={$P.staffId}&groupNo={$P.groupNo}&groupName={$P.groupName}&competitors=3')"><span class="save">删除</span></a>
+                {#/if}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+﻿<div id="mytask">
+    <div class="header">
+        <span>我的任务</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div class="myul">
+            <div class="searchBgNav">
+                <ul class="tabs">
+                    <li class="cur" ul="mytaskList1"><b onclick="setMM(this)">未完成</b></li>
+                    <li ul="mytaskList2"><b onclick="setMM(this)">已完成</b></li></ul>
+            </div>
+            <ul id="mytaskList1" class="arrowlist">
+            {#if $T.data.length}
+                {#foreach $T.data as data}
+                    {#if $T.data.execState == 1 || $T.data.execState == 2}
+                    <li cachekey='mytask' href="templates/tpl/mytaskdetail.html" json="com.ai.esp.g3.workmanager.web.WorkTaskAction" params="action=getWorkTasks&staffId={$P.staffId}&taskState=1&reqDate={$P.reqDate}&myId={$T.data.workId}" class="nobackimage">
+                        <div class="spanTitle longContent">{$T.data.workTitle}</div>
+                        <div class="image"><div {#if $T.data.workLevel == 2}class="img2"{#/if}></div></div>
+                        <div class="spanDate">{$T.data.workDate}</div>
+                    	<a myId="{$T.data.workId}" style="float:right; padding: 0 10px 0 0;" onclick="finishWarn(this,'setTaskState',{$T.data.workId},'是否确认该任务已完成？', '{$P.reqDate}', '{$T.data.workTaskExecId}')"><span class="submit">完成</span></a>
+                    </li>
+                    {#/if}
+                {#/for}
+            {#else}
+                <li class="nobackimage"><a>暂无工作任务</a></li>
+            {#/if}
+            </ul>
+            <ul id="mytaskList2" class="arrowlist hide">
+            {#foreach $T.data as data}
+                {#if $T.data.execState == 4}
+                <li cachekey='mytask' href="templates/tpl/mytaskdetail.html" json="com.ai.esp.g3.workmanager.web.WorkTaskAction" params="action=getWorkTasks&staffId={$P.staffId}&taskState=4&reqDate={$P.reqDate}&myId={$T.data.workId}" class="nobackimage">
+                    <div class="spanTitle longContent">{$T.data.workTitle}</div>
+                    <div class="image"><div {#if $T.data.workLevel == 2}class="img2"{#/if}></div></div>
+                    <div class="spanDate">{$T.data.workDate}</div>
+                    <span class="rightpink" style="color: #3F6F9F;">已完成</span>
+                </li>
+                {#/if}
+            {#/for}
+            </ul>
+        </div>
+    </div>
+</div>

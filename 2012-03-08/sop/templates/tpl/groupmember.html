@@ -1,0 +1,40 @@
+<div id="groupmember">
+    <div class="header"><span>集团成员</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div>
+            <div class="searchBg" style="text-align:center">
+	            <input type="tel" id="groupmemberSearch" class="searchInput" style="width:68%;" placeholder="输入要搜索的手机号码" pattern="[0-9]*" maxlength="11"/>
+	            <a onclick="searchmember(this)"><span class="save">搜索</span></a>
+            </div>
+            <ul id="groupmemberList" class="arrowlist">
+                {#if $T.GroupMembersInfo.length}
+                    <li myId="{$T.GroupMembersInfo[0].memberNo}" class="nobackimage detail">
+                        <table width="100%">
+                            <tr class="groupMemTr"><td>成员姓名：{$T.GroupMembersInfo[0].memberName}</td></tr>
+                            <tr class="groupMemTr"><td>集团名称： {$T.GroupMembersInfo[0].groupName}</td></tr>
+                            <tr class="groupMemTr"><td>电话号码：<a class="tel" onclick="callNum('{$T.GroupMembersInfo[0].telphone}')">{$T.GroupMembersInfo[0].telphone}</a></td></tr>
+                            <tr class="groupMemTr">
+                            	<td>
+            						<table width="100%" style="border-spacing: 0">
+                						<tr><td style="width:60%">是否中高端用户：{$T.GroupMembersInfo[0].ISVIP}</td><td>关键人物：{#if $T.GroupMembersInfo[0].peopleType == '1'}是{#else}否{#/if}</td></tr>
+               						</table>
+               					</td>
+               				</tr>
+                        </table>
+                    </li>
+                    <li onclick="goToGroup('{$T.GroupMembersInfo[0].groupNo}')"><a class="longContent">查看{$T.GroupMembersInfo[0].groupName}详细信息</a></li>
+                    <li href="templates/tpl/myproduct.html" json="com.ai.esp.g3.customer.web.MemberServiceAction" params="action=getPersonalProductInfos&telphone={$T.GroupMembersInfo[0].telphone}" remote="true" cachekey="myproduct"><a>个人订购产品列表</a></li>
+                    <li href="templates/tpl/mygroupproduct.html" json="com.ai.esp.g3.customer.web.MemberServiceAction" params="action=getGroupProductInfos&telphone={$T.GroupMembersInfo[0].telphone}" remote="true" cachekey="mygroupproduct"><a>集团产品列表</a></li>
+                    <li href="templates/tpl/mydreamproduct.html" json="com.ai.esp.g3.customer.web.MemberServiceAction" params="action=getMonternetProductInfos&telphone={$T.GroupMembersInfo[0].telphone}" remote="true" cachekey="mydreamproduct"><a>梦网产品列表</a></li>
+                    <li href="templates/tpl/myserver.html" json="com.ai.esp.g3.customer.web.MemberServiceAction" params="action=getOrderServiceInfos&telphone={$T.GroupMembersInfo[0].telphone}" remote="true" cachekey="myserver"><a>用户已订购服务列表</a></li>
+                    <li href="templates/tpl/mycost.html" json="com.ai.esp.g3.customer.web.MemberServiceAction" params="action=getBillingInfos&telphone={$T.GroupMembersInfo[0].telphone}&staffId={$P.staffId}" remote="true" cachekey="mycost"><a>近3个月的费用账单</a></li>
+                    <li href="templates/tpl/myspecials.html" json="com.ai.esp.g3.customer.web.MemberServiceAction" params="action=getSpecialsInfos&telphone={$T.GroupMembersInfo[0].telphone}" remote="true" cachekey="myspecials"><a>专项月租列表</a></li>
+                    <li href="templates/tpl/mysharing.html" json="com.ai.esp.g3.customer.web.MemberServiceAction" params="action=getSharingInfos&telphone={$T.GroupMembersInfo[0].telphone}" remote="true" cachekey="mysharing"><a>分摊资源列表</a></li>
+                    <li href="templates/tpl/myfree.html" json="com.ai.esp.g3.customer.web.MemberServiceAction" params="action=getFreeInfos&telphone={$T.GroupMembersInfo[0].telphone}" remote="true" cachekey="myfree"><a>免费资源列表</a></li>
+	            {#else}
+                    <li class="nobackimage detail groupMemNoData">该集团成员不存在</li>
+                {#/if}
+            </ul>
+        </div>
+    </div>
+</div>

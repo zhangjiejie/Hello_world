@@ -1,0 +1,40 @@
+﻿<div id="myserverdetail">
+    {#foreach $T.OrderServiceInfo as OrderServiceInfo}
+        {#if $T.OrderServiceInfo.uuid == $P.myId}
+        <div class="header">
+            <span>用户已订购服务详情</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+        <div class="content scroll">
+             <div class="calendarEdit">
+                <div class="hd">
+                    <table class="mytable">
+                        <tr>
+                            <td style="width:40%;">服务名称</td>
+                            <td>{$T.OrderServiceInfo.serviceName}</td>
+                        </tr>
+                        <tr>
+                            <td>生效类型</td>
+                            <td>{#if $T.OrderServiceInfo.effectType == "-8"}立即生效且月底失效{#elseif $T.OrderServiceInfo.effectType == "1"}当前有效{#elseif $T.OrderServiceInfo.effectType == "2"}下月生效{#else}次日生效{#/if}</td>
+                        </tr>
+                         <tr>
+                            <td>生效日期</td>
+                            <td>{$T.OrderServiceInfo.effectDate}</td>
+                        </tr>
+                        <tr>
+                            <td>失效日期</td>
+                            <td>{$T.OrderServiceInfo.expirationDate}</td>
+                        </tr>
+                        <tr>
+                            <td>订购时间</td>
+                            <td>{$T.OrderServiceInfo.orderTime}</td>
+                        </tr>
+                        <tr>
+                            <td>操作员工号</td>
+                            <td>{$T.OrderServiceInfo.operationNo}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        {#/if}
+    {#/for}
+</div>

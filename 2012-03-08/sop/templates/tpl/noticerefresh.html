@@ -1,0 +1,10 @@
+﻿{#if $T.data.length}
+	{#foreach $T.data as data}
+	<li remote="true" href="templates/tpl/noticedetail.html" json="com.ai.esp.g3.sys.web.SysNoticeManagerAction" params="action=getSysNotices&staffId={$P.staffId}&reqDate={$P.reqDate}&myId={$T.data.notifyId}">
+		<div class="spanTitle longContent" style="width: 60%">{$T.data.notifyTitle}</div>
+		<div class="spanDate" style="margin-left: 10px">{$T.data.effDate}</div>
+	</li>
+	{#/for}
+{#else}
+	<li class="nobackimage"><a>暂无公告提醒</a></li>
+{#/if}

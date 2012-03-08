@@ -1,0 +1,16 @@
+<div id="mycost">
+    <div class="header"><span>近三个月账单</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div>
+            <ul id="mycostList" class="arrowlist rounded">
+                {#if $T.BillingInfo.length}
+                    {#foreach $T.BillingInfo as BillingInfo}
+                        <li href="templates/tpl/mycostdetail.html" json="com.ai.esp.g3.customer.web.MemberServiceAction" params="action=getBillingInfoDetail&telphone={$P.telphone}&myId={$T.BillingInfo.uuid}&staffId={$P.staffId}&month={$T.BillingInfo.BILLING_CYCLE_ID}"  remote="true" ><a class="longContent">{$T.BillingInfo.STR_BILLING_CYCLE_ID}账单</a></li>
+                    {#/for}
+                {#else}
+                    <li class="nobackimage"><a>暂无消费账单</a></li>
+                {#/if}
+            </ul>
+        </div>
+    </div>
+</div>

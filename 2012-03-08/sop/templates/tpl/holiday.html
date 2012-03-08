@@ -1,0 +1,34 @@
+﻿<div id="holiday">
+    <div class="header"><span>双节拜访</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div class="myul">
+            <div class="searchBgNav">
+                <ul class="tabs">
+                    <li class="cur" ul="hisoryList1"><b onclick="setMM(this)">未拜访</b></li>
+                    <li ul="hisoryList2"><b onclick="setMM(this)">已拜访</b></li></ul>
+            </div>
+            <ul id="hisoryList1" class="arrowlist">
+                {#foreach $T.data as data}
+                    {#if $T.data.visitState == 0}
+                    <li class="nobackimage">
+                        <div class="spanTitle longContent">{$T.data.customerName}</div>
+                        <div class="spanDate">{$T.data.visitDate}</div>
+                        <a style="float:right; padding: 0 10px 0 0;" onclick="finishWarn(this,'setHolidayVisitState',{$T.data.workDtlId},'是否确认该任务已完成？')"><span class="submit">完成</span></a>
+                    </li>
+                    {#/if}
+                {#/for}
+            </ul>
+            <ul id="hisoryList2" class="arrowlist hide">
+                {#foreach $T.data as data}
+                    {#if $T.data.visitState == 1}
+                    <li class="nobackimage">
+                        <div class="spanTitle longContent">{$T.data.customerName}</div>
+                        <div class="spanDate">{$T.data.visitDate}</div>
+                        <span class="rightpink pink">已完成</span>
+                    </li>
+                    {#/if}
+                {#/for}
+            </ul>
+       </div>
+    </div>
+</div>

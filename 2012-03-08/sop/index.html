@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>ESOP</title>
+        <link href="jqtouch.png" rel="apple-touch-icon-precomposed" />
+        <link href="jqt_startup.png" rel="apple-touch-startup-image" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+        
+        <style type="text/css" media="screen">@import "scripts/src/nb.webframe.css";</style>
+        <style type="text/css" media="screen">@import "themes/apple/iscroll.css";</style>
+        <style type="text/css" media="screen">@import "themes/apple/Calendar.css";</style>
+        <style type="text/css" media="screen">@import "themes/apple/screen320.css";</style>
+        
+        <script src="scripts/jquery-1.6.1.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="scripts/phonegap.0.9.4.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="scripts/jquery-jtemplates.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="scripts/src/nb.webframe.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="scripts/ichannel.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="scripts/esop.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="scripts/Calendar.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="scripts/jquery.iphone-switch.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="gapext/multipleFilesUpload.js" type="application/x-javascript" charset="utf-8"></script>
+        
+        <script src="scripts/commons.js" type="application/x-javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<section>
+			<div id="login">
+			    <div class="logName">
+			        <input type="text" class="logInput name" id="userPhoneNum" readonly="readonly" />
+			    </div>
+			    <div class="logPass">
+			        <input type="password" class="logInput" id="userPassword" />
+			    </div>
+			    <input type="button" class="logButton" id="btn_Login" value="登陆" />
+            </div>
+		</section>
+		<footer id="footer" class="hide">
+			<ul>
+		        <li><a href="#" class="home current" name="home"><span >&nbsp;</span><b>功能导航</b></a></li>
+		        <li><a href="templates/tpl/group.html" json="com.ai.esp.g3.customer.web.CustomerServiceAction" remote="true" class="group" func="creatTips();" cachekey="group" name="group"><span >&nbsp;</span><b id="wlanloginId">集团客户</b></a></li>
+		        <li><a href="templates/tpl/groupmember.html" json="com.ai.esp.g3.customer.web.MemberServiceAction" cachekey="groupmember" class="member" name="groupmember"><span >&nbsp;</span><b id="searchSp">集团成员</b></a></li>
+		        <li><a href="templates/tpl/mycalendar.html" json="datas/json/blank.json" func="Calendar.init();" class="calendar" name="calendar"><span >&nbsp;</span><b>工作日程</b></a></li>
+			</ul>
+		</footer>
+	</body>
+</html>

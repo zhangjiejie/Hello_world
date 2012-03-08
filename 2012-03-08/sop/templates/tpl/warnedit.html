@@ -1,0 +1,156 @@
+<div id="warnedit">
+    <div class="header">
+        <span>{#if $P.add == 'true'}新建{#else}查看{#/if}跟踪详细记录</span>
+        <a href="#" class="toolback back"><div class="divback"></div></a>
+    </div>
+    <div class="content scroll">
+        <div class="calendarEdit">
+            <div class="hd">
+            {#if $P.add == 'true'}
+                <table myId="{$P.workTaskExecId}">
+                	<tr>
+                        <td>
+                            集团名称：
+                        </td>
+                        <td>
+                             <select class="searchSel">
+                             </select>
+                        </td>
+                    </tr>
+                	 <tr>
+                        <td>
+                            任务标题：
+                        </td>
+                        <td>
+                            <input readonly="readonly" type="text" value="{$P.workTitle}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            跟踪目的：
+                        </td>
+                        <td>
+                            <input type="text" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            工作日期：
+                        </td>
+                        <td>
+                            <div class="dateselect"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            跟踪内容：
+                        </td>
+                        <td>
+				            <textarea id="scheduleDes" rows="10"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            跟踪结果：
+                        </td>
+                        <td>
+                            <input type="text">
+                        </td>
+                    </tr>
+                      <tr>
+                        <td>
+                            开始日期：
+                        </td>
+                        <td>
+                            <div class="dateselect"></div>
+                        </td>
+                    </tr>
+                      <tr>
+                        <td>
+                            结束日期：
+                        </td>
+                        <td>
+                            <div class="dateselect"></div>
+                        </td>
+                    </tr>
+                </table>
+            {#else}
+                {#foreach $T.data as data}
+                    {#if $T.data.workNoteId == $P.workNoteId}
+                    <table myId="{$P.workTaskExecId}">
+                    	<tr>
+	                        <td>
+	                            集团名称：
+	                        </td>
+	                        <td>
+	                             <select class="searchSel">
+	                             </select>
+	                        </td>
+	                    </tr>
+	                	 <tr>
+	                        <td>
+	                            任务标题：
+	                        </td>
+	                        <td>
+	                            <input readonly="readonly" type="text" value="{$P.workTitle}">
+	                        </td>
+	                    </tr>
+                        <tr>
+                            <td>
+                                跟踪目的：
+                            </td>
+                            <td>
+                                <input type="text" value="{$T.data.workPurpose}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                工作日期：
+                            </td>
+                            <td>
+                                <div class="dateselect">{$T.data.workDate}</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                跟踪内容：
+                            </td>
+                            <td>
+					            <textarea id="scheduleDes" rows="10">{$T.data.workContent}</textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                跟踪结果：
+                            </td>
+                            <td>
+                                <input type="text" value="{$T.data.workResult}">
+                            </td>
+                        </tr>
+                        <tr>
+	                        <td>
+	                            开始日期：
+	                        </td>
+	                        <td>
+	                            <div class="dateselect">{$T.data.startDate}</div>
+	                        </td>
+	                    </tr>
+	                      <tr>
+	                        <td>
+	                            结束日期：
+	                        </td>
+	                        <td>
+	                            <div class="dateselect">{$T.data.endDate}</div>
+	                        </td>
+	                    </tr>
+                    </table>
+                    {#/if}
+                {#/for}
+            {#/if}    
+            </div>
+            <div class="cl">
+            	<a onclick="submitFollow(this, '{$P.workTaskExecId}','{$P.add}','{$P.workNoteId}')"><span class="sub">提交</span></a>
+            </div>
+        </div>
+    </div>
+</div>

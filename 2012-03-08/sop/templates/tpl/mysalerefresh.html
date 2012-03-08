@@ -1,0 +1,10 @@
+﻿{#if $T.data.length}
+	{#foreach $T.data as data}
+		<li class="nobackimage" remote="true" href="templates/tpl/mysaledetail.html" json='com.ai.esp.g3.workmanager.web.WorkTaskAction' params='action=getWorkSaleTasks&staffId={$P.staffId}&myId={$T.data.workId}'>
+			<div class="spanTitle longContent" style="width: 70%;">{$T.data.workTitle}</div>
+			<a myId="{$T.data.workId}" style="float:right; padding: 0 10px 0 0;" onclick="finishWarn(this, 'setSaleTaskState', '{$T.data.workId}', '是否确认该任务已完成？', '{$P.reqDate}', '{$T.data.workTaskExecId}')"><span class="submit">完成</span></a>
+		</li>
+	{#/for}
+{#else}
+	<li class="nobackimage"><a>暂无营销任务</a></li>
+{#/if}

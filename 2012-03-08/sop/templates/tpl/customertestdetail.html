@@ -1,0 +1,30 @@
+<div id="customertestdetail" class="customertestdetail">
+    <div class="header"><span>{$P.title}</span><a href="#" class="toolback back"><div class="divback"></div></a><a href="#" class="toolother" onclick="editCustomerTest(this, '{$P.id}')"><div class="divedit"></div></a></div>
+    <div class="content scroll">
+        <div class="myul calendarEdit">
+        	<div class="hd" style="padding: 0;">
+            	<ul id="customertestdetailList_{$P.id}" class="arrowlist rounded noa">
+            	</ul>
+            	<table class="edit hide">
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="text" placeholder="请输入视频名称" style="margin: 10px 10px 10px 25px;"  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="text" readonly="readonly" style="margin: 10px 10px 10px 25px;" />
+        					<a onclick="Video.getVideoUri(this)"><span class="sub" style="margin-left:0;padding: 4px 10px;">浏览</span></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="cl hide edit">
+            	<a onclick="addTest(this, '{$P.id}')"><span class="sub">添加</span></a>
+           		<a onclick="Navigation('customertestdetailList', '{$P.id}')"><span class="save">返回</span></a>
+        	</div>
+        </div>
+    </div>
+</div>

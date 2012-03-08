@@ -1,0 +1,11 @@
+<li class="nobackimage"><span>工作结果</span><div class="follow" style="font-size:16px;">工作时间</div></li>
+{#if $T.data.length}
+    {#foreach $T.data as data}
+    <li class="nobackimage" remote="true" href="templates/tpl/warnedit.html" json="com.ai.esp.g3.workmanager.web.WorkNoteAction" params="action=getWorkNotesByTaskId&staffId={$P.staffId}&workTaskExecId={$T.data.workTaskExecId}&workNoteId={$T.data.workNoteId}&workTitle={$P.workTitle}" func="setGroupSelect('{$T.data.groupNo}')">
+    	<div class="longContent followTitle" >{$T.data.workPurpose}<span>{#if $T.data.workResult}({$T.data.workResult}){#/if}</span></div>
+	    <div class="follow">{$T.data.workDate}</div>
+    </li>
+    {#/for}
+{#else}
+    <li class="nobackimage"><a>暂无跟踪记录</a></li>
+{#/if}

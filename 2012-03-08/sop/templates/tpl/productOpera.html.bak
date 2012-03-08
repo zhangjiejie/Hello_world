@@ -1,0 +1,14 @@
+<div id="productOpera">
+    <div class="header"><span>操作列表</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div>
+            <ul id="productOperaUL" class="arrowlist rounded">
+            	{#if $P.packageName != '短信信箱'}
+                    <li href="templates/tpl/productOrder.html" json="datas/json/blank.json" func="$('div.dateselect[name=yuyue]').html(Calendar.today)" params="staffId={$P.staffId}&groupNo={$P.groupNo}&groupName={$P.groupName}&packageName={$P.packageName}&servCode={$P.servCode}">
+                        <a style="font-size:16px">预约受理</a></li>
+                {#/if}
+           
+            </ul>
+        </div>
+    </div>
+</div>

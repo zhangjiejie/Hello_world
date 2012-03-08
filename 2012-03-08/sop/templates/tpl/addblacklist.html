@@ -1,0 +1,49 @@
+<div id="addblacklist">
+    <div class="header">
+        <span>操作{#if $T.listDesc == '2'}黑{#else}白{#/if}名单</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div class="calendarEdit">
+            <div class="hd">
+                <table>
+                    <tr>
+                        <td>
+                            集团客户：
+                        </td>
+                        <td>
+                            <input type="text" disabled="disabled" value="{$P.groupName}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            产品名称：
+                        </td>
+                        <td>
+                            <input type="text" disabled="disabled" value="{$P.packageName}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            操作类型：
+                        </td>
+                        <td>
+                            <select class="searchSel">
+                                <option value="add">添加</option>
+                                <option value="delete">删除</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            成员号码：
+                        </td>
+                        <td>
+                            <input type="tel" pattern="[0-9]*" maxlength="11" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="cl">
+                <a onclick="addBlacklist(this, '{$P.groupNo}', '{$P.servCode}')"><span class="sub">提交</span></a>
+            </div>
+        </div>
+    </div>

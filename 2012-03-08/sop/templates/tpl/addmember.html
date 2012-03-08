@@ -1,0 +1,57 @@
+<div id="addmember">
+    <div class="header">
+        <span>新增集团成员</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div class="calendarEdit">
+            <div class="hd">
+                <table>
+                    <tr>
+                        <td>
+                            集团客户：
+                        </td>
+                        <td>
+                            <input type="text" disabled="disabled" value="{$P.groupName}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            成员类型：
+                        </td>
+                        <td>
+                            <select class="searchSel" onchange="changeOutline(this)">
+                                <option value="online">网内</option>
+                                <option value="outline">网外</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            成员号码：
+                        </td>
+                        <td>
+                            <input type="tel" pattern="[0-9]*" maxlength="11" />
+                        </td>
+                    </tr>
+                    <tr class="hide outline">
+                        <td>
+                            成员姓名：
+                        </td>
+                        <td>
+                            <input type="text" />
+                        </td>
+                    </tr>
+                    <tr class="hide outline">
+                        <td>
+                            身份证号：
+                        </td>
+                        <td>
+                            <input type="tel" pattern="[0-9]*" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="cl">
+                <a onclick="addMember(this, '{$P.groupNo}')"><span class="sub">提交</span></a>
+            </div>
+        </div>
+    </div>

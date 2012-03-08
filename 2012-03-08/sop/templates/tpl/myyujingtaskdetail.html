@@ -1,0 +1,76 @@
+﻿<div id="myyujingtaskdetail">
+    {#foreach $T.data as data}
+        {#if $T.data.workId == $P.myId}
+        <div class="header">
+            <span>预警任务详情</span>
+            <a href="#" class="toolback back"><div class="divback"></div></a>
+        </div>
+        <div class="content scroll">
+            <div class="calendarEdit">
+                <div class="hd">
+                    <table>
+                        <tr>
+                            <td>
+                                任务标题：
+                            </td>
+                            <td>
+                                <input type="text" disabled="disabled" value="{$T.data.workTitle}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                任务周期：
+                            </td>
+                            <td>
+                                <input type="text" disabled="disabled" value="{#if $T.data.cycle == 2}周预警{#else}月预警{#/if}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                生成时间：
+                            </td>
+                            <td>
+					            <input type="text" disabled="disabled" value="{$T.data.createDate}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                集团名称：
+                            </td>
+                            <td>
+                                <input type="text" disabled="disabled" value="{$T.data.groupName}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                任务类型：
+                            </td>
+                            <td>
+                                <input type="text" disabled="disabled" value="{$T.data.workTypeName}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                重要程度：
+                            </td>
+                            <td>
+                                <input type="text" disabled="disabled" value="{#if $T.data.urgLevel == "1"}一般{#else}紧急{#/if}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top">
+                                预警详情：
+                            </td>
+                            <td style="padding-top: 8px;">
+                            	<a class="aInTable" href="templates/tpl/yujing.html" json="com.ai.esp.g3.bi.web.KpiAlarmManagerAction" params='action=getLastestDataDate&staffId={$P.staffId}&infoType=3&periodType=24&groupNo={$T.data.groupNo}&myId={$P.myId}&type=group' remote="true" func="searchYuying('{$T.data.groupNo}', '', '{$T.data.cycle}', '{$P.myId}', 'group', '{$T.data.createDate}')">{$T.data.yj1}</a>
+                            	<a class="aInTable" href="templates/tpl/yujing.html" json="com.ai.esp.g3.bi.web.KpiAlarmManagerAction" params='action=getLastestDataDate&staffId={$P.staffId}&infoType=3&periodType=24&groupNo={$T.data.groupNo}&myId={$P.myId}&type=keyperson' remote="true" func="searchYuying('{$T.data.groupNo}', '', '{$T.data.cycle}', '{$P.myId}', 'keyperson', '{$T.data.createDate}')">{$T.data.yj3}</a>
+                            	<a class="aInTable" style="color: #000;">{$T.data.yj2}</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        {#/if}
+    {#/for}
+</div>

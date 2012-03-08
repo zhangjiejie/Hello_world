@@ -1,0 +1,19 @@
+<div id="followlist">
+    <div class="header"><span>查看书签</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div class="myul">
+            <ul class="arrowlist rounded">
+                {#if $T.data.length}
+                    {#foreach $T.data as data}
+	                <li class="nobackimage">
+	                	<div class="spanTitle longContent" style="width: 60%">{$T.data.noteName}</div>
+	                	<div  class="spanDate" style="margin-left: 10px">{$T.data.createDate}</div>
+	                </li>
+	                {#/for}
+	            {#else}
+                    <li class="nobackimage"><a>暂无跟踪记录</a></li>
+                {#/if}
+            </ul>
+        </div>
+    </div>
+</div>

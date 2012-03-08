@@ -1,0 +1,48 @@
+{
+
+"GroupProductInfo":
+[
+    {
+        "groupName":"K集团",
+        "groupNo":"90009",
+        "packageName":"神州行",
+        "serviceCode":"8990",
+        "effectType":"及时",
+        "effectDate":"2001-06-01",
+        "expirationDate":"2011-08-01",
+        "orderStatus":"正常"
+    },
+    {
+        "groupName":"M集团",
+        "groupNo":"90008",
+        "packageName":"万里行",
+        "serviceCode":"8991",
+        "effectType":"及时",
+        "effectDate":"2011-07-01",
+        "expirationDate":"2011-07-31",
+        "orderStatus":"正常"
+    },
+    {
+        "groupName":"F集团",
+        "groupNo":"90007",
+        "packageName":"哪都行",
+        "serviceCode":"8993",
+        "effectType":"及时",
+        "effectDate":"2011-07-01",
+        "expirationDate":"2011-07-31",
+        "orderStatus":"正常"
+    },
+    {
+        "groupName":"T集团",
+        "groupNo":"90006",
+        "packageName":"行不行",
+        "serviceCode":"8992",
+        "effectType":"及时",
+        "effectDate":"2011-07-01",
+        "expirationDate":"2011-07-31",
+        "orderStatus":"正常"
+    }
+
+]
+
+}

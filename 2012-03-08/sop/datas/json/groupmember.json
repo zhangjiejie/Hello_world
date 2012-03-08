@@ -1,0 +1,20 @@
+{
+
+"GroupMembersInfo":
+	[
+
+		{
+        "membername" : "葛平",
+        "memberNo" : "9000004",
+        "groupNo" : "12389724",
+        "groupName" : "金太阳太阳能配件",
+        "peopleType":"A",
+        "position":"总监",
+        "gender":"男",
+        "birthdayType":"农历",
+        "birthday":"1985-11-25",
+        "telphone":"13466436766" 
+		}
+		
+	]
+}

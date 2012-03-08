@@ -1,0 +1,16 @@
+﻿<div id="myproduct">
+    <div class="header"><span>个人订购产品列表</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div>
+            <ul id="myproductList" class="arrowlist rounded">
+                {#if $T.PersonalProductInfo.length}
+                    {#foreach $T.PersonalProductInfo as PersonalProductInfo}
+                        <li href="templates/tpl/myproductdetail.html" json="com.ai.esp.g3.customer.web.MemberServiceAction" params="action=getPersonalProductInfos&telphone={$P.telphone}&myId={$T.PersonalProductInfo.uuid}" cachekey="myproduct"><a class="longContent">{$T.PersonalProductInfo.packageName}</a></li>
+                    {#/for}
+                {#else}
+                    <li class="nobackimage"><a>暂无订购产品</a></li>
+                {#/if}
+            </ul>
+        </div>
+    </div>
+</div>

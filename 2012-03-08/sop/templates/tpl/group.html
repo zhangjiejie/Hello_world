@@ -1,0 +1,27 @@
+﻿<div id="group">
+    <div class="header"><span>集团客户</span><a class="toolother" href="javascript:void(0)" onclick="refreshGroup()"><div class="divrefresh"></div></a></div>
+    <div class="content scroll">
+        <div>
+            <div class="searchBg">
+	            <input type="text" id="groupSearch" class="searchInput" style="width:85%" placeholder="联系人手机/集团编码/集团名称" oninput="searchGroup(this)" />
+            </div>
+            <ul id="groupList" class="arrowlist">
+            {#if $T.CustomerInfo}
+                {#foreach $T.CustomerInfo as CustomerInfo}
+	                <li class="nobackimage" style="height:auto; line-height:36px;" href="templates/tpl/grouplistdetails.html" json="com.ai.esp.g3.customer.web.CustomerServiceAction" params="action=getCustomerBaseInfo&staffId={$P.staffId}&groupNo={$T.CustomerInfo.GROUPNO}&reqDate={$P.reqDate}" remote="true" code="{$T.CustomerInfo.GROUPNO}" tel="{$T.CustomerInfo.TELPHONE}" spell="{$T.CustomerInfo.SPELLING}" jianpin="{$T.CustomerInfo.JIANPIN}" name="{$T.CustomerInfo.GROUPNAME}" >
+	                    <a class="longContent">{$T.CustomerInfo.GROUPNAME}</a>
+	                    <a style="font-size: 13px; color: #787878">{#if $T.CustomerInfo.CONTACT}{$T.CustomerInfo.CONTACT}{#else}—{#/if} ： {#if $T.CustomerInfo.TELPHONE}{$T.CustomerInfo.TELPHONE}{#else}—{#/if}</a>
+	                </li>
+                {#/for}
+            {#/if}
+            </ul>
+        </div>
+    </div>
+    <nav class="vertical">
+        <ul>
+            <li>#</li><li>A</li><li>B</li><li>C</li><li>D</li><li>E</li><li>F</li><li>G</li><li>H</li>
+            <li>I</li><li>J</li><li>K</li><li>L</li><li>M</li><li>N</li><li>O</li><li>P</li><li>Q</li>
+            <li>R</li><li>S</li><li>T</li><li>U</li><li>V</li><li>W</li><li>X</li><li>Y</li><li>Z</li>
+        </ul>
+    </nav>
+</div>

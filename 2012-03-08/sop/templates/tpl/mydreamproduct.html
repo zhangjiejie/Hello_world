@@ -1,0 +1,16 @@
+﻿<div id="mydreamproduct">
+    <div class="header"><span>梦网产品列表</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div>
+            <ul id="mydreamproductList" class="arrowlist rounded">
+                {#if $T.MonternetProductInfo.length}
+                    {#foreach $T.MonternetProductInfo as MonternetProductInfo}
+                        <li href="templates/tpl/mydreamproductdetail.html" json="com.ai.esp.g3.customer.web.MemberServiceAction" params="action=getMonternetProductInfos&telphone={$P.telphone}&myId={$T.MonternetProductInfo.uuid}" cachekey="mydreamproduct"><a class="longContent">{$T.MonternetProductInfo.servicePackageName}</a></li>
+                    {#/for}
+                {#else}
+                    <li class="nobackimage"><a>暂无梦网产品</a></li>
+                {#/if}
+            </ul>
+        </div>
+    </div>
+</div>

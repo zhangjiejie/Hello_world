@@ -1,0 +1,44 @@
+{
+
+"BillingInfo":
+[
+    {
+        "id":"343544",
+        "month":"2011-04",
+        "preferentialFees": 117.80,
+        "tzAmount":123.33,
+        "ycAmount":100.09,
+        "specialDeposit":999.99,
+        "shouldPay":90.99,
+        "delinquentAmounts":9.99,
+        "paidAmount":1800,
+        "unpaidTotalCost":909.99
+    },
+    {
+        "id":"343545",
+        "month":"2011-05",
+        "preferentialFees": 117.80,
+        "tzAmount":123.33,
+        "ycAmount":100.09,
+        "specialDeposit":999.99,
+        "shouldPay":90.99,
+        "delinquentAmounts":9.99,
+        "paidAmount":1800,
+        "unpaidTotalCost":909.99
+    },
+    {
+        "id":"343546",
+        "month":"2011-06",
+        "preferentialFees": 117.80,
+        "tzAmount":123.33,
+        "ycAmount":100.09,
+        "specialDeposit":999.99,
+        "shouldPay":90.99,
+        "delinquentAmounts":9.99,
+        "paidAmount":1800,
+        "unpaidTotalCost":909.99
+    }
+
+]
+
+}

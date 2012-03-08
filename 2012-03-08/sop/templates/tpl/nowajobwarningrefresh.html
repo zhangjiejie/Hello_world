@@ -1,0 +1,75 @@
+﻿{#if $T.data.count1}
+<li class="tit nobackimage" onclick="showNextContent(this)"><div class="bookimg open"></div>产品专项月租到期提醒</li>
+<ul class="arrowlist">
+    {#foreach $T.data.data as data}
+        {#if $T.data.rmdType == 51}
+        <li class="nobackimage {#if $T.data.readState}readed{#/if}" cachekey='nowajobwarning' onclick="setRemindState(this, '{$T.data.remindId}', '{$P.reqDate}')" href="templates/tpl/warndetail.html" json="com.ai.esp.g3.workmanager.web.WorkRemindAction" params="action=getWorkReminds&staffId={$P.staffId}&remindState=0&reqDate={$P.reqDate}&myId={$T.data.remindId}">
+            <div class="spanTitle longContent">{$T.data.CMN_STR_02}</div>
+            <div class="spanTarget longContent" style="width:25%;">{$T.data.CMN_STR_04}</div>
+            <div class="spanDate rightpink">{$T.data.CMN_DATE_02}</div>
+        </li>
+        {#/if}
+    {#/for}
+</ul>
+{#/if}
+{#if $T.data.count2}
+<li class="tit nobackimage" onclick="showNextContent(this)"><div class="bookimg open"></div>红名单欠费提醒</li>
+<ul class="arrowlist">
+    {#foreach $T.data.data as data}
+        {#if $T.data.rmdType == 52}
+        <li class="nobackimage {#if $T.data.readState}readed{#/if}" cachekey='nowajobwarning' onclick="setRemindState(this, '{$T.data.remindId}', '{$P.reqDate}')" href="templates/tpl/warndetail.html" json="com.ai.esp.g3.workmanager.web.WorkRemindAction" params="action=getWorkReminds&staffId={$P.staffId}&remindState=0&reqDate={$P.reqDate}&myId={$T.data.remindId}">
+            <div class="spanTitle longContent">{$T.data.CMN_STR_02}</div>
+            <div class="spanTarget longContent" style="width:25%;">{$T.data.CMN_STR_03}</div>
+            <div class="spanDate rightpink">{$T.data.CMN_NUM_01}</div>
+        </li>
+        {#/if}
+    {#/for}
+</ul>
+{#/if}
+{#if $T.data.count3}
+<li class="tit nobackimage" onclick="showNextContent(this)"><div class="bookimg open"></div>关键人分摊到期提醒</li>
+<ul class="arrowlist">
+    {#foreach $T.data.data as data}
+        {#if $T.data.rmdType == 53}
+        <li class="nobackimage {#if $T.data.readState}readed{#/if}" cachekey='nowajobwarning' onclick="setRemindState(this, '{$T.data.remindId}', '{$P.reqDate}')" href="templates/tpl/warndetail.html" json="com.ai.esp.g3.workmanager.web.WorkRemindAction" params="action=getWorkReminds&staffId={$P.staffId}&remindState=0&reqDate={$P.reqDate}&myId={$T.data.remindId}">
+            <div class="spanTitle longContent">{$T.data.CMN_STR_02}</div>
+            <div class="spanTarget longContent" style="width:25%;">{$T.data.CMN_STR_04}</div>
+            <div class="spanDate rightpink">{$T.data.CMN_DATE_01}</div>
+        </li>
+        {#/if}
+    {#/for}
+</ul>
+{#/if}
+{#if $T.data.count4}
+<li class="tit nobackimage" onclick="showNextContent(this)"><div class="bookimg open"></div>关键人生日关怀提醒</li>
+<ul class="arrowlist">
+    {#foreach $T.data.data as data}
+        {#if $T.data.rmdType == 54}
+        <li class="nobackimage {#if $T.data.readState}readed{#/if}" cachekey='nowajobwarning' onclick="setRemindState(this, '{$T.data.remindId}', '{$P.reqDate}')" href="templates/tpl/warndetail.html" json="com.ai.esp.g3.workmanager.web.WorkRemindAction" params="action=getWorkReminds&staffId={$P.staffId}&remindState=0&reqDate={$P.reqDate}&myId={$T.data.remindId}">
+            <div class="spanTitle longContent">{$T.data.CMN_STR_02}</div>
+            <div class="spanTarget longContent" style="width:25%;">{$T.data.CMN_STR_03}</div>
+            <div class="spanDate rightpink">{$T.data.CMN_DATE_01}</div>
+        </li>
+        {#/if}
+    {#/for}
+</ul>
+{#/if}
+{#if $T.data.count5}
+<li class="tit nobackimage" onclick="showNextContent(this)"><div class="bookimg open"></div>合同到期提醒</li>
+<ul class="arrowlist">
+    {#foreach $T.data.data as data}
+        {#if $T.data.rmdType == 55}
+        <li class="nobackimage {#if $T.data.readState}readed{#/if}" cachekey='nowajobwarning' onclick="setRemindState(this, '{$T.data.remindId}', '{$P.reqDate}')" href="templates/tpl/warndetail.html" json="com.ai.esp.g3.workmanager.web.WorkRemindAction" params="action=getWorkReminds&staffId={$P.staffId}&remindState=0&reqDate={$P.reqDate}&myId={$T.data.remindId}">
+            <div class="spanTitle longContent">{$T.data.CMN_STR_02}</div>
+            <div class="spanTarget longContent" style="width:25%;">{$T.data.CMN_STR_05}</div>
+            <div class="spanDate rightpink">{$T.data.CMN_DATE_01}</div>
+        </li>
+        {#/if}
+    {#/for}
+</ul>
+{#/if}
+{#if !$T.data.count1 && !$T.data.count2 && !$T.data.count3 && !$T.data.count4 && !$T.data.count5}
+<ul class="arrowlist">
+    <li class="nobackimage"><a>暂无工作提醒</a></li>
+</ul>
+{#/if}

@@ -1,0 +1,32 @@
+<div id="yujing_{$P.type}_{$P.myId}">
+    <div class="header"><span>{#if $P.type == 'group'}集团{#else}关键成员{#/if}预警信息查看</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div class="myul">
+            <div class="searchBg" style="text-align:center; padding: 10px 0;">
+                <select class="searchSel" id="datetypeSel">
+                    <option value="week">周预警</option>
+                    <option value="month">月预警</option>
+                </select>
+	            <select class="searchSel" id="week">
+	                {#foreach $T.data as data}
+	                    {#if $T.data.periodType == 2}
+                        <option>{$T.data.latestDate}</option>
+                        {#/if}
+                    {#/for}
+                </select>
+                <select class="searchSel hide" id="month">
+                    {#foreach $T.data as data}
+                        {#if $T.data.periodType == 4}
+                        <option>{$T.data.latestDate}</option>
+                        {#/if}
+                    {#/for}
+                </select>
+	            <a onclick="searchYuying('{$P.groupNo}', this, '', '{$P.myId}', '{$P.type}', '')"><span class="save" style="margin-left:5px;padding: 5px 10px;">搜索</span></a>
+            </div>
+            <ul id="yujing1" class="arrowlist">
+            </ul>
+            <ul id="yujing2" class="arrowlist hide">
+            </ul>
+       </div>
+    </div>
+</div>

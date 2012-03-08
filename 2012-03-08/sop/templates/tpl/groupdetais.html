@@ -1,0 +1,49 @@
+﻿<div id="groupdetails">
+    <div class="header"><span>集团详细资料</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div class="accordion">
+            <div class="tit" onclick="showNextContent(this)"><div class="bookimg open"></div>基本信息</div>
+            <div>
+                <ul class="arrowlist allshadow">
+	                <li class="nobackimage" style="padding-right: 15px; height:auto; text-align:right"><span style="float:left">集团名称：</span><span class="pink changeLine" name="{$T.data.CustomerInfo.GROUPNAME}">{$T.data.CustomerInfo.GROUPNAME}</span></li>
+	                <li class="nobackimage">集团编码：<span class="rightpink pink">{$T.data.CustomerInfo.GROUPNO}</span></li>
+	                <li class="nobackimage">移动人员占有率：<span class="rightpink pink">{$T.data.CustomerInfo.MEMBERSSHARE}</span></li>
+	                <li class="nobackimage">客户规模：<span class="rightpink pink">{$T.data.CustomerInfo.CUSTOMERBASE}类</span></li>
+	                <li class="nobackimage">联系人：<span class="rightpink pink">{$T.data.CustomerInfo.CONTACT}</span></li>
+	                <li class="nobackimage">联系人电话：<span class="rightpink pink"><a class="tel" onclick="callNum('{$T.data.CustomerInfo.TELPHONE}')">{$T.data.CustomerInfo.TELPHONE}</a></span></li>
+                </ul>
+            </div>
+            <div class="tit" onclick="showNextContent(this)"><div class="bookimg"></div>产品信息</div>
+            <div class="hide">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr><th style="width:35%;">产品名称</th><th style="width:35%;">计费号码</th><!-- <th style="width:15%;">状态</th> --><th>操作</th></tr>
+                    </thead>
+                    <tbody>
+                        {#foreach $T.data.ProductInfo as product}
+                            <tr>
+                                <td>{$T.product.packageName}</td>
+                                <td>{$T.product.serviceCode}</td>
+                                <!-- <td>{$T.product.ORDERSTATUS}</td> -->
+                                <td><a class="operaA" onclick="product(this,'{$T.product.packageName}','{$T.data.CustomerInfo.GROUPNO}','{$T.product.serviceCode}','{$T.data.CustomerInfo.GROUPNAME}')" >办理</a><a class="operaA" href="templates/tpl/productdetail.html" json="com.ai.esp.g3.customer.web.CustomerServiceAction" params="myId={$T.product.serviceCode}" cachekey="groupdetais{$T.data.CustomerInfo.GROUPNO}" >详细</a></td>
+                            </tr>
+                        {#/for}
+                    </tbody>
+                </table>
+            </div>
+            <div class="tit noa" onclick="showNextContent(this)"><div class="bookimg"></div>关键人列表</div>
+            <div class="hide noa">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr><th style="width:30%;">姓名</th><th>手机号码</th><th style="width:35%;">职务</th></tr>
+                    </thead>
+                    <tbody>
+                        {#foreach $T.data.KeyPeopleInfo as keyperson}
+                            <tr><td>{$T.keyperson.KEYMANNAME}</td><td><a style="display: block; height: 100%;" onclick="goToGroupMember('{$T.keyperson.SERNUM}')">{$T.keyperson.SERNUM}</a></td><td>{$T.keyperson.KEYMANDUPT}</td></tr>
+                        {#/for}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

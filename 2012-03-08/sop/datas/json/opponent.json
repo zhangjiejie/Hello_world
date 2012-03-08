@@ -1,0 +1,29 @@
+﻿{
+
+"CompetitorsInfo":
+	[
+
+		{
+		    "groupCode":1003233443,
+            "groupName":"金太阳太阳能配件",
+            "competitors":"联通",
+            "title":"一般",
+            "desc":"无明显优势",
+            "attachment":"info/123xsdr.jpg",
+            "createTime":"2011-07-01",
+            "competitorsId":100
+		},
+		{
+            "groupCode":1003233443,
+            "groupName":"金太阳太阳能配件",
+            "competitors":"电信",
+            "title":"岌岌可危",
+            "desc":"电信的话费明显比移动便宜",
+            "attachment":"info/123xsdr.jpg",
+            "createTime":"2011-07-01",
+            "competitorsId":99
+		}
+
+	]
+
+}

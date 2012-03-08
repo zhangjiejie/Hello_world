@@ -1,0 +1,48 @@
+﻿<div id="mygroupproductdetail">
+    {#foreach $T.GroupProductInfo as GroupProductInfo}
+        {#if $T.GroupProductInfo.uuid == $P.myId}
+        <div class="header">
+            <span>集团产品详情</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+        <div class="content scroll">
+             <div class="calendarEdit">
+                <div class="hd">
+                    <table class="mytable">
+                        <tr>
+                            <td style="width:40%;">套餐名称</td>
+                            <td>{$T.GroupProductInfo.packageName}</td>
+                        </tr>
+                        <tr>
+                            <td>集团编号</td>
+                            <td>{$T.GroupProductInfo.groupNo}</td>
+                        </tr>
+                         <tr>
+                            <td>集团名称</td>
+                            <td>{$T.GroupProductInfo.groupName}</td>
+                        </tr>
+                        <tr>
+                            <td>集团服务号码</td>
+                            <td>{$T.GroupProductInfo.serviceCode}</td>
+                        </tr>
+                        <tr>
+                            <td>生效类型</td>
+                            <td>{#if $T.GroupProductInfo.effectType == "-8"}立即生效且月底失效{#elseif $T.GroupProductInfo.effectType == "1"}当前有效{#elseif $T.GroupProductInfo.effectType == "2"}下月生效{#else}次日生效{#/if}</td>
+                        </tr>
+                         <tr>
+                            <td>生效日期</td>
+                            <td>{$T.GroupProductInfo.effectDate}</td>
+                        </tr>
+                        <tr>
+                            <td>失效日期</td>
+                            <td>{$T.GroupProductInfo.expirationDate}</td>
+                        </tr>
+                        <tr>
+                            <td>状态</td>
+                            <td>正常</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        {#/if}
+    {#/for}
+</div>

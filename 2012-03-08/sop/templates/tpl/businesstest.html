@@ -1,0 +1,16 @@
+<div id="businesstest">
+    <div class="header"><span>业务体验</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div>
+            <ul class="arrowlist rounded">
+            {#if $T.data.length}
+                {#foreach $T.data as data}
+	            <li onclick="startViewWithWeb('{$T.data.url}')"><a class="fontbold longContent">{$T.data.tit}</a></li>
+	            {#/for}
+	         {#else}
+                <li class="nobackimage"><a>没有可以体验的业务</a></li>
+            {#/if}
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,98 @@
+{
+
+"data":[{
+
+"CustomerInfo" : {
+"groupName" : "金太阳太阳能配件",
+"groupNo" : "100030020",
+"membersShare" : "30%",
+"customerBase":"A",
+"contact":"zhangsan",
+"telphone":"13466558899",
+"payNumber":123,
+"redNumber":99   
+  },
+  
+"AgreementExpiresInfo":[
+{"agreementName":"V网协议","maturity":"2011-01-01"},
+{"agreementName":"彩铃协议","maturity":"2011-01-01"},
+{"agreementName":"彩信协议","maturity":"2011-01-01"}
+],
+
+ProductInfo:[{
+"groupName":"金太阳太阳能配件",
+"groupNo":"100030020",
+"packageName":"动力100",
+"packageFee":"1200",
+"packageDesc":"很好很强大",
+"serviceCode":"12003",
+"effectType":"1",
+"effectDate":"2011-06-31",
+"expirationDate":"2011-06-30",
+"orderStatus":"正常"
+},
+{
+"groupName":"金太阳太阳能配件",
+"groupNo":"100030020",
+"packageName":"集团V网",
+"packageFee":"1800",
+"packageDesc":"很好很强大",
+"serviceCode":"12004",
+"effectType":"1",
+"effectDate":"2011-06-31",
+"expirationDate":"2011-06-30",
+"orderStatus":"停机"
+},
+{
+"groupName":"金太阳太阳能配件",
+"groupNo":"100030020",
+"packageName":"集团彩铃",
+"packageFee":"2200",
+"packageDesc":"很好很强大",
+"serviceCode":"12005",
+"effectType":"1",
+"effectDate":"2011-06-31",
+"expirationDate":"2011-06-30",
+"orderStatus":"正常"
+}
+],
+
+"KeyPeopleInfo" : [{
+"groupName" : "金太阳太阳能配件",
+"groupNo" : "100030020",
+"membersSahre":"80%",
+"customerBase":"A",
+"contact":"张三",
+"position":"副经理",
+"telphone" : "13466553782"},
+{
+"groupName" : "金太阳太阳能配件",
+"groupNo" : "100030020",
+"membersSahre":"80%",
+"customerBase":"A",
+"contact":"李四",
+"position":"经理助理",
+"telphone" : "13466553678"},
+{
+"groupName" : "金太阳太阳能配件",
+"groupNo" : "100030020",
+"membersSahre":"80%",
+"customerBase":"A",
+"contact":"王五",
+"position":"经理",
+"telphone" : "13466553345"}
+],
+
+
+"PositionInfo":[{
+"staffId":9999999,
+"position":"12,12,12,12"
+},
+{
+"staffId":9999999,
+"position":"12,12,12,12"
+}]
+
+}]
+
+}

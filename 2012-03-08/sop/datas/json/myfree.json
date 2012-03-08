@@ -1,0 +1,62 @@
+{
+
+"FreeInfo":
+[
+    {
+        "id": 343456,
+        "freeResourceSubject":"免费资源",
+        "isTied":"是",
+        "tiedType":"月",
+        "tiedTypeName": "预缴捆绑",
+        "freeResourcesTotal":1900,
+        "freeResourcesRemaining":900,
+        "shareResourcesAmount":100,
+        "apportioneMonths":12,
+        "apportionePeriodMonths":9,
+        "NextApportioneTime":2011-02-02,
+        "effectiveTime":2011-12-12,
+        "failureTime":2011-05-01,
+        "operationNo":"admin",
+        "status":"正常",
+        "marketingActivities":"掌上营销"
+    },
+    {
+        "id": 343457,
+        "freeResourceSubject":"免费下载资源",
+        "isTied":"是",
+        "tiedType":"月",
+        "tiedTypeName": "预缴捆绑",
+        "freeResourcesTotal":1900,
+        "freeResourcesRemaining":900,
+        "shareResourcesAmount":100,
+        "apportioneMonths":12,
+        "apportionePeriodMonths":9,
+        "NextApportioneTime":2011-02-02,
+        "effectiveTime":2011-12-12,
+        "failureTime":2011-05-01,
+        "operationNo":"admin",
+        "status":"正常",
+        "marketingActivities":"掌上营销"
+    },
+    {
+        "id": 343459,
+        "freeResourceSubject":"免费通话时长",
+        "isTied":"是",
+        "tiedType":"月",
+        "tiedTypeName": "预缴捆绑",
+        "freeResourcesTotal":1900,
+        "freeResourcesRemaining":900,
+        "shareResourcesAmount":100,
+        "apportioneMonths":12,
+        "apportionePeriodMonths":9,
+        "NextApportioneTime":2011-02-02,
+        "effectiveTime":2011-12-12,
+        "failureTime":2011-05-01,
+        "operationNo":"admin",
+        "status":"正常",
+        "marketingActivities":"掌上营销"
+    }
+
+]
+
+}

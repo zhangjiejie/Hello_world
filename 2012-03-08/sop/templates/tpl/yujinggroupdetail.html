@@ -1,0 +1,36 @@
+﻿<div id="yujinggroupdetail">
+    <div class="header">
+        <span>集团预警详细</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+         <div class="calendarEdit">
+            <div class="hd">
+                {#foreach $T.data as data}
+                    {#if $T.data.kpiAlarmId == $P.myId}
+                    <table class="mytable">
+                        <tr>
+                            <td style="width:30%;">集团名称</td>
+                            <td style="width:70%;"><a onclick="goToGroup('{$P.groupNo}')">{$T.data.customerName}</a></td>
+                        </tr>
+                        <tr>
+                            <td>预警分类</td>
+                            <td>{$T.data.kpiAlarmType}</td>
+                        </tr>
+                         <tr>
+                            <td>预警名称</td>
+                            <td>{$T.data.kpiAlarmName}</td>
+                        </tr>
+                        <tr>
+                            <td>预警值</td>
+                            <td>{$T.data.kpiValue}%</td>
+                        </tr>
+                        <tr>
+                            <td>预警描述</td>
+                            <td>{$T.data.kpiAlarmDesc}</td>
+                        </tr>
+                    </table>
+                    {#/if}
+                {#/for}
+            </div>
+        </div>
+    </div>
+</div>

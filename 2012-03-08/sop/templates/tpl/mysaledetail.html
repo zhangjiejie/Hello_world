@@ -1,0 +1,53 @@
+﻿<div id="mysaledetail">
+    {#foreach $T.data as data}
+        {#if $T.data.workId == $P.myId}
+        <div class="header">
+            <span>营销详情</span>
+            <a href="#" class="toolback back"><div class="divback"></div></a>
+        </div>
+        <div class="content scroll">
+            <div class="calendarEdit">
+                <div class="hd">
+                    <table>
+                        <tr>
+                            <td>
+                                任务标题：
+                            </td>
+                            <td>
+                                <input type="text" disabled="disabled" value="{$T.data.workTitle}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                任务类型：
+                            </td>
+                            <td>
+                                <input type="text" disabled="disabled" value="{$T.data.workTypeName}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                任务内容：
+                            </td>
+                            <td>
+					            <textarea id="scheduleDes" disabled="disabled" rows="10">{$T.data.workContent}</textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                执行状态：
+                            </td>
+                            <td>
+                                <input finishId="{$P.myId}" type="text" disabled="disabled" value="{#if $T.data.execState == 1}待处理{#else}处理中{#/if}">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="cl">
+                	<a onclick="finishWarnAtLast('setSaleTaskState', '{$T.data.workId}', '是否确认该任务已完成？', '{$P.reqDate}', '{$T.data.workTaskExecId}')"><span class="sub">完成</span></a>
+                </div>
+            </div>
+        </div>
+        {#/if}
+    {#/for}
+</div>

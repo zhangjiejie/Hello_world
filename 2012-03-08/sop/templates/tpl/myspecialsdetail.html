@@ -1,0 +1,52 @@
+﻿<div id="myspecialsdetail">
+    {#foreach $T.SpecialsInfo as SpecialsInfo}
+        {#if $T.SpecialsInfo.uuid == $P.myId}
+        <div class="header">
+            <span>专项月租详情</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+        <div class="content scroll">
+             <div class="calendarEdit">
+                <div class="hd">
+                    <table class="mytable">
+                        <tr>
+                            <td style="width:40%;">专项月租名称</td>
+                            <td>{$T.SpecialsInfo.specialsName}</td>
+                        </tr>
+                        <tr>
+                            <td>套餐名称</td>
+                            <td>{$T.SpecialsInfo.packageName}</td>
+                        </tr>
+                         <tr>
+                            <td>缴费金额</td>
+                            <td>{$T.SpecialsInfo.paymentAmount}</td>
+                        </tr>
+                        <tr>
+                            <td>减免时长</td>
+                            <td>{$T.SpecialsInfo.remissionDuration}</td>
+                        </tr>
+                        <tr>
+                            <td>起始日期</td>
+                            <td>{$T.SpecialsInfo.beginDate}</td>
+                        </tr>
+                         <tr>
+                            <td>截止日期</td>
+                            <td>{$T.SpecialsInfo.endDate}</td>
+                        </tr>
+                        <tr>
+                            <td>操作日期</td>
+                            <td>{$T.SpecialsInfo.operationDate}</td>
+                        </tr>
+                        <tr>
+                            <td>操作员工号</td>
+                            <td>{$T.SpecialsInfo.operationNo}</td>
+                        </tr>
+                        <tr>
+                            <td>是否绑定</td>
+                            <td>{$T.SpecialsInfo.isBound}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        {#/if}
+    {#/for}
+</div>

@@ -1,0 +1,44 @@
+{
+
+"SharingInfo":
+[
+    {
+        "id":"45656",
+        "booksCourseName":"普通分摊预存",
+        "apportioneAmount":190.090,
+        "residuaAmount":90.09,
+        "apportionedIntervalMonths":12,
+        "apportioneValidityMonths":12,
+        "isFailure":"是",
+        "beginTime":"2011-03-01",
+        "failureTime":"2011-06-30",
+        "apportonedMonths":12
+    },
+    {
+        "id":"45657",
+        "booksCourseName":"捆绑分摊预存",
+        "apportioneAmount":190.090,
+        "residuaAmount":90.09,
+        "apportionedIntervalMonths":12,
+        "apportioneValidityMonths":12,
+        "isFailure":"是",
+        "beginTime":"2011-03-01",
+        "failureTime":"2011-06-30",
+        "apportonedMonths":12
+    },
+    {
+        "id":"45658",
+        "booksCourseName":"分段分摊预存",
+        "apportioneAmount":190.090,
+        "residuaAmount":90.09,
+        "apportionedIntervalMonths":12,
+        "apportioneValidityMonths":12,
+        "isFailure":"是",
+        "beginTime":"2011-03-01",
+        "failureTime":"2011-06-30",
+        "apportonedMonths":12
+    }
+
+]
+
+}

@@ -1,0 +1,48 @@
+﻿<div id="mydreamproductdetail">
+    {#foreach $T.MonternetProductInfo as MonternetProductInfo}
+        {#if $T.MonternetProductInfo.uuid == $P.myId}
+        <div class="header">
+            <span>梦网产品详情</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+        <div class="content scroll">
+             <div class="calendarEdit">
+                <div class="hd">
+                    <table class="mytable">
+                        <tr>
+                            <td style="width:40%;">套餐</td>
+                            <td>{$T.MonternetProductInfo.package}</td>
+                        </tr>
+                        <tr>
+                            <td>服务包名称</td>
+                            <td>{$T.MonternetProductInfo.servicePackageName}</td>
+                        </tr>
+                         <tr>
+                            <td>SP代码</td>
+                            <td>{$T.MonternetProductInfo.SPCode}</td>
+                        </tr>
+                        <tr>
+                            <td>SP名称</td>
+                            <td>{$T.MonternetProductInfo.SPName}</td>
+                        </tr>
+                        <tr>
+                            <td>订购渠道</td>
+                            <td>{$T.MonternetProductInfo.orderChannel}</td>
+                        </tr>
+                         <tr>
+                            <td>生效日期</td>
+                            <td>{$T.MonternetProductInfo.effectDate}</td>
+                        </tr>
+                        <tr>
+                            <td>失效日期</td>
+                            <td>{$T.MonternetProductInfo.expirationDate}</td>
+                        </tr>
+                        <tr>
+                            <td>状态</td>
+                            <td>正常</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        {#/if}
+    {#/for}    
+</div>

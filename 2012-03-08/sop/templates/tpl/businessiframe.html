@@ -1,0 +1,12 @@
+<div id="businessiframe">
+    {#foreach $T.data as data}
+        {#if $T.data.id == $P.myId}
+        <div class="header"><span>{$T.data.tit}</span><a href="#" class="toolback back">&nbsp;</a></div>
+        <div class="content scroll">
+            <div>
+                <iframe id="ifra" height="100%" width="100%" src="{$T.data.url}"></iframe>
+            </div>
+        </div>
+        {#/if}
+    {#/for}
+</div>

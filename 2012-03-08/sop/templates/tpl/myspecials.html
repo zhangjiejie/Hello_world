@@ -1,0 +1,16 @@
+﻿<div id="myspecials">
+    <div class="header"><span>专项月租列表</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div>
+            <ul id="myspecialsList" class="arrowlist rounded">
+                {#if $T.SpecialsInfo.length}
+                    {#foreach $T.SpecialsInfo as SpecialsInfo}
+                        <li href="templates/tpl/myspecialsdetail.html" json="com.ai.esp.g3.customer.web.MemberServiceAction" params="action=getSpecialsInfos&telphone={$P.telphone}&myId={$T.SpecialsInfo.uuid}" cachekey="myspecials"><a class="longContent">{$T.SpecialsInfo.specialsName}</a></li>
+                    {#/for}
+                {#else}
+                    <li class="nobackimage"><a>暂无专项月租</a></li>
+                {#/if}
+            </ul>
+        </div>
+    </div>
+</div>

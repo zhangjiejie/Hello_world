@@ -1,0 +1,20 @@
+﻿<div id="searchlist">
+    <div class="header"><span>功能设置</span><a href="#" class="toolback back">&nbsp;</a></div>
+    <div class="content scroll">
+        <div class="calendarEdit">
+        	<ul class="arrowlist rounded" id="selectLogin">
+            	<li><span>密码保存</span><div id="forgotpass" class="iswitch"></div></li>
+            	<li><span>自动登录</span><div id="autologin" class="iswitch" ontouchend="checkLogin(this)"></div></li>
+            </ul>
+            <ul class="arrowlist rounded" id="selectSearch">
+                {#foreach $T.data as data}
+                    <li><span>{$T.data.tit}</span><div id="{$T.data.id}" class="iswitch"></div></li>
+                {#/for}
+            </ul>
+            <div class="cl">
+                <input type="button" id="submit" class="submit" value="保存" ontouchend="saveMain()" />
+                <input type="button" id="sysUpdate" class="save" value="系统更新" ontouchend="update()" />
+            </div>
+        </div>
+    </div>
+</div>

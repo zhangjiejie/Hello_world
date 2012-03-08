@@ -1,0 +1,72 @@
+﻿<div id="myfreedetail">
+    {#foreach $T.FreeInfo as FreeInfo}
+        {#if $T.FreeInfo.uuid == $P.myId}
+        <div class="header">
+            <span>免费资源详情</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+        <div class="content scroll">
+             <div class="calendarEdit">
+                <div class="hd">
+                    <table class="mytable">
+                        <tr>
+                            <td style="width: 50%;">免费资源科目</td>
+                            <td>{$T.FreeInfo.freeResourcesSubject}</td>
+                        </tr>
+                        <tr>
+                            <td>是否捆绑</td>
+                            <td>{$T.FreeInfo.isTied}</td>
+                        </tr>
+                        <tr>
+                            <td>捆绑类型</td>
+                            <td>{$T.FreeInfo.tiedTypeName}</td>
+                        </tr>
+                        <tr>
+                            <td>免费资源总量</td>
+                            <td>{$T.FreeInfo.freeResourcesTotal}</td>
+                        </tr>
+                        <tr>
+                            <td>免费资源剩余量</td>
+                            <td>{$T.FreeInfo.freeResourcesRemaining}</td>
+                        </tr>
+                         <tr>
+                            <td>当前分摊资源数量</td>
+                            <td>{$T.FreeInfo.sharedResourcesAmount}</td>
+                        </tr>
+                        <tr>
+                            <td>分摊月数</td>
+                            <td>{$T.FreeInfo.apportionedMonths}</td>
+                        </tr>
+                        <tr>
+                            <td>分摊有效期月数</td>
+                            <td>{$T.FreeInfo.apportionedPeriodMonths}</td>
+                        </tr>
+                        <tr>
+                            <td>下次分摊时间</td>
+                            <td>{$T.FreeInfo.NextApportioneTime}</td>
+                        </tr>
+                         <tr>
+                            <td>生效时间</td>
+                            <td>{$T.FreeInfo.effectiveTime}</td>
+                        </tr>
+                        <tr>
+                            <td>失效时间</td>
+                            <td>{$T.FreeInfo.failureTime}</td>
+                        </tr>
+                        <tr>
+                            <td>操作员工</td>
+                            <td>{$T.FreeInfo.operationNo}</td>
+                        </tr>
+                        <tr>
+                            <td>状态</td>
+                            <td>正常</td>
+                        </tr>
+                        <tr>
+                            <td>营销活动</td>
+                            <td>{$T.FreeInfo.marketingActivities}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        {#/if}
+    {#/for}     
+</div>

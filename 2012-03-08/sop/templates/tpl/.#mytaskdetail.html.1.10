@@ -1,0 +1,75 @@
+﻿<div id="mytaskdetail">
+    {#foreach $T.data as data}
+        {#if $T.data.workId == $P.myId}
+        <div class="header">
+            <span>任务详情</span>
+            <a class="toolback back" href="#">&nbsp;</a>
+            {#if $T.data.execState == 1 || $T.data.execState == 2}<a class="toolsearch"><div href="templates/tpl/followlist.html" json="com.ai.esp.g3.workmanager.web.WorkNoteAction" remote="true" params="action=getWorkNotesByTaskId&staffId={$P.staffId}&workTaskExecId={$T.data.workTaskExecId}&workTitle={$T.data.workTitle}">&nbsp;</div></a>{#/if}
+        </div>
+        <div class="content scroll">
+            <div class="calendarEdit">
+                <div class="hd">
+                    <table>
+                        <tr>
+                            <td>
+                                任务标题：
+                            </td>
+                            <td>
+                                <input type="text" disabled="disabled" value="{$T.data.workTitle}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                任务类型：
+                            </td>
+                            <td>
+                                <input type="text" disabled="disabled" value="{$T.data.workTypeName}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                任务内容：
+                            </td>
+                            <td>
+					            <textarea id="scheduleDes" disabled="disabled" rows="10">{$T.data.workContent}</textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                开始日期：
+                            </td>
+                            <td>
+                                <input type="text" disabled="disabled" value="{$T.data.workDate}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                结束日期：
+                            </td>
+                            <td>
+                                <input type="text" disabled="disabled" value="{$T.data.wishFinishDate}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                执行状态：
+                            </td>
+                            <td>
+                                <input finishId="{$P.myId}" type="text" disabled="disabled" value="{$T.data.execStateName}">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="buttonArea">
+                	{#if $T.data.execState == 1 || $T.data.execState == 2}
+                		<input type="button" class="submit" value="完成" onclick="stopClick()" ontouchend="finishWarnAtLast('setTaskState',{$T.data.workId},'是否确认该任务已完成？', '{$P.reqDate}', '{$T.data.workTaskExecId}')" />
+                	{#/if}
+                	{#if $T.data.workRltType == 4}
+                    	<a remote="true" params="action=getHolidayVisitList&staffId={$P.staffId}&taskId={$P.myId}" href="templates/tpl/holiday.html" json="com.ai.esp.g3.workmanager.web.WorkTaskAction" >查看双节拜访清单</a>
+                	{#/if}
+                </div>
+            </div>
+        </div>
+        {#/if}
+    {#/for}
+</div>

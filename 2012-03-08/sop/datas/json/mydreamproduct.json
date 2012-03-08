@@ -1,0 +1,48 @@
+{
+
+"MonternetProductInfo":
+[
+    {
+        "package":"5",
+        "servicePackageName":"5元10M",
+        "SPCode":"1901",
+        "SPName":"亚联",
+        "orderChannel":"G3",
+        "effectDate":"2011-07-01",
+        "expirationDate":"2011-07-31",
+        "status":"正常"
+    },
+    {
+        "package":"6",
+        "servicePackageName":"10元30M",
+        "SPCode":"1901",
+        "SPName":"亚联",
+        "orderChannel":"G3",
+        "effectDate":"2011-07-01",
+        "expirationDate":"2011-07-31",
+        "status":"正常"
+    },
+    {
+        "package":"7",
+        "servicePackageName":"20元100M",
+        "SPCode":"1901",
+        "SPName":"亚联",
+        "orderChannel":"G3",
+        "effectDate":"2011-07-01",
+        "expirationDate":"2011-07-31",
+        "status":"正常"
+    },
+    {
+        "package":"8",
+        "servicePackageName":"50元1G",
+        "SPCode":"1901",
+        "SPName":"亚联",
+        "orderChannel":"G3",
+        "effectDate":"2011-07-01",
+        "expirationDate":"2011-07-31",
+        "status":"正常"
+    }
+
+]
+
+}

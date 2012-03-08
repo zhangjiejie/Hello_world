@@ -1,0 +1,52 @@
+﻿<div id="mysharingdetail">
+    {#foreach $T.SharingInfo as SharingInfo}
+        {#if $T.SharingInfo.uuid == $P.myId}
+        <div class="header">
+            <span>分摊资源详情</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+        <div class="content scroll">
+             <div class="calendarEdit">
+                <div class="hd">
+                    <table  class="mytable">
+                        <tr>
+                            <td style="width:55%;">账本科目名称</td>
+                            <td>{$T.SharingInfo.booksCourseName}</td>
+                        </tr>
+                        <tr>
+                            <td>分摊总金额</td>
+                            <td>{$T.SharingInfo.apportionedAmount}</td>
+                        </tr>
+                         <tr>
+                            <td>剩余金额</td>
+                            <td>{$T.SharingInfo.residualAmount}</td>
+                        </tr>
+                        <tr>
+                            <td>分摊间隔月数</td>
+                            <td>{$T.SharingInfo.apportionedIntervalMonths}</td>
+                        </tr>
+                        <tr>
+                            <td>分摊有效期月数</td>
+                            <td>{$T.SharingInfo.apportionedValiditymonths}</td>
+                        </tr>
+                        <tr>
+                            <td>分摊话费是否当月失效</td>
+                            <td>{$T.SharingInfo.isFailure}</td>
+                        </tr>
+                        <tr>
+                            <td>开始时间</td>
+                            <td>{$T.SharingInfo.beginTime}</td>
+                        </tr>
+                        <tr>
+                            <td>失效时间</td>
+                            <td>{$T.SharingInfo.failureTime}</td>
+                        </tr>
+                        <tr>
+                            <td>分摊月数</td>
+                            <td>{$T.SharingInfo.apportionedMonths}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        {#/if}
+    {#/for} 
+</div>

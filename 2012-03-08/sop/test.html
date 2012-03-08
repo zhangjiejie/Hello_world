@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>WIFI</title>
+        <link href="jqtouch.png" rel="apple-touch-icon-precomposed" />
+        <link href="jqt_startup.png" rel="apple-touch-startup-image" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+        
+        <style type="text/css" media="screen">@import "themes/wlan/iscroll.css";</style> 
+        <link href="themes/wlan/screen320.css" type="text/css" rel="stylesheet" media="screen and (min-width:320px)" />
+        <link href="themes/wlan/screen480.css" type="text/css" rel="stylesheet" media="screen and (min-width:480px)" />
+        
+        <script src="scripts/jquery-1.6.1.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="scripts/csframe.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="scripts/ichannels.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="scripts/jquery-jtemplates.js" type="application/x-javascript" charset="utf-8"></script>
+        <script type="application/x-javascript" charset="utf-8">
+            $(document).ready(function(){
+				
+                $("span.labelClass").bind("click", function(){
+                    var that = $(this),
+						length_y = screen.width < 480 ? -24 : -39;
+                    if (that.is("#forgotpassbtn") && $("#autologinbtn").is(".highClass")) {
+                        return false;
+                    }
+
+                    if (that.is(".highClass")) {
+                        that.removeClass("highClass").animate({ "background-position-y": 0 });
+                        if (that.is("#allowPickUp")){
+                            that.addClass("pickup");
+                        }
+                        if (that.is("#showPassword")){
+                            $("#userPassword").removeClass("hide").next().addClass("hide");
+                        }
+                    }
+                    else {
+                        that.addClass("highClass").animate({ "background-position-y": length_y });
+                        if (that.is("#autologinbtn")) {
+                            $("#forgotpassbtn").addClass("highClass").animate({ "background-position-y": length_y });
+                        }
+                        if (that.is("#allowPickUp")){
+                            that.removeClass("pickup");
+                        }
+                        if (that.is("#showPassword")){
+                            $("#userPassword").addClass("hide").next().removeClass("hide");
+                        }
+                    }
+                });
+
+				$("#btn_Connect").bind({
+					"touchstart": function(){
+						$(this).addClass("logButton_touchstart");
+					},
+					"touchend": function(){
+						$(this).removeClass("logButton_touchstart");
+					},
+					"click": function(){
+						//goToLogin(phoneIMEISI);
+					}
+				});
+				
+				$("#userPassword, #textPassword").bind("input", function(){
+				    $(this).siblings().val($(this).val());
+				});
+				
+            });
+            
+        </script>
+	</head>
+	<body style="margin: 0;">
+		<section>
+			<div id="wifi" style="display:block;">
+			    <div id="wifiContain">
+			        <table>
+			            <tr>
+			                <td>
+			                    <input type="password" class="logInput big" id="userPassword" placeholder="请输入密码" />
+			                    <input type="text" class="logInput big hide" id="textPassword" placeholder="请输入密码" />
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <span for="forgotpass" class="labelClass" id="showPassword">显示密码</span>
+			                </td>   
+			            </tr>
+			            <tr>
+			                <td>
+			                    <span for="forgotpass" class="labelClass" id="shareWIFI">分享热点并获取该商家优惠信息</span>
+			                </td>   
+			            </tr>
+			            <tr>
+			                <td>
+			                    <span for="autoLogin" class="labelClass pickup" id="allowPickUp" style="margin-right:0;">接收搭讪</span>
+			                    <input type="password" disabled="disabled" class="logInput mini" id="userPasswordforCNET" placeholder="请输入你的昵称" />
+			                </td>   
+			            </tr>
+			            <tr>
+			                <td class="last">
+			                    <input type="button" class="logButton"  onclick="wlanLogin()" id="btn_Connect" /><input type="button" class="logButton_touchstart hide" />
+			                </td>
+			            </tr>
+			        </table>
+			    </div>
+            </div>
+		</section>
+	</body>
+</html>

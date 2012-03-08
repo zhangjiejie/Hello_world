@@ -1,0 +1,58 @@
+{
+
+"data":
+	[
+
+		{
+		"workDtlId" : 234243,
+		"customerCode" : "123123" ,
+		"customerName" : "郑州人民银行" ,
+		"visitDate" : "2011-07-30" ,
+		"visitState" : 1
+		},
+		{
+		"workDtlId" : 234244,
+		"customerCode" : "123124" ,
+		"customerName" : "郑州工商银行" ,
+		"visitDate" : "2011-07-30" ,
+		"visitState" : 0
+		},
+		{
+		"workDtlId" : 234245,
+		"customerCode" : "123125" ,
+		"customerName" : "郑州人民政府" ,
+		"visitDate" : "2011-07-30" ,
+		"visitState" : 1
+		},
+		{
+		"workDtlId" : 234246,
+		"customerCode" : "123126" ,
+		"customerName" : "郑州大学" ,
+		"visitDate" : "2011-07-30" ,
+		"visitState" : 0
+		},
+		{
+		"workDtlId" : 234247,
+		"customerCode" : "123127" ,
+		"customerName" : "郑州中学" ,
+		"visitDate" : "2011-07-30" ,
+		"visitState" : 1
+		},
+		{
+		"workDtlId" : 234248,
+		"customerCode" : "123128" ,
+		"customerName" : "郑州小学" ,
+		"visitDate" : "2011-07-30" ,
+		"visitState" : 0
+		},
+		{
+		"workDtlId" : 234249,
+		"customerCode" : "123129" ,
+		"customerName" : "郑州供销社" ,
+		"visitDate" : "2011-07-30" ,
+		"visitState" : 0
+		}
+		
+	]
+
+}

@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>TIME</title>
+        <link href="jqtouch.png" rel="apple-touch-icon-precomposed" />
+        <link href="jqt_startup.png" rel="apple-touch-startup-image" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+        
+        <style type="text/css" media="screen">@import "themes/wlan/iscroll.css";</style> 
+        <link href="themes/wlan/screen320.css" type="text/css" rel="stylesheet" media="screen and (min-width:320px)" />
+        <link href="themes/wlan/screen480.css" type="text/css" rel="stylesheet" media="screen and (min-width:480px)" />
+        
+        <script src="scripts/jquery-1.6.1.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="scripts/jquery-jtemplates.js" type="application/x-javascript" charset="utf-8"></script>
+        <script type="application/x-javascript" charset="utf-8">
+            $(document).ready(function(){
+                showTime($("#totalTime"));
+                setInterval(addTime,1000);
+            });
+            
+            function addTime(){
+                var total = $("#totalTime"),
+                    now = $("#nowTime");
+                total.attr("time", parseInt(total.attr("time")) + 1);
+                now.attr("time", parseInt(now.attr("time")) + 1);
+                
+                showTime(total);
+                showTime(now);
+            }
+            
+            function showTime(o){
+                var totalSecond = parseInt(o.attr("time"));
+                if (totalSecond){
+                    var hour = parseInt(totalSecond / 3600),
+                        minute = parseInt((totalSecond - hour * 3600) / 60),
+                        second = parseInt(totalSecond - hour * 3600 - minute * 60),
+                        TimeDiv = $("div", o);
+                    TimeDiv.eq(0).html(parseInt(hour / 10));
+                    TimeDiv.eq(1).html(hour % 10);
+                    TimeDiv.eq(2).html(parseInt(minute / 10));
+                    TimeDiv.eq(3).html(minute % 10);
+                    TimeDiv.eq(4).html(parseInt(second / 10));
+                    TimeDiv.eq(5).html(second % 10);
+                }
+            }
+        </script>
+	</head>
+	<body style="margin: 0;">
+		<section>
+			<div id="time" style="display:block;">
+			    <div id="userContain">
+			        <div id="userPhoto" class="userDiv"></div>
+			        <div id="userShadow" class="userDiv"></div>
+			        <div id="userInfo" class="userDiv">
+			            <div>账户名 ：13343421231</div>
+			            <div>运营商 ：中国电信</div>
+			            <div>热点名 ：CMCC</div>
+			        </div>
+			    </div>
+			    <div id="timeContain">
+			        <div>
+			            本月累计时长 ：
+			        </div>
+			        <div>
+			            <table id="totalTime" time="23880">
+			                <tr>
+			                    <td><div class="timeshow">0</div></td>
+			                    <td><div class="timeshow">0</div></td>
+			                    <td><span>:</span></td>
+			                    <td><div class="timeshow">0</div></td>
+			                    <td><div class="timeshow">0</div></td>
+			                    <td><span>:</span></td>
+			                    <td><div class="timeshow">0</div></td>
+			                    <td><div class="timeshow">0</div></td>
+			                </tr>
+			            </table>
+			        </div>
+			        <div>
+			            本次登录时长 ：
+			        </div>
+			        <div>
+			            <table id="nowTime" time="0">
+			                <tr>
+			                    <td><div class="timeshow">0</div></td>
+			                    <td><div class="timeshow">0</div></td>
+			                    <td><span>:</span></td>
+			                    <td><div class="timeshow">0</div></td>
+			                    <td><div class="timeshow">0</div></td>
+			                    <td><span>:</span></td>
+			                    <td><div class="timeshow">0</div></td>
+			                    <td><div class="timeshow">0</div></td>
+			                </tr>
+			            </table>
+			        </div>
+			    </div>
+			    <div id="operaContain">
+			        <input type="button" class="submit" value="断开" ontouchend="" />
+			        <input type="button" class="save" value="隐藏" ontouchend="" />
+			    </div>
+            </div>
+		</section>
+	</body>
+</html>

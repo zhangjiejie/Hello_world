@@ -1,0 +1,74 @@
+{
+
+"data":
+	[
+
+		{
+		"workId" : 123234,
+		"workTitle" : "我的任务1" ,
+		"workContent" : "每个客户只能参加一次本活动。已参加终端、实物、家庭等各类营销活动的客户恕不能享受本活动话费补贴。" ,
+		"workTypeName" : "双节拜访类任务" ,
+		"workType" : "1" ,
+		"workDate" : "2011-06-14" ,
+		"wishFinishDate" : "2011-06-30" ,
+		"workLevelName" : "紧急" ,
+		"workLevel" : "2" ,
+		"execStateName" : "待处理" ,
+		"execState" : "1" 
+		},
+		{
+		"workId" : 123235,
+		"workTitle" : "我的任务2" ,
+		"workContent" : "每个客户只能参加一次本活动。已参加终端、实物、家庭等各类营销活动的客户恕不能享受本活动话费补贴。" ,
+		"workTypeName" : "集团预警类任务" ,
+		"workType" : "2" ,
+		"workDate" : "2011-06-14" ,
+		"wishFinishDate" : "2011-06-30" ,
+		"workLevelName" : "一般" ,
+		"workLevel" : "1" ,
+		"execStateName" : "待处理" ,
+		"execState" : "1" 
+		},
+		{
+		"workId" : 123236,
+		"workTitle" : "我的任务3" ,
+		"workContent" : "每个客户只能参加一次本活动。已参加终端、实物、家庭等各类营销活动的客户恕不能享受本活动话费补贴。" ,
+		"workTypeName" : "日常报表类任务" ,
+		"workType" : "3" ,
+		"workDate" : "2011-06-14" ,
+		"wishFinishDate" : "2011-06-30" ,
+		"workLevelName" : "一般" ,
+		"workLevel" : "1" ,
+		"execStateName" : "处理中" ,
+		"execState" : "2" 
+		},
+		{
+		"workId" : 123237,
+		"workTitle" : "我的任务4" ,
+		"workContent" : "每个客户只能参加一次本活动。已参加终端、实物、家庭等各类营销活动的客户恕不能享受本活动话费补贴。" ,
+		"workTypeName" : "服务到期类任务" ,
+		"workType" : "4" ,
+		"workDate" : "2011-06-14" ,
+		"wishFinishDate" : "2011-06-30" ,
+		"workLevelName" : "紧急" ,
+		"workLevel" : "2" ,
+		"execStateName" : "已完成" ,
+		"execState" : "4" 
+		},
+		{
+		"workId" : 123238,
+		"workTitle" : "我的任务5" ,
+		"workContent" : "每个客户只能参加一次本活动。已参加终端、实物、家庭等各类营销活动的客户恕不能享受本活动话费补贴。" ,
+		"workTypeName" : "上级下派类任务" ,
+		"workType" : "5" ,
+		"workDate" : "2011-06-14" ,
+		"wishFinishDate" : "2011-06-30" ,
+		"workLevelName" : "紧急" ,
+		"workLevel" : "2" ,
+		"execStateName" : "已完成" ,
+		"execState" : "4" 
+		}
+		
+	]
+
+}

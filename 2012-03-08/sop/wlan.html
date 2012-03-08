@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>WLAN</title>
+        <link href="jqtouch.png" rel="apple-touch-icon-precomposed" />
+        <link href="jqt_startup.png" rel="apple-touch-startup-image" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+        
+        <style type="text/css" media="screen">@import "themes/wlan/iscroll.css";</style> 
+        <link href="themes/wlan/screen320.css" type="text/css" rel="stylesheet" media="screen and (min-width:320px)" />
+        <link href="themes/wlan/screen480.css" type="text/css" rel="stylesheet" media="screen and (min-width:480px)" />
+        
+        <script src="scripts/jquery-1.6.1.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="scripts/csframe.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="scripts/ichannels.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="scripts/jquery-jtemplates.js" type="application/x-javascript" charset="utf-8"></script>
+        <script type="application/x-javascript" charset="utf-8">
+            $(document).ready(function(){
+                $("span.radioClass").bind("click", function(){
+                   $(this).addClass("radioSelected").siblings("span").removeClass("radioSelected");
+                });
+				
+                $("span.labelClass").bind("click", function(){
+                    var that = $(this),
+						length_y = screen.width < 480 ? -24 : -39;
+                    if (that.is("#forgotpassbtn") && $("#autologinbtn").is(".highClass")) {
+                        return false;
+                    }
+
+                    if (that.is(".highClass")) {
+                        that.removeClass("highClass").animate({ "background-position-y": 0 });
+                    }
+                    else {
+                        that.addClass("highClass").animate({ "background-position-y": length_y });
+                        if (that.is("#autologinbtn")) {
+                            $("#forgotpassbtn").addClass("highClass").animate({ "background-position-y": length_y });
+                        }
+                    }
+                });
+                
+                $("#btn_Login").bind({
+					"touchstart": function(){
+						$(this).addClass("logButton_touchstart");
+					},
+					"touchend": function(){
+						$(this).removeClass("logButton_touchstart");
+					},
+					"click": function(){
+						//goToLogin(phoneIMEISI);
+					}
+				});
+
+				$("#getPassword").bind({
+					"touchstart": function(){
+						$(this).addClass("miniButton_touchstart");
+					},
+					"touchend": function(){
+						$(this).removeClass("miniButton_touchstart");
+					},
+					"click": function(){
+						//goToLogin(phoneIMEISI);
+					}
+				});
+				
+				$("#loginNav div").bind("click", function(){
+				    var that = $(this),
+				        id = that.attr("id");
+				    if (!that.is("div.current")){
+				        var oldDiv = that.siblings(".current")
+				            oldId = oldDiv.attr("id");
+				        oldDiv.removeClass(oldId + "_hover").removeClass("current");
+				        that.addClass("current").addClass(id + "_hover");
+				        $("#loginContain table").each(function(){
+				            var t = $(this);
+				            if (t.is("." + id)){
+				                t.removeClass("hide");
+				            }
+				            else if (t.is("." + oldId)){
+				                t.addClass("hide");
+				            }
+				        })
+				    }
+				});
+            });
+            
+            function wlanLogin(){
+	            var usercode = $("#userPhoneNum").val(),
+		            password = $("#loginNav #yidong").is("div.current") ? $("#userPasswordforCMCC").val() : $("#userPasswordforCNET").val(),
+		            forgotpass = false, autoLogin = false;
+	            if(!usercode){
+		            navigator.notification.alert("请输入您的帐号!", function(){}, "提示", "确定");
+		            return;
+	            }
+	            if(!password){
+		            navigator.notification.alert("请输入您的密码!", function(){}, "提示", "确定");
+		            return;
+	            }
+	            if ($("#loginNav yidong").is("div.current")){
+		            forgotpass = $("#forgotpassbtn").is(".highClass");
+		            autoLogin = $("#autologinbtn").is(".highClass");
+	            }
+	            alert(usercode +","+ password +","+ forgotpass +","+ autoLogin);
+	            IChannel.CMCCWLAN.login(usercode, password, forgotpass, autoLogin);
+            }
+        </script>
+	</head>
+	<body style="margin: 0;">
+		<section>
+			<div id="login" style="display:block;">
+			    <div id="loginContain">
+			        <table class="yidong">
+			            <tr>
+			                <td>
+			                    <span for="CMCC" class="radioClass radioSelected" id="CMCCbtn">CMCC</span><input type="hidden" value="1" id="CMCC"/>
+			                    <span for="CMCC-EDU" class="radioClass" id="CMCC-EDUbtn">CMCC-EDU</span><input type="hidden" value="0" id="CMCC-EDU"/>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <input type="text" class="logInput" name="userPhoneNum" placeholder="请输入WLAN账号" />
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <input type="password" class="logInput" name="userPassword" placeholder="请输入密码" />
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <span for="forgotpass" class="labelClass" name="forgotpassbtn">记住密码</span>
+			                    <span for="autoLogin" class="labelClass" name="autologinbtn">自动登录</span>
+			                </td>   
+			            </tr>
+			        </table>
+			        <table class="dianxin hide">
+			            <tr>
+			                <td>
+			                    <input type="text" class="logInput" name="userPhoneNum" placeholder="请输入WLAN账号" />
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <input type="password" class="logInput mini" name="userPassword" placeholder="请输入密码" />
+			                    <input type="button" class="miniButton" id="getPassword" value=" " /><input type="button" class="miniButton_touchstart hide">
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <span for="forgotpass" class="labelClass" name="forgotpassbtn">记住密码</span>
+			                    <span for="autoLogin" class="labelClass" name="autologinbtn">自动登录</span>
+			                </td>   
+			            </tr>
+			        </table>
+			        <table  class="liantong hide">
+			            <tr>
+			                <td>
+			                    <input type="text" class="logInput" name="userPhoneNum" placeholder="请输入手机号码" />
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <input type="password" class="logInput" name="userPassword" placeholder="请输入密码" />
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <input type="password" class="logInput mini" name="validate" placeholder="验证码" />
+			                    <img src="createImage.png" class="validateimg" />
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <select class="logSelect">
+                                    <option value="zj">浙江</option>
+                                    <option value="bj">北京</option>
+                                    <option value="tj">天津</option>
+                                    <option value="sh">上海</option>
+                                    <option value="cq">重庆</option>
+                                    <option value="sd">山东</option>
+                                    <option value="sx">山西</option>
+                                    <option value="ha">河南</option>
+                                    <option value="he">河北</option>
+                                    <option value="hn">湖南</option>
+                                    <option value="hb">湖北</option>
+                                    <option value="gd">广东</option>
+                                    <option value="gx">广西</option>
+                                    <option value="hl">黑龙江</option>
+                                    <option value="ln">辽宁</option>
+                                    <option value="fj">福建</option>
+                                    <option value="fj">福建</option>
+                                    <option value="ah">安徽</option>
+                                    <option value="js">江苏</option>
+                                    <option value="gs">甘肃</option>
+                                    <option value="jx">江西</option>
+                                    <option value="yn">云南</option>
+                                    <option value="gz">贵州</option>
+                                    <option value="sc">四川</option>
+                                    <option value="qh">青海</option>
+                                    <option value="sn">陕西</option>
+                                    <option value="jl">吉林</option>
+                                    <option value="nx">宁夏</option>
+                                    <option value="hi">海南</option>
+                                    <option value="xz">西藏</option>
+                                    <option value="nm">内蒙古</option>
+                                    <option value="xj">新疆</option>
+                                    <option value="tw">台湾</option>
+                                    <option value="xg">香港</option>
+                                    <option value="am">澳门</option>
+			                    </select>
+			                    <span for="forgotpass" class="labelClass" name="forgotpassbtn">记住密码</span>
+			                </td>
+			            </tr>
+			        </table>
+			        <table>
+			            <tr>
+			                <td class="last">
+			                    <input type="button" class="logButton"  onclick="wlanLogin()" id="btn_Login" /><input type="button" class="logButton_touchstart hide" />
+			                </td>
+			            </tr>
+			        </table>
+			    </div>
+			    <nav id="loginNav">
+			        <div id="yidong" class="yidong yidong_hover current"></div>
+			        <div id="dianxin" class="dianxin"></div>
+			        <div id="liantong" class="liantong"></div>
+			    </nav>
+            </div>
+		</section>
+	</body>
+</html>

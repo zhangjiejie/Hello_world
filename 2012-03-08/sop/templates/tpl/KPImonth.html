@@ -1,0 +1,6 @@
+{#foreach $T.data2 as data2}
+    <li params"myId={$T.data2.id}" href="templates/tpl/yujingtrends.html" json="datas/json/blank.json">
+        <div class="spanTitle" style="width:60%">{$T.data2.tit}<span class='pink'>{$T.data2.count}</span></div>
+        <div class="spanDate"><div class="percent" percent="{$T.data2.percent}"><div></div><span>{$T.data2.percent}%</span></div></div>
+    </li>
+{#/for}

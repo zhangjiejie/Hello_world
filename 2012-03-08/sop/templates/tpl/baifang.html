@@ -1,0 +1,16 @@
+<div id="baifang">
+    <div class="header"><span>拜访记录列表</span><a href="#" class="toolback back"><div class="divback"></div></a><a class="toolother" href="templates/tpl/baifangedit.html" json="datas/json/blank.json" params="groupNo={$P.groupNo}&groupName={$P.groupName}&add=true" func="setDefault('baifang','{$P.groupName}','{$P.groupNo}')"><div class="divedit"></div></a></div>
+    <div class="content scroll">
+        <div>
+            <ul id="bifangList" class="arrowlist rounded">
+                {#if $T.data.length}
+                    {#foreach $T.data as data}
+                        <li href="templates/tpl/baifangedit.html" json="com.ai.esp.g3.workmanager.web.WorkNoteAction" params="action=getWorkNoteByCustomerId&staffId={$P.staffId}&workNoteId={$T.data.workNoteId}&groupName={$P.groupName}&groupNo={$P.groupNo}" remote="true" cachekey="baifang"><a class="longContent">{$T.data.workPurpose}</a></li>
+                    {#/for}
+                {#else}
+                    <li class="nobackimage"><a>暂无拜访记录</a></li>
+                {#/if}
+            </ul>
+        </div>
+    </div>
+</div>

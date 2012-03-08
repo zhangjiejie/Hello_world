@@ -1,0 +1,16 @@
+﻿<div id="myserver">
+    <div class="header"><span>用户已订购服务</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div>
+            <ul id="myserverList" class="arrowlist rounded">
+                {#if $T.OrderServiceInfo.length}
+                    {#foreach $T.OrderServiceInfo as OrderServiceInfo}
+                        <li href="templates/tpl/myserverdetail.html" json="com.ai.esp.g3.customer.web.MemberServiceAction" params="action=getOrderServiceInfos&telphone={$P.telphone}&myId={$T.OrderServiceInfo.uuid}" cachekey="myserver"><a  class="longContent">{$T.OrderServiceInfo.serviceName}</a></li>
+                    {#/for}
+                {#else}
+                    <li class="nobackimage"><a>暂无订购服务</a></li>
+                {#/if}
+            </ul>
+        </div>
+    </div>
+</div>

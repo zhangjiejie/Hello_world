@@ -1,0 +1,93 @@
+{
+
+"group":
+	[
+
+		{
+		"kpiAlarmId" : 1000021,
+		"kpiId" : "100001",
+		"customerCode" : "100000001",
+		"customerName" : "郑州人民银行" ,
+		"kpiAlarmType":"集团客户",
+		"kpiAlarmName":"关键人物预警",
+		"kpiValue":"26",
+		"kpiAlarmDesc":"预警描述",
+		"kpiAlarmCondition":"预警条件"
+		},
+		{
+		"kpiAlarmId" : 1000022,
+		"kpiId" : "100002",
+		"customerCode" : "100000001",
+		"customerName" : "郑州人民银行" ,
+		"kpiAlarmType":"集团客户",
+		"kpiAlarmName":"普通成员预警",
+		"kpiValue":"37",
+		"kpiAlarmDesc":"预警描述",
+		"kpiAlarmCondition":"预警条件"
+		},
+		{
+		"kpiAlarmId" : 1000023,
+		"kpiId" : "100001",
+		"customerCode" : "100000002",
+		"customerName" : "丹尼斯百货" ,
+		"kpiAlarmType":"集团客户",
+		"kpiAlarmName":"关键人物预警",
+		"kpiValue":"18",
+		"kpiAlarmDesc":"预警描述",
+		"kpiAlarmCondition":"预警条件"
+		},
+		{
+		"kpiAlarmId" : 1000024,
+		"kpiId" : "100002",
+		"customerCode" : "100000002",
+		"customerName" : "丹尼斯百货" ,
+		"kpiAlarmType":"集团客户",
+		"kpiAlarmName":"普通成员预警",
+		"kpiValue":"37",
+		"kpiAlarmDesc":"预警描述",
+		"kpiAlarmCondition":"预警条件"
+		}
+	],
+"member":
+	[
+
+		{
+		"groupid" : 3453535,
+		"groupname" : "郑州人民银行" ,
+		"memberid" : 3453535,
+		"membername" : "姜燕" ,
+		"targetid" : 234345,
+		"target" : "集团普通成员流失",
+		"detail" : {"bigtype":"集团普通成员预警","minitype":"敏感通话", "now": "是", "rule": "发生预警人数比例...", "threshold": "是"}
+		},
+		{
+		"groupid" : 3453535,
+		"groupname" : "郑州人民银行" ,
+		"memberid" : 3453535,
+		"membername" : "姜燕" ,
+		"targetid" : 453455,
+		"target" : "最近一周累计0次通话天数",
+		"detail" : {"bigtype":"集团普通成员预警","minitype":"敏感通话", "now": "4", "rule": "最近一周累计0次通话天数", "threshold": "4次以上"}
+		},
+        {
+        "groupid" : 3453535,
+		"groupname" : "郑州人民银行" ,
+		"memberid" : 4546465,
+		"membername" : "赵春丽" ,
+		"targetid" : 234345,
+		"target" : "集团普通成员流失",
+		"detail" : {"bigtype":"集团普通成员预警","minitype":"敏感通话", "now": "是", "rule": "发生预警人数比例发生预警人数比例发生预警人数比例发生预警人数比例发生预警人数比例发生预警人数比例发生预警人数比例发生预警人数比例", "threshold": "是"}
+		},
+		{
+		"groupid" : 3453535,
+		"groupname" : "郑州人民银行" ,
+		"memberid" : 4546465,
+		"membername" : "赵春丽" ,
+		"targetid" : 453455,
+		"target" : "最近一周累计0次通话天数",
+		"detail" : {"bigtype":"集团普通成员预警","minitype":"敏感通话", "now": "4", "rule": "最近一周累计0次通话天数", "threshold": "4次以上"}
+		}
+
+	]
+
+}

@@ -1,0 +1,30 @@
+﻿<div id="alltask">
+    <div class="header">
+        <span>我的任务</span><a href="#" class="toolback back"><div class="divback"></div></a>
+    	<a class="toolother" href="javascript:void(0)" onclick="refreshMain('alltaskList', 'com.ai.esp.g3.workmanager.web.WorkTaskAction', 'alltaskrefresh', 'action=getWorkTasks&staffId={$P.staffId}&taskState=1&reqDate={$P.reqDate}')"><div class="divrefresh"></div></a>
+    </div>
+    <div class="content scroll">
+        <div class="myul accordion">
+            <div>
+                <ul id="alltaskList" class="arrowlist">
+                {#if $T.data.length}
+                    {#foreach $T.data as data}
+                        {#if $T.data.execState == 1 || $T.data.execState == 2}
+                        <li href="templates/tpl/mytaskdetail.html" json="com.ai.esp.g3.workmanager.web.WorkTaskAction" params="action=getWorkTasks&staffId={$P.staffId}&taskState=1&reqDate={$P.reqDate}&myId={$T.data.workId}" cachekey="alltask" class="nobackimage">
+                            <div class="spanTitle longContent">{$T.data.workTitle}</div>
+                            <div class="image"><div {#if $T.data.workLevel == 2}class="img2"{#/if}></div></div>
+                            <div class="spanDate">{$T.data.workDate}</div>
+                        	<a myId="{$T.data.workId}" style="float:right; padding: 0 10px 0 0;" onclick="finishWarn(this,'setTaskState',{$T.data.workId},'是否确认该任务已完成？', '{$P.reqDate}', '{$T.data.workTaskExecId}')"><span class="submit">完成</span></a>
+                        </li>
+                        {#/if}
+                    {#/for}
+                {#else}
+                    <li class="nobackimage"><a>暂无上级下派任务</a></li>
+                {#/if}
+                </ul>
+                <ul id="alltaskList2" class="arrowlist hide">
+            	</ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+{
+
+"OrderServiceInfo":
+[
+    {
+        "id":"1234",
+        "serviceName":"电话服务",
+        "effectType":"及时",
+        "effectDate":"2011-06-01",
+        "expirationDate":"2011-07-01",
+        "orderTime":"2011-05-31",
+        "operationNo":"admin"
+    },
+    {
+        "id":"1235",
+        "serviceName":"短信服务",
+        "effectType":"及时",
+        "effectDate":"2011-06-01",
+        "expirationDate":"2011-07-01",
+        "orderTime":"2011-05-31",
+        "operationNo":"admin"
+    },
+    {
+        "id":"1236",
+        "serviceName":"上网服务",
+        "effectType":"及时",
+        "effectDate":"2011-06-01",
+        "expirationDate":"2011-07-01",
+        "orderTime":"2011-05-31",
+        "operationNo":"admin"
+    },
+    {
+        "id":"1237",
+        "serviceName":"手机服务",
+        "effectType":"及时",
+        "effectDate":"2011-06-01",
+        "expirationDate":"2011-07-01",
+        "orderTime":"2011-05-31",
+        "operationNo":"admin"
+    }
+
+]
+
+}

@@ -1,0 +1,16 @@
+﻿<div id="myfree">
+    <div class="header"><span>免费资源列表</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div>
+            <ul id="myfreeList" class="arrowlist rounded">
+                {#if $T.FreeInfo.length}
+                    {#foreach $T.FreeInfo as FreeInfo}
+                        <li href="templates/tpl/myfreedetail.html" json="com.ai.esp.g3.customer.web.MemberServiceAction" params="action=getFreeInfos&telphone={$P.telphone}&myId={$T.FreeInfo.uuid}" cachekey="myfree"><a class="longContent">{$T.FreeInfo.freeResourcesSubject}</a></li>
+                    {#/for}
+                {#else}
+                    <li class="nobackimage"><a>暂无免费资源</a></li>
+                {#/if}
+            </ul>
+        </div>
+    </div>
+</div>

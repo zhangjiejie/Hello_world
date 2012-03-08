@@ -1,0 +1,7 @@
+{#if $T.data.length}
+	{#foreach $T.data as data}
+    	 <li href="templates/tpl/opponentedit.html" json="com.ai.esp.g3.customer.web.CompeteInfoServiceAction" cachekey="opponent" params="action=getCustomerCompeteInfos&staffId={$P.staffId}&groupNo={$P.groupNo}&competitors=3&myId={$T.data.competitorsId}&groupName={$P.groupName}" remote="true"><a class="longContent">{$T.data.title}</a></li>
+	{#/for}
+{#else}
+	<li class="nobackimage"><a>暂无竞争对手</a></li>
+{#/if}

@@ -1,0 +1,15 @@
+﻿<div id="searchlist">
+    <div class="header"><span>功能设置</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div class="calendarEdit">
+            <ul class="arrowlist rounded" id="selectSearch">
+                {#foreach $T.data as data}
+                    <li><span>{$T.data.tit}</span><div id="{$T.data.id}" class="iswitch"></div></li>
+                {#/for}
+            </ul>
+            <div class="cl">
+            	<a onclick="saveMain()"><span class="sub">保存</span></a>
+            </div>
+        </div>
+    </div>
+</div>

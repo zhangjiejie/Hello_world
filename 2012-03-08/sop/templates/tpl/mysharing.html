@@ -1,0 +1,16 @@
+﻿<div id="mysharing">
+    <div class="header"><span>分摊资源列表</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div>
+            <ul id="mysharingList" class="arrowlist rounded">
+                {#if $T.SharingInfo.length}
+                    {#foreach $T.SharingInfo as SharingInfo}
+                        <li href="templates/tpl/mysharingdetail.html" json="com.ai.esp.g3.customer.web.MemberServiceAction" params="action=getSharingInfos&telphone={$P.telphone}&myId={$T.SharingInfo.uuid}" cachekey="mysharing"><a class="longContent">{$T.SharingInfo.booksCourseName}</a></li>
+                    {#/for}
+                {#else}
+                    <li class="nobackimage"><a>暂无分摊资源</a></li>
+                {#/if}
+            </ul>
+        </div>
+    </div>
+</div>

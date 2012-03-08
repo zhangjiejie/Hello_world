@@ -1,0 +1,89 @@
+<div id="jobwarnlist">
+    <div class="header"><span>工作提醒</span><a href="#" class="toolback back">&nbsp;</a></div>
+    <div class="content scroll">
+        <div>
+            <ul id="jobwarningList1" class="arrowlist">
+                {#if $T.count1}
+                <li class="tit" onclick="showNextContent(this, 'groupdetails')"><div class="bookimg open"></div>产品专项月租到期提醒</li>
+                <ul class="arrowlist">
+	                {#foreach $T.data as data}
+                        {#if $T.data.type == $T.专项月租}
+                        <li class="nobackimage" cachekey='{$P.cache}' href="templates/tpl/warndetail.html" json="com.ai.esp.g3.workmanager.web.WorkRemindAction" params="action=getWorkReminds&staffId={$P.staffId}&remindState=0&reqDate={$P.reqDate}&myId={$T.data.remindId}">
+                            <div class="spanTitle longContent">{$T.data.remindTitle}</div>
+                            <div class="image"><div {#if $T.data.workLevel == 2}class="img2"{#/if}></div></div>
+                            <div class="spanDate">{$T.data.remindDate}</div>
+                            <a style="float:right; padding: 0 10px 0 0;" onclick="stopClick()" ontouchend="finishWarn(this,'setRemindState','{$T.data.remindId}','是否确认该提醒已完成阅读？', '{$P.reqDate}')"><span class="submit">已读</span></a>
+                        </li>
+                        {#/if}
+                    {#/for}
+	            </ul>
+	            {#/if}
+	            {#if $T.count2}
+                <li class="tit" onclick="showNextContent(this, 'groupdetails')"><div class="bookimg open"></div>红名单欠费提醒</li>
+                <ul class="arrowlist">
+	                {#foreach $T.data as data}
+                        {#if $T.data.type == $T.红名单欠费}
+                        <li class="nobackimage" cachekey='{$P.cache}' href="templates/tpl/warndetail.html" json="com.ai.esp.g3.workmanager.web.WorkRemindAction" params="action=getWorkReminds&staffId={$P.staffId}&remindState=0&reqDate={$P.reqDate}&myId={$T.data.remindId}">
+                            <div class="spanTitle longContent">{$T.data.remindTitle}</div>
+                            <div class="image"><div {#if $T.data.workLevel == 2}class="img2"{#/if}></div></div>
+                            <div class="spanDate">{$T.data.remindDate}</div>
+                            <a style="float:right; padding: 0 10px 0 0;" onclick="stopClick()" ontouchend="finishWarn(this,'setRemindState','{$T.data.remindId}','是否确认该提醒已完成阅读？', '{$P.reqDate}')"><span class="submit">已读</span></a>
+                        </li>
+                        {#/if}
+                    {#/for}
+	            </ul>
+	            {#/if}
+	            {#if $T.count3}
+                <li class="tit" onclick="showNextContent(this, 'groupdetails')"><div class="bookimg open"></div>关键人分摊到期提醒</li>
+                <ul class="arrowlist">
+	                {#foreach $T.data as data}
+                        {#if $T.data.type == $T.关键人分摊}
+                        <li class="nobackimage" cachekey='{$P.cache}' href="templates/tpl/warndetail.html" json="com.ai.esp.g3.workmanager.web.WorkRemindAction" params="action=getWorkReminds&staffId={$P.staffId}&remindState=0&reqDate={$P.reqDate}&myId={$T.data.remindId}">
+                            <div class="spanTitle longContent">{$T.data.remindTitle}</div>
+                            <div class="image"><div {#if $T.data.workLevel == 2}class="img2"{#/if}></div></div>
+                            <div class="spanDate">{$T.data.remindDate}</div>
+                            <a style="float:right; padding: 0 10px 0 0;" onclick="stopClick()" ontouchend="finishWarn(this,'setRemindState','{$T.data.remindId}','是否确认该提醒已完成阅读？', '{$P.reqDate}')"><span class="submit">已读</span></a>
+                        </li>
+                        {#/if}
+                    {#/for}
+	            </ul>
+	            {#/if}
+                {#if $T.count4}
+                <li class="tit" onclick="showNextContent(this, 'groupdetails')"><div class="bookimg open"></div>关键人生日关怀提醒</li>
+                <ul class="arrowlist">
+	                {#foreach $T.data as data}
+                        {#if $T.data.type == $T.关键人生日}
+                        <li class="nobackimage" cachekey='{$P.cache}' href="templates/tpl/warndetail.html" json="com.ai.esp.g3.workmanager.web.WorkRemindAction" params="action=getWorkReminds&staffId={$P.staffId}&remindState=0&reqDate={$P.reqDate}&myId={$T.data.remindId}">
+                            <div class="spanTitle longContent">{$T.data.remindTitle}</div>
+                            <div class="image"><div {#if $T.data.workLevel == 2}class="img2"{#/if}></div></div>
+                            <div class="spanDate">{$T.data.remindDate}</div>
+                            <a style="float:right; padding: 0 10px 0 0;" onclick="stopClick()" ontouchend="finishWarn(this,'setRemindState','{$T.data.remindId}','是否确认该提醒已完成阅读？', '{$P.reqDate}')"><span class="submit">已读</span></a>
+                        </li>
+                        {#/if}
+                    {#/for}
+	            </ul>
+	            {#/if}
+                {#if $T.count5}
+                <li class="tit" onclick="showNextContent(this, 'groupdetails')"><div class="bookimg open"></div>合同到期提醒</li>
+                <ul class="arrowlist">
+	                {#foreach $T.data as data}
+                        {#if $T.data.type == $T.合同到期}
+                        <li class="nobackimage" cachekey='{$P.cache}' href="templates/tpl/warndetail.html" json="com.ai.esp.g3.workmanager.web.WorkRemindAction" params="action=getWorkReminds&staffId={$P.staffId}&remindState=0&reqDate={$P.reqDate}&myId={$T.data.remindId}">
+                            <div class="spanTitle longContent">{$T.data.remindTitle}</div>
+                            <div class="image"><div {#if $T.data.workLevel == 2}class="img2"{#/if}></div></div>
+                            <div class="spanDate">{$T.data.remindDate}</div>
+                            <a style="float:right; padding: 0 10px 0 0;" onclick="stopClick()" ontouchend="finishWarn(this,'setRemindState','{$T.data.remindId}','是否确认该提醒已完成阅读？', '{$P.reqDate}')"><span class="submit">已读</span></a>
+                        </li>
+                        {#/if}
+                    {#/for}
+	            </ul>
+	            {#/if}
+	            {#if !$T.专项月租 && !$T.红名单欠费 && !$T.关键人分摊 && !$T.关键人生日 && !$T.count5}
+	            <ul class="arrowlist">
+                    <li class="nobackimage"><a>暂无工作提醒</a></li>
+                </ul>
+                {#/if}
+            </ul>
+        </div>
+    </div>
+</div>

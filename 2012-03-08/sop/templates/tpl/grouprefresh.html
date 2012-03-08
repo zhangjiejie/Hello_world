@@ -1,0 +1,8 @@
+﻿{#if $T.CustomerInfo}
+	{#foreach $T.CustomerInfo as CustomerInfo}
+		<li class="nobackimage" style="height:auto; line-height:36px;" href="templates/tpl/grouplistdetails.html" json="com.ai.esp.g3.customer.web.CustomerServiceAction" params="action=getCustomerBaseInfo&staffId={$P.staffId}&groupNo={$T.CustomerInfo.GROUPNO}&reqDate={$P.reqDate}" remote="true" code="{$T.CustomerInfo.GROUPNO}" tel="{$T.CustomerInfo.TELPHONE}" spell="{$T.CustomerInfo.SPELLING}" jianpin="{$T.CustomerInfo.JIANPIN}" name="{$T.CustomerInfo.GROUPNAME}" >
+			<a class="longContent">{$T.CustomerInfo.GROUPNAME}</a>
+			<a style="font-size: 13px; color: #787878">{#if $T.CustomerInfo.CONTACT}{$T.CustomerInfo.CONTACT}{#else}—{#/if} ：  {#if $T.CustomerInfo.TELPHONE}{$T.CustomerInfo.TELPHONE}{#else}—{#/if}</a>
+		</li>
+	{#/for}
+{#/if}

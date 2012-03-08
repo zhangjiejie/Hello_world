@@ -1,0 +1,19 @@
+<div id="qianfei">
+    <div class="header"><span>欠费催缴</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div class="myul">
+            <ul class="arrowlist" id="qianfeiList">
+                {#if $T.ArrearsInfo.length}
+	                {#foreach $T.ArrearsInfo as ArrearsInfo}
+		                <li class="nobackimage" href="templates/tpl/qianfei2.html" json="com.ai.esp.g3.customer.web.OverdueServiceAction" remote="true" params="action=getOverDueDetail&staffId={$P.staffId}&groupNo={$T.ArrearsInfo.GROUPNO}&groupName={$T.ArrearsInfo.GROUPNAME}" cachekey="qianfei{$T.ArrearsInfo.GROUPNO}">
+	                        <div class="spanTitle longContent" style="width:60%">{$T.ArrearsInfo.GROUPNAME}</div>
+	                        <span class="rightspan" style="font-size: 13px;">红名单(<span class="red">{#if $T.ArrearsInfo.REDLISTCOUNTS}{$T.ArrearsInfo.REDLISTCOUNTS}{#else}0{#/if}</span>)</span>
+		                </li>
+	                {#/for}
+	            {#else}
+                    <li class="nobackimage"><a>暂无欠费催缴记录</a></li>
+                {#/if}
+            </ul>
+        </div>
+    </div>
+</div>

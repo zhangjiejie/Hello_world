@@ -1,0 +1,19 @@
+﻿<div id="groupdetails">
+    <div class="header"><span>集团详细资料</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div class="accordion">
+            <div class="tit" onclick="showNextContent(this)"><div class="bookimg open"></div>基本信息</div>
+            <div>
+                <ul class="arrowlist allshadow">
+	                <li class="nobackimage" style="padding-right: 15px; height:auto; text-align:right"><span style="float:left">集团名称：</span><span class="pink changeLine" name="{$T.data.CustomerInfo.GROUPNAME}">{$T.data.CustomerInfo.GROUPNAME}</span></li>
+	                <li class="nobackimage">集团编码：<span class="rightpink pink">{$T.data.CustomerInfo.GROUPNO}</span></li>
+	                <li class="nobackimage">移动人员占有率：<span class="rightpink pink">{$T.data.CustomerInfo.MEMBERSSHARE}</span></li>
+	                <li class="nobackimage">客户规模：<span class="rightpink pink">{$T.data.CustomerInfo.CUSTOMERBASE}类</span></li>
+	                <li class="nobackimage">联系人：<span class="rightpink pink">{$T.data.CustomerInfo.CONTACT}</span></li>
+	                <li class="nobackimage">联系人电话：<span class="rightpink pink"><a class="tel" onclick="callNum('{$T.data.CustomerInfo.TELPHONE}')">{$T.data.CustomerInfo.TELPHONE}</a></span></li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div id="qianfei3">
+    {#foreach $T.ArrearsDetailInfo as ArrearsDetailInfo}
+        {#if $T.ArrearsDetailInfo.TELPHONE == $P.myId}
+        <div class="header"><span>欠费详情</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+        <div class="content scroll">
+            <div class="accordion">
+	            <div class="normalList changeLine">集团名称：<span>{$T.ArrearsDetailInfo.GROUPNAME}</span></div>
+	            <div class="normalList">名称：<span>{$T.ArrearsDetailInfo.CUSTOMERSNAME}</span></div>
+	            <div class="normalList">号码：<a class="tel" onclick="callNum('{$T.ArrearsDetailInfo.TELPHONE}')">{$T.ArrearsDetailInfo.TELPHONE}</a></div>
+	            <div class="normalList">职务：<span>{$T.ArrearsDetailInfo.POSITION}</span></div>
+	            <div class="normalList">总欠费 ：<span>{$T.ArrearsDetailInfo.ARREARSTOTAL}元</span></div>
+	            <div id="qianfei_{$T.ArrearsDetailInfo.TELPHONE}"></div>
+	            <div class="normalList contact">
+                	<a onclick="callNum('{$T.ArrearsDetailInfo.TELPHONE}')"><span class="sub">电话</span></a>
+                	<a onclick="send('{$T.ArrearsDetailInfo.TELPHONE}', '尊敬的{$T.ArrearsDetailInfo.CUSTOMERSNAME}先生/女士，您的手机已欠费{$T.ArrearsDetailInfo.ARREARSTOTAL}元，为确保您的正常使用，请及时进行缴费，谢谢。')"><span class="save">短信</span></a>
+                </div>
+            </div>
+        </div>
+        {#/if}
+    {#/for}   
+</div>

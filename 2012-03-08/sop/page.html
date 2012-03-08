@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>ESOP</title>
+        <link href="jqtouch.png" rel="apple-touch-icon-precomposed" />
+        <link href="jqt_startup.png" rel="apple-touch-startup-image" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+        
+        <style type="text/css" media="screen">@import "themes/apple/nb.webframe.css";</style>
+        <style type="text/css" media="screen">@import "themes/apple/iscroll.css";</style>
+        <style type="text/css" media="screen">@import "themes/apple/Calendar.css";</style>
+        <link href="themes/apple/screen320.css" type="text/css" rel="stylesheet" media="screen and (min-width:320px)">
+        <link href="themes/apple/screen400.css" type="text/css" rel="stylesheet" media="screen and (min-width:400px)">
+        <link href="themes/apple/screen480.css" type="text/css" rel="stylesheet" media="screen and (min-width:480px)">
+        
+        <script src="scripts/jquery-1.6.1.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="scripts/phonegap.0.9.4.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="scripts/jquery-jtemplates.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="scripts/src/nb.webframe.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="scripts/ichannel.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="scripts/esop.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="scripts/Calendar.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="scripts/jquery.iphone-switch.js" type="application/x-javascript" charset="utf-8"></script>
+        <script src="gapext/multipleFilesUpload.js" type="application/x-javascript" charset="utf-8"></script>
+        
+        <script src="scripts/commons.js" type="application/x-javascript" charset="utf-8"></script>
+	</head>
+	<body style="overflow-y:auto">
+		<section>
+			<!-- customize divs here -->
+			<div>
+			    <div class="header">
+            <span>公告详情</span><a href="#" class="toolback back">&nbsp;</a></div>
+        <div class="content scroll">
+            <div>
+                <div class="midwrapper">
+                    <div class="midcontent">
+                        <div class="noticediv">
+                            <span style="margin-right:20px;">发布时间：<a>2011-01-01</a></span><span>发布人：按时打算</span>
+                        </div>
+                        <div class="noticediv">
+                            公告内容：<p style="text-indent: 2em;">{$T.data.notifyContent}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+		</section>
+		<footer id="footer" class="hide">
+			<!-- customize footer here -->
+			<ul>
+		        <li><a href="#" class="home current" name="home"><span >&nbsp;</span><b id="applyaccout">功能导航</b></a></li>
+		        <li><a href="templates/tpl/group.html" json="com.ai.esp.g3.customer.web.CustomerServiceAction" remote="true" params='' class="group" func="creatTips();" cachekey="group" name="group"><span >&nbsp;</span><b id="wlanloginId">集团客户</b></a></li>
+		        <li><a href="templates/tpl/groupmember.html" json="com.ai.esp.g3.customer.web.MemberServiceAction" cachekey="groupmember" class="member" name="groupmember"><span >&nbsp;</span><b id="searchSp">集团成员</b></a></li>
+		        <li><a href="templates/tpl/mycalendar.html" json="datas/json/blank.json" func="Calendar.init();" class="calendar" name="calendar"><span >&nbsp;</span><b id="helpId">工作日程</b></a></li>
+	        </ul>
+		</footer>
+	</body>
+</html>

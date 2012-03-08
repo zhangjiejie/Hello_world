@@ -1,0 +1,56 @@
+{
+
+"SpecialsInfo":
+[
+    {
+        "id":"234435",
+        "specialsName":"基辅月租",
+        "packageName":"吉普套餐",
+        "paymentAmount":190.00,
+        "remissionDuration":190,
+        "beginDate":"2011-01-01",
+        "endDate":"2012-12-25",
+        "operationDate":"2011-01-01",
+        "operationNo":"admin",
+        "isBound":"是"
+    },
+    {
+        "id":"234436",
+        "specialsName":"开机提醒月功能费",
+        "packageName":"吉普套餐",
+        "paymentAmount":190.00,
+        "remissionDuration":190,
+        "beginDate":"2011-01-01",
+        "endDate":"2012-12-25",
+        "operationDate":"2011-01-01",
+        "operationNo":"admin",
+        "isBound":"是"
+    },
+    {
+        "id":"234437",
+        "specialsName":"彩铃月功能使用费",
+        "packageName":"吉普套餐",
+        "paymentAmount":190.00,
+        "remissionDuration":190,
+        "beginDate":"2011-01-01",
+        "endDate":"2012-12-25",
+        "operationDate":"2011-01-01",
+        "operationNo":"admin",
+        "isBound":"是"
+    },
+    {
+        "id":"234438",
+        "specialsName":"中国手机报月功能费",
+        "packageName":"吉普套餐",
+        "paymentAmount":190.00,
+        "remissionDuration":190,
+        "beginDate":"2011-01-01",
+        "endDate":"2012-12-25",
+        "operationDate":"2011-01-01",
+        "operationNo":"admin",
+        "isBound":"是"
+    }
+
+]
+
+}

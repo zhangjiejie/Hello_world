@@ -1,0 +1,25 @@
+﻿<div id="yujinglist">
+    <div class="header">
+        <span>预警任务</span><a href="#" class="toolback back"><div class="divback"></div></a>
+    	<a class="toolother" href="javascript:void(0)" onclick="refreshMain('allyujingList', 'com.ai.esp.g3.workmanager.web.WorkTaskAction', 'yujinglistrefresh', 'action=getYuJinTasks&staffId={$P.staffId}')"><div class="divrefresh"></div></a>
+    </div>
+    <div class="content scroll">
+        <div class="myul accordion">
+            <div>
+                <ul id="allyujingList" class="arrowlist">
+                {#if $T.data.length}
+                    {#foreach $T.data as data}
+                        {#if $T.data.execState == 1}
+                        <li class="nobackimage" href="templates/tpl/myyujingtaskdetail.html" json="com.ai.esp.g3.workmanager.web.WorkTaskAction" params="action=getWorkTasks&staffId={$P.staffId}&taskState=1&reqDate={$P.reqDate}&myId={$T.data.workId}" cachekey="yujinglist">
+                            <div class="spanTitle longContent" style="width: 88%;">{$T.data.workTitle}</div>
+                        </li>
+                        {#/if}
+                    {#/for}
+                {#else}
+                    <li class="nobackimage"><a>暂无集团预警任务</a></li>
+                {#/if}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

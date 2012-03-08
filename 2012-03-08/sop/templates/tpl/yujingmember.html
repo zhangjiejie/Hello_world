@@ -1,0 +1,7 @@
+{#foreach $T.data as data}
+    <li class="nobackimage" remote="true" href="templates/tpl/yujingmemberdetail.html" json="com.ai.esp.g3.bi.web.KpiAlarmManagerAction" params="action=getMyMemberKpiAlarms&staffId={$P.staffId}&periodType={$P.periodType}&kpiDate={$P.kpiDate}&memberType=3&myId={$T.data.kpiAlarmId}&groupNo={$T.data.customerCode}">
+        <div class="spanTarget longContent">{$T.data.memberName}</div>
+        <div class="spanTarget longContent" style="width:60%">{$T.data.kpiAlarmName}</div>
+        <div class="spanTarget longContent" style="text-align:right; width: 10%;">{$T.data.kpiValue}%</div>
+    </li>
+{#/for}

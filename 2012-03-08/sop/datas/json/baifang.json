@@ -1,0 +1,53 @@
+﻿{
+
+"data":
+	[
+
+        {
+        "logId":"12331313",
+        "logType":"拜访",
+        "logContent":"与客户交流感情",
+        "workResult":"感觉很好",
+        "createTime":"2011-06-30",
+        "creator":"admin",
+        "groupCode":"1003233443",
+        "groupName":"金太阳太阳能配件",
+        "attachment":"info/111.jpg"
+        },
+        {
+        "logId":"12331314",
+        "logType":"电话",
+        "logContent":"与客户节日祝福",
+        "workResult":"感觉很好",
+        "createTime":"2011-06-30",
+        "creator":"admin",
+        "groupCode":"1003233443",
+        "groupName":"金太阳太阳能配件",
+        "attachment":"info/111.jpg"
+        },
+        {
+        "logId":"12331315",
+        "logType":"拜访",
+        "logContent":"与客户交流感情",
+        "workResult":"感觉很好",
+        "createTime":"2011-06-30",
+        "creator":"admin",
+        "groupCode":"1003233443",
+        "groupName":"金太阳太阳能配件",
+        "attachment":"info/111.jpg"
+        },
+        {
+        "logId":"12331316",
+        "logType":"短信",
+        "logContent":"与客户节日祝福",
+        "workResult":"感觉很好",
+        "createTime":"2011-06-30",
+        "creator":"admin",
+        "groupCode":"1003233443",
+        "groupName":"金太阳太阳能配件",
+        "attachment":"info/111.jpg"
+        }
+        
+	]
+
+}

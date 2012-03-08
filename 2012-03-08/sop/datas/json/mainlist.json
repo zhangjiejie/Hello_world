@@ -1,0 +1,25 @@
+﻿{
+
+"data":
+	[
+
+        {
+        "moduleCode":"ic_remind",
+        "remindCount": 4,
+        },
+        {
+        "moduleCode":"ic_yujing",
+        "remindCount": 8,
+        },
+        {
+        "moduleCode":"ic_notice",
+        "remindCount": 2,
+        },
+        {
+        "moduleCode":"ic_own",
+        "remindCount": 5,
+        }
+        
+	]
+
+}

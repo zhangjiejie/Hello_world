@@ -1,0 +1,206 @@
+﻿<div id="warndetail">
+    {#foreach $T.data.data as data}
+        {#if $T.data.remindId == $P.myId}
+        <div class="header">
+            <span>提醒详情</span>
+            <a href="#" class="toolback back"><div class="divback"></div></a>
+        </div>
+        <div class="content scroll">
+            <div class="calendarEdit">
+                <div class="hd">
+                    <table class="mytable">
+                        <tr>
+                            <td style="width: 35%; color: #8B8B8A;">
+                                集团名称：
+                            </td>
+                            <td>
+                                {$T.data.CMN_STR_02}
+                            </td>
+                        </tr>
+                        {#if $T.data.rmdType == 51 || $T.data.rmdType == 55}
+                        <tr>
+                            <td style="color: #8B8B8A;">
+                                产品名称：
+                            </td>
+                            <td>
+                                {$T.data.CMN_STR_04}
+                            </td>
+                        </tr>
+                        {#/if}
+                        {#if $T.data.rmdType == 51}
+                        <tr>
+                            <td style="color: #8B8B8A;">
+                                订购时间：
+                            </td>
+                            <td>
+                                {$T.data.CMN_DATE_01}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8B8B8A;">
+                                到期时间：
+                            </td>
+                            <td>
+					            {$T.data.CMN_DATE_02}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8B8B8A;">
+                                产品资费：
+                            </td>
+                            <td>
+                                {$T.data.CMN_STR_05}
+                            </td>
+                        </tr>
+                        {#/if}
+                        {#if $T.data.rmdType == 52}
+                        <tr>
+                            <td style="color: #8B8B8A;">
+                                成员名称：
+                            </td>
+                            <td>
+                                {$T.data.CMN_STR_03}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8B8B8A;">
+                                成员号码：
+                            </td>
+                            <td>
+                                {$T.data.CMN_STR_05}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8B8B8A;">
+                                欠费金额：
+                            </td>
+                            <td>
+                                {$T.data.CMN_NUM_01}元
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8B8B8A;">
+                                欠费月数：
+                            </td>
+                            <td>
+                                {$T.data.CMN_NUM_02}
+                            </td>
+                        </tr>
+                        {#/if}
+                        {#if $T.data.rmdType == 53}
+                        <tr>
+                            <td style="color: #8B8B8A;">
+                                关键人姓名：
+                            </td>
+                            <td>
+                                {$T.data.CMN_STR_04}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8B8B8A;">
+                                关键人号码：
+                            </td>
+                            <td>
+                                {$T.data.CMN_STR_05}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8B8B8A;">
+                                关键人职务：
+                            </td>
+                            <td>
+                                {#if $T.data.CMN_STR_06}{$T.data.CMN_STR_06}{#else}无{#/if}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8B8B8A;">
+                                活动名称：
+                            </td>
+                            <td>
+                                {$T.data.CMN_STR_07}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8B8B8A;">
+                                活动代码：
+                            </td>
+                            <td>
+                                {$T.data.CMN_STR_08}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8B8B8A;">
+                                到期日期：
+                            </td>
+                            <td>
+                                {$T.data.CMN_DATE_01}
+                            </td>
+                        </tr>
+                        {#/if}
+                        {#if $T.data.rmdType == 54}
+                        <tr>
+                            <td style="color: #8B8B8A;">
+                                关键人姓名：
+                            </td>
+                            <td>
+                                {$T.data.CMN_STR_03}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8B8B8A;">
+                                关键人号码：
+                            </td>
+                            <td>
+                                {$T.data.CMN_STR_04}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8B8B8A;">
+                                关键人职务：
+                            </td>
+                            <td>
+                                {#if $T.data.CMN_STR_05}{$T.data.CMN_STR_05}{#else}无{#/if}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8B8B8A;">
+                                关键人生日：
+                            </td>
+                            <td>
+                                {$T.data.CMN_DATE_01}
+                            </td>
+                        </tr>
+                        {#/if}
+                        {#if $T.data.rmdType == 55}
+                        <tr>
+                            <td style="color: #8B8B8A;">
+                                合同编号：
+                            </td>
+                            <td>
+                                {$T.data.CMN_STR_05}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="color: #8B8B8A;">
+                                到期日期：
+                            </td>
+                            <td>
+                                {$T.data.CMN_DATE_01}
+                            </td>
+                        </tr>
+                        {#/if}
+                        <tr class="hide">
+                            <td style="color: #8B8B8A;">
+                                提醒状态：
+                            </td>
+                            <td>
+                                	已读
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        {#/if}
+    {#/for}
+</div>

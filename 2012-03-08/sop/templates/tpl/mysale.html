@@ -1,0 +1,24 @@
+﻿<div id="mysale">
+    <div class="header">
+        <span>我的营销</span><a href="#" class="toolback back"><div class="divback"></div></a>
+    	<a class="toolother" href="javascript:void(0)" onclick="refreshMain('mysaleList', 'com.ai.esp.g3.workmanager.web.WorkTaskAction', 'mysalerefresh', 'action=getWorkSaleTasks&staffId={$P.staffId}')"><div class="divrefresh"></div></a>    
+    </div>
+    <div class="content scroll">
+        <div class="myul">
+            <ul id="mysaleList" class="arrowlist">
+            {#if $T.data.length}
+                {#foreach $T.data as data}
+                    <li class="nobackimage" cachekey="mysale" href="templates/tpl/mysaledetail.html" json='com.ai.esp.g3.workmanager.web.WorkTaskAction' params='staffId={$P.staffId}&myId={$T.data.workId}'>
+                        <div class="spanTitle longContent" style="width: 70%;">{$T.data.workTitle}</div>
+                    	<a myId="{$T.data.workId}" style="float:right; padding: 0 10px 0 0;" onclick="finishWarn(this, 'setSaleTaskState', '{$T.data.workId}', '是否确认该任务已完成？', '{$P.reqDate}', '{$T.data.workTaskExecId}')"><span class="submit">完成</span></a>
+                    </li>
+                {#/for}
+            {#else}
+                <li class="nobackimage"><a>暂无营销任务</a></li>
+            {#/if}
+            </ul>
+            <ul id="mysaleList2" class="arrowlist hide">
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div id="followlist">
+    <div class="header"><span>查看跟踪</span><a href="#" class="toolback back"><div class="divback"></div></a><a class="toolother" href="templates/tpl/warnedit.html" json="datas/json/blank.json" params="workTaskExecId={$P.workTaskExecId}&workTitle={$P.workTitle}&add=true" func="setGroupSelect()"><div class="divedit"></div></a></div>
+    <div class="content scroll">
+        <div>
+            <ul>
+                <li class="nobackimage title_li"><div>工作结果</div><div>工作时间</div></li>
+            </ul>
+            <ul id="followUL" class="arrowlist rounded">
+                {#if $T.data.length}
+                    {#foreach $T.data as data}
+	                <li class="nobackimage" remote="true" href="templates/tpl/warnedit.html" json="com.ai.esp.g3.workmanager.web.WorkNoteAction" params="action=getWorkNotesByTaskId&staffId={$T.data.staffId}&workTaskExecId={$T.data.workTaskExecId}&workNoteId={$T.data.workNoteId}&workTitle={$P.workTitle}" func="setGroupSelect('{$T.data.groupNo}')">
+	                	<div class="longContent followTitle" >{$T.data.workPurpose}<span>{#if $T.data.workResult}({$T.data.workResult}){#/if}</span></div>
+	                	<div class="follow">{$T.data.workDate}</div>
+	                </li>
+	                {#/for}
+	            {#else}
+                    <li class="nobackimage"><a>暂无跟踪记录</a></li>
+                {#/if}
+            </ul>
+        </div>
+    </div>
+</div>

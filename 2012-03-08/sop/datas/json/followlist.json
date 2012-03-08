@@ -1,0 +1,57 @@
+﻿{
+
+"data":
+	[
+
+		{
+		"workNoteId": 1233434,
+		"workPurpose" : "工作目的1",
+		"workDate": "2011-06-28",
+		"workContent": "工作内容",
+		"workResult": "进行中",
+		"workTaskId": 323241
+		},
+		{
+		"workNoteId": 1233435,
+		"workPurpose" : "工作目的2",
+		"workDate": "2011-06-28",
+		"workContent": "工作内容",
+		"workResult": "已完成",
+		"workTaskId": 323241
+		},
+        {
+		"workNoteId": 1233436,
+		"workPurpose" : "工作目的3",
+		"workDate": "2011-06-28",
+		"workContent": "工作内容",
+		"workResult": "已完成",
+		"workTaskId": 323241
+		},
+		{
+		"workNoteId": 1233437,
+		"workPurpose" : "工作目的4",
+		"workDate": "2011-06-28",
+		"workContent": "工作内容",
+		"workResult": "已完成",
+		"workTaskId": 323241
+		},
+		{
+		"workNoteId": 123348,
+		"workPurpose" : "工作目的5",
+		"workDate": "2011-06-28",
+		"workContent": "工作内容",
+		"workResult": "已完成",
+		"workTaskId": 323241
+		},
+		{
+		"workNoteId": 1233439,
+		"workPurpose" : "工作目的6",
+		"workDate": "2011-06-28",
+		"workContent": "工作内容",
+		"workResult": "已完成",
+		"workTaskId": 323241
+		}
+
+	]
+
+}

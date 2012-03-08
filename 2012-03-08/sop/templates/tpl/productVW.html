@@ -1,0 +1,53 @@
+﻿<div id="productVW">
+    <div class="header"><span>集团V网</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div class="calendarEdit">
+            <div class="hd">
+                <table>
+                    <tr>
+                        <td style="width:27%;">集团名称：</td>
+                        <td>
+                            {$P.groupName}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:27%;">套餐名称：</td>
+                        <td>
+                            {$P.packageName}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>计费号码：</td>
+                        <td>
+                            {$P.servCode}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>手机号码：</td>
+                        <td>
+                            <input type="tel" id="telVM" pattern="[0-9]*" maxlength="11" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>短号：</td>
+                        <td>
+                            <input type="tel" pattern="[0-9]*" maxlength="5" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>办理类型：</td>
+                        <td>
+                            <select class="searchSel">
+                                <option value="addMMS" selected="selected">添加用户</option>
+                                <option value="deleteMMS" >删除用户</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="cl">
+            	<a onclick="takeBusiness(this,'{$P.groupName}','集团V网','{$P.servCode}','{$P.feeCode}')"><span class="sub">提交</span></a>
+            </div>
+        </div>
+    </div>
+</div>

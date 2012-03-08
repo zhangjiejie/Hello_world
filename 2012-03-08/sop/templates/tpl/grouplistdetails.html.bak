@@ -1,0 +1,12 @@
+<div id="grouplistdetails">
+    <div class="header"><span>集团详情</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div>
+            <ul class="rounded noa">
+                <li class="nobackimage box_container"><div style="width: 90px;">集团名称：</div><div class="pink box_inner_1 box_inner_heighter">{$T.data.GROUPNAME}</div></li>
+                <li class="nobackimage box_container"><div style="width: 90px;">红名单欠费：</div><div class="pink box_inner_1">{#if $T.data.REDLISTCOUNTS}{$T.data.REDLISTCOUNTS}{#else}0{#/if}</div></li>
+			</ul>
+
+        </div>
+    </div> 
+</div>

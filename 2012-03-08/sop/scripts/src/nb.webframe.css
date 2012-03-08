@@ -1,0 +1,119 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	overflow: hidden;
+	background-color: rgb(240,240,240);
+}
+
+section{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: 0;
+}
+
+section>div{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	display: none;
+	-webkit-transition-duration: 300ms;
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transform: translateX(0%);
+}
+
+footer {
+	z-index: 10;
+	height: 48px;
+	position: absolute;
+	bottom: 0;
+	background-color: rgb(20, 70, 20);
+	width: 100%;
+}
+
+section>div.current{
+	display: block;
+}
+
+/* left in out*/
+@-webkit-keyframes leftIn{
+	from {
+		-webkit-transform: translateX(100%);
+	}
+	to {
+		-webkit-transform: translateX(0);
+	}
+}
+
+@-webkit-keyframes leftOut{
+	from {
+		-webkit-transform: translateX(0);
+	}
+	to {
+		-webkit-transform: translateX(-100%);
+	}
+}
+
+section>div.left.in{
+	-webkit-animation-name: leftIn;
+}
+
+section>div.left.out{
+	-webkit-animation-name: leftOut;
+}
+
+/* right in */
+@-webkit-keyframes rightIn{
+	from {
+		-webkit-transform: translateX(-100%);
+	}
+	to {
+		-webkit-transform: translateX(0);
+	}
+}
+
+@-webkit-keyframes rightOut{
+	from {
+		-webkit-transform: translateX(0);
+	}
+	to {
+		-webkit-transform: translateX(100%);
+	}
+}
+
+section>div.right.in{
+	-webkit-animation-name: rightIn;
+}
+
+section>div.right.out{
+	-webkit-animation-name: rightOut;
+}
+
+/*extensions*/
+.header{
+	height: 45px;
+	background-color: rgb(20, 150, 20);
+	width: 100%;
+	position: absolute;
+	z-index: 10;
+}
+.scroll{
+	position: absolute;
+	top: 45px;
+	left: 0;
+	right: 0;
+	bottom: 48px;
+}
+.input{
+	float:right;
+	width:1px;
+	height:1px;
+	-webkit-transform:translate3d(0,0,0);
+}

@@ -1,0 +1,22 @@
+<div id="qianfei2">
+    <div class="header"><span>{$P.groupName}</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div class="myul">
+            <ul class="arrowlist" id="qianfei2List">
+                <li class="nobackimage" style="background-color: #E8E8E1;"><div class="spanTitle" style="width:auto">姓名</div>
+                    <span class="rightspan">欠费金额</span>
+                </li>
+                {#if $T.ArrearsDetailInfo.length}
+                    {#foreach $T.ArrearsDetailInfo as ArrearsDetailInfo}
+	                    <li class="nobackimage" href="templates/tpl/qianfei3.html" json="com.ai.esp.g3.customer.web.OverdueServiceAction" params="action=getOverDueDetail&staffId={$P.staffId}&groupNo={$P.groupNo}&myId={$T.ArrearsDetailInfo.TELPHONE}" cachekey="qianfei{$P.groupNo}" func="showCostDetail('{$T.ArrearsDetailInfo.ARREARSDETAIL}',{$T.ArrearsDetailInfo.TELPHONE})">
+                            <div class="spanTitle" style="width:auto">{$T.ArrearsDetailInfo.CUSTOMERSNAME}</div>
+                            <span class="rightspan">{$T.ArrearsDetailInfo.ARREARSTOTAL}元</span>
+	                    </li>
+                    {#/for}
+                {#else}
+                    <li class="nobackimage"><a>暂无欠费记录</a></li>
+                {#/if}
+            </ul>
+        </div>
+    </div>
+</div>

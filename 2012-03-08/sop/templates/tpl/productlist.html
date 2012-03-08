@@ -1,0 +1,16 @@
+<div id="productlist">
+    <div class="header"><span>套餐列表</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div>
+            <ul id="productUL" class="arrowlist rounded">
+                {#if $T.data.length}
+                    {#foreach $T.data as data}
+	                <li class="nobackimage" onclick="product_load(this,'{$P.pName}','staffId={$P.staffId}&groupNo={$P.groupNo}&groupName={$P.groupName}&servCode={$P.servCode}&feeCode={$T.data.FEECODE}&packageName={$T.data.PACKAGENAME}')"><a class="longContent" style="font-size:16px">{$T.data.PACKAGENAME}</a></li>
+	                {#/for}
+	            {#else}
+                    <li class="nobackimage"><a>暂无套餐数据</a></li>
+                {#/if}
+            </ul>
+        </div>
+    </div>
+</div>

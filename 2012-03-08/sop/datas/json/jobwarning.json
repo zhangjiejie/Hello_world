@@ -1,0 +1,59 @@
+{
+
+"data":
+	[
+
+		{
+		"remindId" : 323241,
+		"remindTitle" : "工作提醒1",
+		"remindContent" : "每个客户只能参加一次本活动。已参加终端、实物、家庭等各类营销活动的客户恕不能享受本活动话费补贴。",
+		"remindTypeName" : "红名单欠费提醒",
+		"remindType" : 1,
+		"remindDate" : "2011-07-30",
+		"readStateName" : "未读",
+		"readState" : 0
+		},
+		{
+		"remindId" : 323242,
+		"remindTitle" : "工作提醒2",
+		"remindContent" : "每个客户只能参加一次本活动。已参加终端、实物、家庭等各类营销活动的客户恕不能享受本活动话费补贴。",
+		"remindTypeName" : "关键联系人生日提醒",
+		"remindType" : 2,
+		"remindDate" : "2011-07-30",
+		"readStateName" : "未读",
+		"readState" : 0
+		},
+		{
+		"remindId" : 323243,
+		"remindTitle" : "工作提醒3",
+		"remindContent" : "每个客户只能参加一次本活动。已参加终端、实物、家庭等各类营销活动的客户恕不能享受本活动话费补贴。",
+		"remindTypeName" : "关键联系人分摊到期提醒",
+		"remindType" : 3,
+		"remindDate" : "2011-07-30",
+		"readStateName" : "未读",
+		"readState" : 0
+		},
+		{
+		"remindId" : 323244,
+		"remindTitle" : "工作提醒4",
+		"remindContent" : "每个客户只能参加一次本活动。已参加终端、实物、家庭等各类营销活动的客户恕不能享受本活动话费补贴。",
+		"remindTypeName" : "产品专项月租到期提醒",
+		"remindType" : 4,
+		"remindDate" : "2011-07-30",
+		"readStateName" : "未读",
+		"readState" : 0
+		},
+		{
+		"remindId" : 323245,
+		"remindTitle" : "工作提醒5",
+		"remindContent" : "每个客户只能参加一次本活动。已参加终端、实物、家庭等各类营销活动的客户恕不能享受本活动话费补贴。",
+		"remindTypeName" : "合同到期提醒",
+		"remindType" : 5,
+		"remindDate" : "2011-07-30",
+		"readStateName" : "已读",
+		"readState" : 1
+		}
+		
+	]
+
+}

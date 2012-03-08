@@ -1,0 +1,53 @@
+{
+"CustomerInfo":[
+    {
+        "groupName" : "金太阳太阳能配件", 
+        "Spelling" : "jintaiyangnengpeijian",
+        "groupNo" : "1003233443",
+        "telphone" : "123343453",
+        "jianpin" : "JTYTYNPJ",
+        "contact":"zhangsan"
+    },
+    {
+        "groupName" : "中国石化", 
+        "Spelling" : "zhongguoshihua",
+        "groupNo" : "12389724",
+        "telphone" : "134523412",
+        "jianpin" : "ZGSH",
+        "contact":"zhangsan"
+    },
+    {
+        "groupName" : "郑州市财经干部学校", 
+        "Spelling" : "zhengzhoushicaijingganbuxuexiao",
+        "groupNo" : "1023423456",
+        "telphone" : "12334535345",
+        "jianpin" : "ZZSCJGBXX",
+        "contact":"zhangsan"
+    },
+    {
+        "groupName" : "诚信白铁不锈钢加工", 
+        "Spelling" : "chengxinbaitiebuxiugangjiagong",
+        "groupNo" : "134556657",
+        "telphone" : "145665463",
+        "jianpin" : "CXBTBXGJG",
+        "contact":"zhangsan"
+    },
+    {
+        "groupName" : "新郑市兴华集团实业公司", 
+        "Spelling" : "xinzhengshixinghuajituanshiyegongsi",
+        "groupNo" : "14355676576",
+        "telphone" : "134555656",
+        "jianpin" : "XZSXHJTSYGS",
+        "contact":"zhangsan"
+    },
+	{
+	    "groupName" : "郑州市亚新房地产开发公司", 
+	    "Spelling" : "zhengzhoushiyaxinfangdichankaifagongsi",
+        "groupNo" : "1034345456",
+        "telphone" : "12677657767",
+        "jianpin" : "ZZSYXDCKFGS",
+        "contact":"zhangsan"
+    }
+]
+
+}

@@ -1,0 +1,127 @@
+<div id="baifangedit">
+    <div class="header"><span>{#if $P.add == 'true'}新增{#else}编辑{#/if}拜访记录</span><a href="#" class="toolback back"><div class="divback"></div></a></div>
+    <div class="content scroll">
+        <div class="calendarEdit">
+            <div class="hd">
+                {#if $P.add == 'true'}
+                    <table id="baifangAdd_{$P.groupNo}">
+                        <tr>
+                            <td>集团客户：</td>
+                            <td>
+                                <input type="text" readonly="readonly" value="{$P.groupName}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拜访目的：</td>
+                            <td>
+                                <input type="text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拜访日期：</td>
+                            <td>
+                                <div class="dateselect"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拜访类型：</td>
+                            <td>
+                                <input type="text" value="集团客户拜访" readonly="readonly" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>日志描述：</td>
+                            <td>
+                                <textarea id="scheduleDes" rows="10"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拜访结果：</td>
+                            <td>
+                                <input type="text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拍照附件</td>
+                            <td>
+                            	<a onclick="getPicture(this)"><span class="save photo">拍照附件</span></a>
+                                <input type="text" class="hide"><br/>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td></td>
+                            <td>
+                            	<div class="imageshow">
+                            	</div>
+                            </td>
+                        </tr>
+                    </table>
+                {#else}
+                {#foreach $T.data as data}
+                    {#if $T.data.workNoteId == $P.workNoteId}
+                    <table>
+                        <tr>
+                            <td>集团客户：</td>
+                            <td>
+                                <input type="text" value="{$P.groupName}" readonly="readonly">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拜访目的：</td>
+                            <td>
+                                <input type="text" value="{$T.data.workPurpose}" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拜访日期：</td>
+                            <td>
+                            	<div class="dateselect">{$T.data.workDate}</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拜访类型：</td>
+                            <td>
+                                <input type="text" value="集团客户拜访" readonly="readonly" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>日志描述：</td>
+                            <td>
+                                <textarea id="scheduleDes" rows="10">{$T.data.workContent}</textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拜访结果：</td>
+                            <td>
+                                <input type="text" value="{$T.data.workResult}" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>拍照附件</td>
+                            <td>
+                            	<a onclick="getPicture(this)"><span style="width: 95px;" class="save photo">拍照附件</span></a>
+                            	<a onclick="showPic(this, '{$T.data.attachment}')"><span style="width: 95px; margin-left: 10px;" class="save photo">显示照片</span></a>
+                                <input type="text" class="hide" value=""><br/>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td><input type="text" class="hide oldimg" value="{$T.data.attachment}"><br/></td>
+                            <td>
+                            	<div class="imageshow">
+                            	</div>
+                            </td>
+                        </tr>
+                    </table>
+                    {#/if}
+                {#/for}
+            {#/if}   
+            </div>
+            <div class="cl">
+            	<a onclick="submitBaifang(this, '{$P.groupNo}','{$P.add}','{$P.workNoteId}')"><span class="sub">提交</span></a>
+                {#if $P.add != 'true'}
+                	<a onclick="deleteEsop('deleteWorkNote','com.ai.esp.g3.workmanager.web.WorkNoteAction','workNoteId={$P.workNoteId}','baifang','action=getWorkNoteByCustomerId&staffId={$P.staffId}&groupNo={$P.groupNo}&groupName={$P.groupName}')"><span class="save">删除</span></a>
+                {#/if}
+            </div>
+        </div>
+    </div>
+</div>

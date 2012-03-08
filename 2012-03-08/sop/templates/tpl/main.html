@@ -1,0 +1,65 @@
+<div id="main">
+	<div class="header headshadow">
+		<span>G3移动版ESOP系统</span>
+		<a bindclick="exitSys()" class="toolback"><div class="divexit"></div></a>
+        <a class="toolother" href="templates/tpl/settinglist.html" json="datas/json/blank.json"><div class="divset"></div></a>
+	</div>
+	<div class="scroll content main">
+		<div class="grid">
+	        <div class="row">
+		        <div id="ic_group" class="item">
+			        <a class="ic_group" name="group"><div class="icon"><div class="mask">集团客户</div></div></a>
+			        <p class="ico_txt">集团客户</p>
+		        </div> 
+		        <div id="ic_mem" class="item"> 
+			        <a class="ic_mem" name="groupmember"><div class="icon"><div class="mask">集团成员</div></div></a>
+			        <p class="ico_txt">集团成员</p>
+		        </div>
+		        <div id="ic_remind" class="item">
+			        <a class="ic_remind" href="templates/tpl/nowajobwarning.html" json="com.ai.esp.g3.workmanager.web.WorkRemindAction" remote="true" params='action=getWorkReminds&staffId={$P.staffId}&remindState=0&reqDate=' cachekey="nowajobwarning"><div class="icon"><div class="mask">工作提醒</div></div></a>
+			        <p class="ico_txt">工作提醒</p>
+		        </div>
+		        <div id="ic_yujing" class="item" >
+			        <a class="ic_yujing" href="templates/tpl/yujinglist.html" json="com.ai.esp.g3.workmanager.web.WorkTaskAction" remote="true" params='action=getYuJinTasks&staffId={$P.staffId}' cachekey="yujinglist"><div class="icon"><div class="mask">预警提醒</div></div></a> 
+			        <p class="ico_txt">预警任务</p>
+		        </div>
+		        <div id="ic_notice" class="item" >
+			        <a class="ic_notice" href="templates/tpl/notice.html" json="com.ai.esp.g3.sys.web.SysNoticeManagerAction" remote="true" params='action=getSysNotices&staffId={$P.staffId}&reqDate={$P.today}' cachekey='notice'><div class="icon"><div class="mask">公告提醒</div></div></a> 
+			        <p class="ico_txt">公告提醒</p>
+		        </div>
+		        <div id="ic_perfor" class="item"> 
+			        <a class="ic_perfor" cachekey="alltask" remote='true' href='templates/tpl/alltask.html' json='com.ai.esp.g3.workmanager.web.WorkTaskAction' params='action=getWorkTasks&staffId={$P.staffId}&taskState=1&reqDate={$P.today}'><div class="icon"><div class="mask">我的任务</div></div></a> 
+			        <p class="ico_txt">我的任务</p>
+		        </div>
+		        <div id="ic_sale" class="item"> 
+			        <a class="ic_sale" cachekey="mysale" remote='true' href='templates/tpl/mysale.html' json='com.ai.esp.g3.workmanager.web.WorkTaskAction' params='action=getWorkSaleTasks&staffId={$P.staffId}'><div class="icon"><div class="mask">我的营销</div></div></a> 
+			        <p class="ico_txt">我的营销</p>
+		        </div>
+		        <div id="ic_own" class="item" > 
+			        <a class="ic_own" href="templates/tpl/qianfei.html" json="com.ai.esp.g3.customer.web.OverdueServiceAction" remote="true" params="action=getOverDueList&staffId={$P.staffId}"><div class="icon"><div class="mask">欠费提醒</div></div></a> 
+			        <p class="ico_txt">欠费提醒</p>
+		        </div>
+		        <div id="ic_text" class="item" > 
+			        <a class="ic_text" href="templates/tpl/businesstest.html" json="datas/json/businesstest.json"><div class="icon"><div class="mask">业务体验</div></div></a> 
+			        <p class="ico_txt">业务体验</p>
+		        </div> 
+		        <div id="ic_play" class="item" > 
+			        <a class="ic_play" href="templates/tpl/businessplay.html" json="datas/json/businessplay.json"><div class="icon"><div class="mask">业务演示</div></div></a> 
+			        <p class="ico_txt">业务演示</p>
+		        </div>
+		        <div id="ic_prod" class="item" > 
+			        <a class="ic_prod" href="templates/tpl/customertest.html" json="datas/json/blank.json" func="Navigation('customertestList')"><div class="icon"><div class="mask">客户体验</div></div></a> 
+			        <p class="ico_txt">客户体验</p>
+		        </div>
+		        <div id="ic_esep" class="item" >
+			        <a class="ic_esep" bindclick="Esep()"><div class="icon"><div class="mask">ESEP</div></div></a> 
+			        <p class="ico_txt">ESEP</p>
+		        </div>
+		         <div id="ic_note" class="item" >
+			        <a class="ic_note" href="templates/tpl/mynote.html" json="com.ai.esp.test.note.web.NoteAction" remote="true" params="action=getNoteInfo&staffId={$P.staffId}"><div class="icon"><div class="mask">电子书签</div></div></a> 
+			        <p class="ico_txt">电子书签</p>
+		        </div>   
+	        </div>
+        </div>
+	</div>
+</div>
