@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+font-size:12px;}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3,      
+h4, h5, h6, p, blockquote, pre, a, abbr, acronym,      
+address, cite,em, img,       
+strong, sub, sup,       
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend,      
+table, caption, tbody, tfoot, thead, tr, th, td {      
+margin: 0;      
+padding: 0;      
+border: 0;      
+outline: 0;      
+font-weight:normal;      
+vertical-align: baselinebaseline;      
+}  
+
+    
+:focus { outline: 0;}      
+a, a:link, a:visited, a:hover, a:active{text-decoration:none;}   
+   
+table { border-collapse: separate;border-spacing: 0;}   
+   
+th, td {text-align: left; font-weight: normal;} 
+     
+img, iframe {border: none; text-decoration:none;} 
+     
+ol, ul {list-style: none;} 
+
+
+a img{
+border:none;}
+ 
+.thumbpic a img{
+display:block;} 
+.clear{
+zoom:1;
+font-size:0;
+line-height:0;
+clear:both;
+height:0;
+visibility:hidden;
+}     
+	 

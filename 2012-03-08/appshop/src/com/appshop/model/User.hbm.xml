@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.appshop.model">
+	<class name="com.appshop.model.User" table="user" catalog="syt">
+	<!-- 配置缓存 -->
+	 <cache usage="read-write" region="sampleCache1"/>
+		 <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="increment" />
+        </id>
+
+        <property name="name" type="java.lang.String">
+            <column name="name" length="32" not-null="true" />
+        </property>
+        <property name="pass" type="java.lang.String">
+            <column name="pass" length="32" not-null="true" />
+        </property>        		
+
+        <property name="email" type="java.lang.String">
+            <column name="email" length="32" not-null="true" />
+        </property>
+        <property name="age" type="java.lang.Integer">
+            <column name="age"/>
+        </property>
+        <property name="birth" type="java.util.Date">
+            <column name="birth" length="7" not-null="true" />
+        </property>        
+	</class>	
+</hibernate-mapping>

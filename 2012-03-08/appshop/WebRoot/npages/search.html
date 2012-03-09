@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>商品列表</title>
+<link href="../nresources/css/layout.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../njs/jquery/jquery-1.3.min.js"></script>
+<script type="text/javascript" src="../njs/framework.js"></script>
+<script type="text/javascript" src="../njs/tab.js"></script>
+<script type="text/javascript">
+
+$(function(){
+})
+</script>
+</head>
+
+<body>
+<div class="wrapper">
+  <div class="top-banner">
+    <div class="login-panel"></div>
+    <form>
+      <div class="search-panel">
+        <input type="text" class="input-text" value="请输入关键字" />
+        <input type="submit" class="input-btn" value="注册" />
+        <a href="search.html">高级搜索</a>|<a href="help.html">帮助中心</a>|<a href="contact.html">联系我们</a>|<a href="index.html">首页</a> </div>
+    </form>
+  </div>
+  <div class="bread-crumb">
+    	当前位置：<a href="#">首页</a> > <a href="#">高级搜索</a>
+    </div>
+  <div class="col-left">
+      <div class="col-left-title c-l-orange">商户排名</div>
+    <div class="col-left-ctn pd0">
+        <div class="sb-menu-til"> <span><a href="#"><img src="../nresources/images/icon-new/icon-01.gif" width="10" height="10" />商户名称</a></span> </div>
+        <div class="sb-menu-til bg"> <span><a href="#"><img src="../nresources/images/icon-new/icon-01.gif" alt="" width="10" height="10" />商户名称</a></span> </div>
+        <div class="sb-menu-til"> <span><a href="#"><img src="../nresources/images/icon-new/icon-01.gif" alt="" width="10" height="10" />商户名称</a></span> </div>
+        <div class="sb-menu-til bg"> <span><a href="#"><img src="../nresources/images/icon-new/icon-02.gif" alt="" width="10" height="10" />商户名称</a></span> </div>
+        <div class="sb-menu-til"> <span><a href="#"><img src="../nresources/images/icon-new/icon-02.gif" alt="" width="10" height="10" />商户名称</a></span> </div>
+        <div class="sb-menu-til bg"> <span><a href="#"><img src="../nresources/images/icon-new/icon-02.gif" alt="" width="10" height="10" />商户名称</a></span> </div>
+        <div class="sb-menu-til"> <span><a href="#"><img src="../nresources/images/icon-new/icon-02.gif" alt="" width="10" height="10" />商户名称</a></span> </div>
+        <div class="sb-menu-til bg"> <span><a href="#"><img src="../nresources/images/icon-new/icon-02.gif" alt="" width="10" height="10" />商户名称</a></span> </div>
+        <div class="sb-menu-til"> <span><a href="#"><img src="../nresources/images/icon-new/icon-02.gif" alt="" width="10" height="10" />商户名称</a></span> </div>
+      <div class="sb-menu-til bg"> <span><a href="#"><img src="../nresources/images/icon-new/icon-02.gif" alt="" width="10" height="10" />商户名称</a></span> </div>
+        <div class="sb-menu-til"> <span><a href="#" class="btn-more">更多</a></span> </div>
+      </div>
+      <div class="col-left-title c-l-green">公告信息</div>
+      <div class="col-left-ctn">
+        <div>
+          <p class="bulletin"> <a>买大众礼包，送超值话费，山西移动商易通，超值优惠，超值活动。买大众礼包，送超值话费，山西移动商易通，超值优惠，超值活动。</a> </p>
+        </div>
+      </div>
+      <div class="col-left-title c-l-pink">客户服务</div>
+      <div class="col-left-ctn" style="padding:0;">
+        <ul class="customer-service">
+          <li><img src="../nresources/images/icon-deliver.gif" /><span>发货时间:<b>09:00-18:00</b></span></li>
+          <li><img src="../nresources/images/icon-cell.gif" /><span>e购热线:<b>400-000-0000</b></span></li>
+          <li style="border-bottom:none;"><img src="../nresources/images/icon-time.gif" /><span>客服值班时间:<b>09:00-18:00</b></span></li>
+        </ul>
+      </div>
+    <div class="col-left-title c-l-blue">帮助中心</div>
+      <div class="col-left-ctn">
+        <ul class="help-center">
+          <li><a href="#"><img src="../nresources/images/help1.gif" />如何订购</a></li>
+          <li><a href="#"><img src="../nresources/images/help2.gif" />如何优惠</a></li>
+          <li><a href="#"><img src="../nresources/images/help3.gif" />售后服务</a></li>
+          <li><a href="#"><img src="../nresources/images/help4.gif" />付款方式</a></li>
+          <li><a href="#"><img src="../nresources/images/help1.gif" />图标待定</a></li>
+          <li><a href="#"><img src="../nresources/images/help2.gif" />图标待定</a></li>
+          <div class="clear"></div>
+        </ul>
+      </div>
+    </div>
+    <div class="col-right">
+      <div class="col-right-title c-r-blue"><span>查询</span>
+      </div>
+      <div class="col-right-ctn">
+        <div id="getId">
+          <ul id="tabtag">
+            <li id="tabId1" class="tab_on" onclick="tab('tabId1','tabC1');"><a javascript:void(0)="javascript:void(0)" onfocus="blur()">商品</a></li>
+            <li id="tabId2" onclick="tab('tabId2','tabC2');" ><a javascript:void(0)="javascript:void(0)" onfocus="blur()">商户</a></li>
+            <li id="tabId3" onclick="tab('tabId3','tabC3');" ><a javascript:void(0)="javascript:void(0)" onfocus="blur()">优惠券</a></li>
+            <li id="tabId4" onclick="tab('tabId4','tabC4');" ><a javascript:void(0)="javascript:void(0)" onfocus="blur()">活动</a></li>
+          </ul>
+        </div>
+        <div  class="show" id="tabC1">
+          <div class="table-form">
+            <table cellpadding="0" cellspacing="0">
+              <caption>
+                填写查询条件:
+              </caption>
+              <tr>
+                <th>名称：</th>
+                <td><input type="text" class="input-text" /></td>
+              </tr>
+              <tr>
+                <th>所在地区：</th>
+                <td><select name="select">
+                  <option>XXXX</option>
+                </select>
+                  &nbsp;&nbsp;省&nbsp;&nbsp;
+                  <select name="select2">
+                    <option>XXXX</option>
+                  </select>
+                  &nbsp;&nbsp;市&nbsp;&nbsp;
+                  <select name="select2">
+                    <option>XXXX</option>
+                  </select>
+                  &nbsp;&nbsp;区</td>
+              </tr>
+              <tr>
+                <th>详细地址：</th>
+                <td><input type="text" class="input-text" size="50" /></td>
+              </tr>
+              <tr>
+                <th>邮    编：</th>
+                <td><input type="text" class="input-text" /></td>
+              </tr>
+              <tr>
+                <th>电    话：</th>
+                <td><input type="text" class="input-text" size="3" />
+                  &nbsp;&nbsp;
+                  <input type="text" class="input-text" size="3" />
+                  &nbsp;&nbsp;
+                  <input type="text" class="input-text" size="10" />
+                  （区号-电话号-分机）</td>
+              </tr>
+              <tr>
+                <th>手    机：</th>
+                <td><input type="text" class="input-text" /></td>
+              </tr>
+            </table>
+            <p align="center"><a href="#"><img src="../nresources/images/btn-search.gif" /></a></p>
+          </div>
+        </div>
+        <div  class="hidden" id="tabC2">222</div>
+        <div  class="hidden" id="tabC3">333</div>
+        <div  class="hidden" id="tabC4">444</div>
+      </div>
+      <div class="col-right-title c-r-orange"><span>列表</span>
+      </div>
+      <div class="col-right-ctn">
+        <div class="clear"></div>
+        <div class="table-data">
+          <table cellpadding="0" cellspacing="0">
+            <tr>
+              <th>排名</th>
+              <th>商户</th>
+              <th>商户名称</th>
+              <th>销售额</th>
+              <th>数量</th>
+            </tr>
+            <tr>
+              <td><span> 1 </span></td>
+              <td><img src="../nresources/images/p3.gif" /></td>
+              <td><a href="#">商品名商品名称商品名称商品名称称</a></td>
+              <td><span><b>￥1850元</b></span></td>
+              <td><span> 11 </span></td>
+            </tr>
+            <tr>
+              <td><span> 2 </span></td>
+              <td><img src="../nresources/images/p4.gif" /></td>
+              <td><a href="#">商品名商品名称商品名称商品名称称</a></td>
+              <td><span><b>￥1850元</b></span></td>
+              <td><span> 11 </span></td>
+            </tr>
+            <tr>
+              <td><span> 3 </span></td>
+              <td><img src="../nresources/images/p2.gif" /></td>
+              <td><a href="#">商品名商品名称商品名称商品名称称商品名商品名称商品名称商品名称称</a></td>
+              <td><span><b>￥1850元</b></span></td>
+              <td><span> 11 </span></td>
+            </tr>
+            <tr>
+              <td><span> 4 </span></td>
+              <td><img src="../nresources/images/p3.gif" /></td>
+              <td><a href="#">商品名商品名称商品名称商品名称称</a></td>
+              <td><span><b>￥1850元</b></span></td>
+              <td><span> 11 </span></td>
+            </tr>
+            <tr>
+              <td><span> 5 </span></td>
+              <td><img src="../nresources/images/p4.gif" /></td>
+              <td><a href="#">商品名商品名称商品名称商品名称称</a></td>
+              <td><span><b>￥1850元</b></span></td>
+              <td><span> 11 </span></td>
+            </tr>
+            <tr>
+              <td><span> 6 </span></td>
+              <td><img src="../nresources/images/p2.gif" /></td>
+              <td><a href="#">商品名商品名称商品名称商品名称称商品名商品名称商品名称商品名称称</a></td>
+              <td><span><b>￥1850元</b></span></td>
+              <td><span> 11 </span></td>
+            </tr>
+          </table>
+          <div class="next-pages"> <span class="disabled"> &lt; 上一页 </span>
+            <!-- 不可点 -->
+            <span class="current">1</span>
+            <!-- 目前所在页 -->
+            <a href="#?page=2">2</a> <a href="#?page=3">3</a> <a href="#?page=4">4</a> <a href="#?page=5">5</a> <a href="#?page=6">6</a> <a href="#?page=7">7</a> ... <a href="#?page=19">19</a> <a href="#?page=2"> 下一页 &gt; </a></div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="footer">
+  <p>版权所有 (c) 2009 中国移动通信集团山西分公司</p>
+</div>
+</body>
+</html>

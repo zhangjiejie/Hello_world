@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.appshop.model">
+	<class name="com.appshop.model.MerchandiseInfo" table="merchandise_info"
+		catalog="syt">
+		<!-- 配置缓存 -->
+		<cache usage="read-write" region="sampleCache1" />
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="increment" />
+		</id>
+
+		<property name="name" type="java.lang.String">
+			<column name="name" length="128" not-null="true" />
+		</property>
+		
+		<property name="amount" type="java.lang.String">
+			<column name="amount" length="128" not-null="true" />
+		</property>
+		
+		<property name="icon" type="java.lang.String">
+			<column name="icon" length="10240" not-null="true" />
+		</property>
+		
+		<property name="describe" type="java.lang.String">
+			<column name="describe" length="1024" not-null="true" />
+		</property>
+		
+		<property name="type" type="java.lang.Integer">
+			<column name="type" length="32" not-null="true" />
+		</property>
+		
+		<property name="up_flag" type="java.lang.String">
+			<column name="up_flag" length="1" not-null="true" />
+		</property>
+
+        <property name="assess_flag" type="java.lang.String">
+			<column name="assess_flag" length="1" not-null="true" />
+		</property>
+		
+		
+        <property name="current_price" type="java.lang.String">
+			<column name="current_price" length="64" not-null="true" />
+		</property>
+        <property name="orig_price" type="java.lang.String">
+			<column name="orig_price" length="64" not-null="true" />
+		</property>			
+        <property name="corp_no" type="java.lang.String">
+			<column name="corp_no" length="64" not-null="true" />
+		</property>
+		
+        <property name="status" type="java.lang.String">
+			<column name="status" length="1" not-null="true" />
+		</property>
+		
+		 <property name="create_time" type="java.util.Date">
+			<column name="create_time" length="20" not-null="true" />
+		</property>
+					
+	</class>
+</hibernate-mapping>

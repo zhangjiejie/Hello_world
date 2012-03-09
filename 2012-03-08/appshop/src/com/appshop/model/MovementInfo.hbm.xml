@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.appshop.model">
+	<class name="com.appshop.model.MovementInfo" table="movement_info"
+		catalog="syt">
+		<!-- 配置缓存 -->
+		<cache usage="read-write" region="sampleCache1" />
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="increment" />
+		</id>
+
+		<property name="move_subject" type="java.lang.String">
+			<column name="move_subject" length="64" not-null="true" />
+		</property>
+		
+		<property name="move_content" type="java.lang.String">
+			<column name="move_content" length="1024" not-null="true" />
+		</property>
+		
+		<property name="begin_time" type="java.util.Date">
+			<column name="begin_time" length="20" not-null="true" />
+		</property>
+		
+		<property name="end_time" type="java.util.Date">
+			<column name="end_time" length="20" not-null="true" />
+		</property>
+		
+		<property name="create_time" type="java.util.Date">
+			<column name="create_time" length="20" not-null="true" />
+		</property>
+		
+		<property name="status" type="java.lang.String">
+			<column name="status" length="1" not-null="true" />
+		</property>
+		
+		<property name="assess_flag" type="java.lang.String">
+			<column name="assess_flag" length="1" not-null="true" />
+		</property>
+		
+		<property name="send_flag" type="java.lang.String">
+			<column name="send_flag" length="1" not-null="true" />
+		</property>	
+		
+		<property name="operator_no" type="java.lang.String">
+			<column name="operator_no" length="64" not-null="true" />
+		</property>	
+			
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- 配置占位符 -->
+    <bean id="placeholderConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+      <property name="location">
+                <value>classpath:config.properties</value>
+      </property>
+    </bean>
+	<!-- 数据连接池 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName">
+			<value>${datasource.driverClassName}</value>
+		</property>
+		<property name="url">	
+			<value>${datasource.url}</value>
+		</property>
+		<property name="username">
+			<value>${datasource.username}</value>
+		</property>
+		<property name="password">
+			<value>${datasource.password}</value>
+		</property>
+		<property name="maxActive">
+			<value>50</value>
+		</property>
+		<property name="maxIdle">
+			<value>10</value>
+		</property>
+		<property name="maxWait">
+			<value>100</value>
+		</property>
+	</bean>
+
+     <!-- sessionFactory -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean" >
+		<property name="dataSource">
+			<ref local="dataSource"/>
+		</property>
+		<property name="mappingResources">
+      		<list>
+      		 <value>com/appshop/model/CorpInfo.hbm.xml</value>
+      		 <value>com/appshop/model/MerchandiseInfo.hbm.xml</value>
+      		 <value>com/appshop/model/VoucherInfo.hbm.xml</value>
+      		 <value>com/appshop/model/MovementInfo.hbm.xml</value>
+      		 
+      		</list>
+      	</property>
+      	
+      	<property name="hibernateProperties">
+      	<props>
+        	<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+        	<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+        	<prop key="hibernate.jdbc.fetch_size">50</prop>
+        	<prop key="hibernate.jdbc.batch_size">25</prop>
+        	
+        	<prop key="hibernate.use_outer_join">true</prop>
+        	<!-- hibernate 缓存 -->
+        	<prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
+        	<prop key="hibernate.cache.use_query_cache">true</prop>
+        	
+        	<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+      	</props>
+    	</property>
+      	
+	</bean>
+	
+	<!-- 事务管理 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory"/>
+		</property>
+	</bean>					  
+	<bean id="baseTxProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" abstract="true">
+		<property name="transactionManager">
+			<ref local="transactionManager"/>
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+				<prop key="load*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+
+
+<!-- 
+
+	<bean id="transactionInterceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor">           
+        <property name="transactionManager" ref="transactionManager"/>           
+        <property name="transactionAttributes">         
+            <props>         
+                       
+                <prop key="add*">PROPAGATION_REQUIRED</prop>         
+                <prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>         
+            </props>         
+        </property>         
+    </bean>           
+                  
+   <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">           
+        <property name="beanNames">         
+            <value>*Service</value>         
+        property>         
+        <property name="interceptorNames">           
+            <list>           
+                <value>transactionInterceptorvalue>           
+                           
+            </list>           
+        </property>           
+    </bean> 
+
+ -->
+
+
+	<!-- hibernate 操作模版 -->
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+        <property name="sessionFactory">
+           <ref bean="sessionFactory" />
+        </property>
+        <property name="cacheQueries">
+           <value>true</value>
+        </property>
+    </bean>
+
+
+
+	<!-- 支持 @Transactional 标记 --> 
+	<!-- =========== openSessionInViewInterceptor ==============--> 
+	<!-- 
+	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" /> 
+	-->
+
+	<bean id="openSessionInViewInterceptor" class="org.springframework.orm.hibernate3.support.OpenSessionInViewInterceptor"> 
+		<property name="sessionFactory" ref="sessionFactory" /> 
+	</bean>
+
+	 
+</beans>

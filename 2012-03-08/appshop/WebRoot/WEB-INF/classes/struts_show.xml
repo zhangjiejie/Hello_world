@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<package name="show" extends="struts-default">
+
+   		<interceptors>
+            <interceptor name="authority" class="com.appshop.interceptor.SessionInterceptor"/>
+            <interceptor-stack name="sessionStack">
+                <interceptor-ref name="defaultStack"/>
+                <interceptor-ref name="authority"/>
+            </interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="defaultStack"/>
+		
+		<global-results>
+			<!-- 下面定义的结果对所有的Action都有效 -->
+			<result name="exception">/WEB-INF/jsp/error.jsp</result>
+			<result name="main">/WEB-INF/jsp/show/index.jsp</result>
+			<result name="input">/WEB-INF/jsp/error.jsp</result>
+			<result name="error">/WEB-INF/jsp/error.jsp</result>
+			<result name="login">/WEB-INF/jsp/login.jsp</result>
+		</global-results>
+			
+		<global-exception-mappings>
+			<exception-mapping exception="com.appshop.exception.DemoException" result="exception"/>
+			<exception-mapping exception="java.lang.Exception" result="exception"/>
+		</global-exception-mappings>
+
+
+        <!-- 商户排名 -->
+        <action name="corpInfo" class="com.appshop.web.CorpInfoAction">
+			<result>/app/corpInfoList.jsp</result>	
+			<result name="error">/WEB-INF/jsp/error.jsp</result>
+        </action>
+        
+        <action name="corpinforecommend" class="com.appshop.web.CorpInfoAction" method="recommend">
+			<result>/common/corpRecommend.jsp</result>	
+			<result name="allList">/list/corpInfoList.jsp</result>	
+			<result name="error">/WEB-INF/jsp/error.jsp</result>
+        </action>
+        
+        <action name="search" class="com.appshop.web.CorpInfoAction" method="search">
+			<result>/search/search.jsp</result>	
+			<result name="error">/WEB-INF/jsp/error.jsp</result>
+        </action>
+        
+       <action name="corpInfoDetail"
+			class="com.appshop.web.CorpInfoAction" method="getInfoById">
+			<result>/detail/corpInfoDetail.jsp</result>
+			<result name="error">/WEB-INF/jsp/error.jsp</result>
+		</action>
+        
+        
+        
+        <!-- 优惠券排名 -->
+		<action name="voucherInfo" class="com.appshop.web.VoucherInfoAction">
+			<result>/common/corpTop.jsp</result>	
+			<result name="error">/WEB-INF/jsp/error.jsp</result>
+        </action>
+        <action name="voucherInforecommended" class="com.appshop.web.VoucherInfoAction" method="recommended">
+			<result>/common/voucherRecommend.jsp</result>	
+			<result name="error">/WEB-INF/jsp/error.jsp</result>
+        </action>
+         <action name="voucherInforecommendedList" class="com.appshop.web.VoucherInfoAction" method="list">
+			<result>/list/voucherRecommendList.jsp</result>	
+			<result name="error">/WEB-INF/jsp/error.jsp</result>
+        </action>
+        <action name="voucherInfoSearch" class="com.appshop.web.VoucherInfoAction" method="search">
+		    <result>/search/search.jsp</result>	
+			<result name="error">/WEB-INF/jsp/error.jsp</result>
+        </action>
+        
+        
+        <!-- 商品排名 -->
+		<action name="merchandiseInfo" class="com.appshop.web.MerchandiseInfoAction">
+			<result>/common/merchandiseInfoNew.jsp</result>	
+			<result name="error">/WEB-INF/jsp/error.jsp</result>
+        </action>  
+        <action name="merchandiseInfolist" class="com.appshop.web.MerchandiseInfoAction" method="list">
+			<result>/list/merchandiseInfoList.jsp</result>	
+			<result name="error">/WEB-INF/jsp/error.jsp</result>
+        </action>  
+        <action name="merchandiseInfodetail" class="com.appshop.web.MerchandiseInfoAction" method="detail">
+			<result>/detail/merchandiseInfoDetail.jsp</result>	
+			<result name="error">/WEB-INF/jsp/error.jsp</result>
+        </action> 
+         <action name="merchandiseInfoSearch" class="com.appshop.web.MerchandiseInfoAction" method="search">
+			<result>/search/search.jsp</result>	
+			<result name="error">/WEB-INF/jsp/error.jsp</result>
+        </action>   
+        
+        
+         <!-- 活动 -->
+		<action name="movementInfo" class="com.appshop.web.MovementInfoAction">
+			<result>/common/movementNew.jsp</result>
+			<result name="error">/WEB-INF/jsp/error.jsp</result>
+		</action>
+		<!-- more -->
+		<action name="movementInfoList" method="movementInfoList" class="com.appshop.web.MovementInfoAction">
+			<result>/list/movementInfoList.jsp</result>
+			<result name="error">/WEB-INF/jsp/error.jsp</result>
+		</action>
+		<!-- detail -->
+		<action name="movementInfoDetail" method="movementInfoDetail" class="com.appshop.web.MovementInfoAction">
+			<result>/detail/movementInfoDetail.jsp</result>
+			<result name="error">/WEB-INF/jsp/error.jsp</result>
+		</action>
+		<!-- search -->
+		<action name="movementInfoSearch" method="search" class="com.appshop.web.MovementInfoAction">
+			<result>/search/search.jsp</result>	
+			<result name="error">/WEB-INF/jsp/error.jsp</result>
+		</action>
+                                                            
+</package>
+
+</struts>

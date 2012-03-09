@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+
+	<!-- DAO层 -->
+    <bean id="corpInfoDAO" class="com.appshop.dao.impl.CorpInfoDAOHibernate">
+       <property name="hibernateTemplate"><ref bean="hibernateTemplate" /></property>
+    </bean>
+    <bean id="voucherInfoDAO" class="com.appshop.dao.impl.VoucherInfoDAOHibernate">
+       <property name="hibernateTemplate"><ref bean="hibernateTemplate" /></property>
+    </bean>
+    <bean id="merchandiseInfoDAO" class="com.appshop.dao.impl.MerchandiseInfoDAOHibernate">
+       <property name="hibernateTemplate"><ref bean="hibernateTemplate" /></property>
+    </bean>
+     <bean id="movementInfoDAO" class="com.appshop.dao.impl.MovementInfoDAOHibernate">
+       <property name="hibernateTemplate"><ref bean="hibernateTemplate" /></property>
+    </bean>
+    
+    
+    
+    
+    <!-- 业务实现层 -->  
+    <bean id="corpInfoTarget" class="com.appshop.service.impl.CorpInfoServiceImpl">
+        <property name="corpInfoDAO"><ref local="corpInfoDAO"/></property> 
+    </bean>
+    <bean id="voucherInfoTarget" class="com.appshop.service.impl.VoucherInfoServiceImpl">
+        <property name="voucherInfoDAO"><ref local="voucherInfoDAO"/></property> 
+    </bean>
+     <bean id="merchandiseInfoTarget" class="com.appshop.service.impl.MerchandiseInfoServiceImpl">
+        <property name="merchandiseInfoDAO"><ref local="merchandiseInfoDAO"/></property> 
+    </bean>
+     <bean id="movementInfoTarget" class="com.appshop.service.impl.MovementInfoServiceImpl">
+        <property name="movementInfoDAO"><ref local="movementInfoDAO"/></property> 
+    </bean>
+    
+    
+    <!-- 事务 -->
+    <bean id="corpInfoService" parent="baseTxProxy">
+        <property name="target">
+			<ref local="corpInfoTarget"/>
+        </property>
+    </bean>
+    
+    <bean id="voucherInfoService" parent="baseTxProxy">
+        <property name="target">
+			<ref local="voucherInfoTarget"/>
+        </property>
+    </bean>
+     <bean id="merchandiseInfoService" parent="baseTxProxy">
+        <property name="target">
+			<ref local="merchandiseInfoTarget"/>
+        </property>
+    </bean>
+     <bean id="movementInfoService" parent="baseTxProxy">
+        <property name="target">
+			<ref local="movementInfoTarget"/>
+        </property>
+    </bean>
+    
+    
+</beans>

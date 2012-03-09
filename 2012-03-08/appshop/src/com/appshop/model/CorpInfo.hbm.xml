@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.appshop.model">
+	<class name="com.appshop.model.CorpInfo" table="corp_info"
+		catalog="syt">
+		<!-- 配置缓存 -->
+		<cache usage="read-only" region="sampleCache1" />
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="increment" />
+		</id>
+		<property name="corp_name" type="java.lang.String">
+			<column name="corp_name" length="128" not-null="true" />
+		</property>
+        <property name="flag" type="java.lang.String">
+			<column name="flag" length="1" not-null="true" />
+		</property>
+		
+        <property name="corp_address" type="java.lang.String">
+			<column name="corp_address" length="256" not-null="true" />
+		</property>
+		
+        <property name="corp_phone" type="java.lang.String">
+			<column name="corp_phone" length="20" not-null="true" />
+		</property>
+		
+		<property name="status" type="java.lang.String">
+			<column name="status" length="1" not-null="true" />
+		</property>
+		
+		<property name="create_time" type="java.util.Date">
+			<column name="create_time" length="20" not-null="true" />
+		</property>
+
+		<property name="corp_level" type="java.lang.String">
+			<column name="corp_level" length="10" not-null="true" />
+		</property>		
+		
+		<property name="login_no" type="java.lang.String">
+			<column name="login_no" length="20" not-null="true" />
+		</property>	
+				
+	</class>
+</hibernate-mapping>

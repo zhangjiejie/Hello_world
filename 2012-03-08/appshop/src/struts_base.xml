@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+   <package name="base" extends="struts-default">
+   
+   		<global-results>
+			<!-- 下面定义的结果对所有的Action都有效 -->
+			<result name="exception">/error.jsp</result>
+		</global-results>
+		
+
+   </package>
+
+</struts>
